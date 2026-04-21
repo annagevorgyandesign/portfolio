@@ -1,0 +1,15 @@
+---
+description: Project-wide code style and readability standards
+alwaysApply: true
+---
+
+# Code Style
+
+- Prefer readability over cleverness; write code that is easy to scan and maintain.
+- Use meaningful names for variables, functions, components, and types.
+- Keep functions focused and short; extract helpers when a function grows too large.
+- Avoid deep nesting; prefer guard clauses and early returns.
+- Keep files cohesive with one clear responsibility per file.
+- Remove dead code, commented-out blocks, and unused imports/variables.
+- Keep formatting consistent with project tooling and existing patterns.
+- Add brief comments only when logic is not obvious from the code itself.

@@ -1,0 +1,13 @@
+---
+description: Core standards for all code changes
+alwaysApply: true
+---
+
+# Core Engineering Standards
+
+- Keep changes small and focused on the user's request.
+- Preserve existing behavior unless the task explicitly asks for changes.
+- Avoid introducing new dependencies unless clearly necessary.
+- Reuse existing patterns in this repo before creating new abstractions.
+- Run relevant checks after edits (`pnpm lint`, then build if needed).
+- If a change affects UI behavior, include brief manual verification steps.

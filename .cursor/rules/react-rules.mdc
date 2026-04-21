@@ -1,0 +1,12 @@
+---
+alwaysApply: true
+---
+# React Conventions
+
+- Build components as pure functions from props and state.
+- Do not use inline styles in JSX (`style={{ ... }}`); use style files/modules.
+- Keep component files focused; extract hooks/utilities when logic grows.
+- Use descriptive prop names and typed props for all exported components.
+- Keep JSX readable by avoiding deeply nested conditional expressions.
+- Prefer derived values with memoization only when profiling indicates need.
+- Ensure accessible semantics for interactive UI (buttons, labels, alt text).

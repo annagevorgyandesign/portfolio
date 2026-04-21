@@ -1,0 +1,12 @@
+---
+description: Linting discipline and suppression policy
+alwaysApply: true
+---
+
+# Linting Discipline
+
+- Do not use `eslint-disable`, `eslint-disable-next-line`, or file-level disable blocks.
+- Do not suppress TypeScript diagnostics with `// @ts-ignore`.
+- Resolve the root cause of lint/type errors instead of muting rules.
+- Run `pnpm lint` after edits and address all new issues.
+- Keep lint config changes rare and justify them in the change description.

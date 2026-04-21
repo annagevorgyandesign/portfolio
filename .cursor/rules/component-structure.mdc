@@ -1,0 +1,11 @@
+---
+alwaysApply: true
+---
+# Component Folder Structure
+
+- Each component must live in its own folder named after the component.
+- Use `index.tsx` as the component entry file.
+- Keep styles in a dedicated `styles.*` file in the same folder.
+- Keep constants in `consts.*` files in the same folder.
+- Keep helper logic in `utils.*` files in the same folder.
+- Keep each file focused on one concern; avoid mixed responsibilities.
