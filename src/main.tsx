@@ -17,8 +17,8 @@ createRoot(rootElement).render(
       theme={{
         algorithm: theme.darkAlgorithm,
         token: {
-          colorPrimary: '#7c3aed',
-          borderRadius: 10,
+          colorPrimary: '#FA8C16',
+          borderRadius: 8,
           fontFamily: 'Inter, Segoe UI, Roboto, Arial, sans-serif',
         },
       }}

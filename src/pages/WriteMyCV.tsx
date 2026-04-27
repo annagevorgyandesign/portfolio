@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, Form, Input, Button, Typography, Space, message, Divider } from 'antd';
 import { SendOutlined, CopyOutlined, FileTextOutlined } from '@ant-design/icons';
 import { generateGeminiContent } from '../api/gemini';
+import './WriteMyCV.css';
 
 const { Title, Paragraph, Text } = Typography;
 const { TextArea } = Input;
@@ -11,7 +12,7 @@ const WriteMyCV: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState("");
 
-  const handleGenerate = async (values: any) => {
+  const handleGenerate = async (values: { role: string; skills?: string; experience?: string }) => {
     setLoading(true);
     
     const fullPrompt = `
@@ -31,7 +32,7 @@ const WriteMyCV: React.FC = () => {
       const response = await generateGeminiContent(fullPrompt);
       setResult(response);
       message.success("CV content generated!");
-    } catch (error) {
+    } catch {
       message.error("Failed to generate content.");
     } finally {
       setLoading(false);
@@ -39,9 +40,8 @@ const WriteMyCV: React.FC = () => {
   };
 
   return (
-    <div style={{ padding: '40px', maxWidth: '850px', margin: '0 auto' }}>
-      <Space direction="vertical" size="large" style={{ width: '100%' }}>
-        
+    <div className="cv-page">
+      <Space direction="vertical" size="large" className="cv-stack">
         <header>
           <Title level={2}>
             <FileTextOutlined /> AI CV Generator
@@ -51,7 +51,7 @@ const WriteMyCV: React.FC = () => {
           </Paragraph>
         </header>
 
-        <Card bordered={false} style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
+        <Card bordered={false} className="cv-card">
           <Form form={form} layout="vertical" onFinish={handleGenerate}>
             <Form.Item 
               name="role" 
@@ -69,13 +69,13 @@ const WriteMyCV: React.FC = () => {
               <TextArea rows={4} placeholder="Summarize your main responsibilities..." />
             </Form.Item>
 
-            <Button 
-              type="primary" 
-              htmlType="submit" 
-              loading={loading} 
-              icon={<SendOutlined />} 
+            <Button
+              type="primary"
+              htmlType="submit"
+              loading={loading}
+              icon={<SendOutlined />}
               block
-              style={{ height: '45px', borderRadius: '6px' }}
+              className="cv-generate-btn"
             >
               Generate Content
             </Button>
@@ -83,14 +83,14 @@ const WriteMyCV: React.FC = () => {
         </Card>
 
         {result && (
-          <Card 
-            title="Generated Result" 
+          <Card
+            title="Generated Result"
             extra={<Button type="link" icon={<CopyOutlined />} onClick={() => {
               navigator.clipboard.writeText(result);
               message.success("Copied!");
             }}>Copy</Button>}
           >
-            <div style={{ whiteSpace: 'pre-wrap', lineHeight: '1.7' }}>
+            <div className="cv-result-text">
               {result}
             </div>
             

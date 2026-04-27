@@ -1,0 +1,75 @@
+.cv-page {
+  padding: 40px 48px;
+  max-width: 980px;
+  min-height: 700px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.cv-stack {
+  width: 100%;
+}
+
+.cv-page .ant-typography {
+  color: #111;
+}
+
+.cv-page .ant-typography p,
+.cv-page .ant-typography.ant-typography-secondary {
+  color: #4a4a4a;
+}
+
+.cv-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  background: #fff !important;
+}
+
+.cv-card .ant-card-body,
+.cv-card .ant-form,
+.cv-card .ant-form-item-label > label {
+  background: #fff !important;
+  color: #111827 !important;
+}
+
+.cv-page .ant-input,
+.cv-page .ant-input-outlined,
+.cv-page .ant-input-affix-wrapper,
+.cv-page .ant-input-affix-wrapper.ant-input-outlined,
+.cv-page .ant-input-textarea .ant-input {
+  background: #fff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  color: #111827;
+  box-shadow: none;
+}
+
+.cv-page .ant-input:focus,
+.cv-page .ant-input-focused,
+.cv-page .ant-input-outlined.ant-input-focused,
+.cv-page .ant-input-affix-wrapper-focused,
+.cv-page .ant-input-affix-wrapper.ant-input-outlined.ant-input-affix-wrapper-focused,
+.cv-page .ant-input-textarea .ant-input:focus {
+  border-color: #cfd4dc !important;
+  box-shadow: none !important;
+}
+
+.cv-generate-btn {
+  height: 56px;
+  border-radius: 6px !important;
+  background-color: #fa8c16 !important;
+  border-color: #fa8c16 !important;
+  color: #111 !important;
+}
+
+.cv-result-text {
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .cv-page {
+    padding: 28px 20px;
+  }
+}

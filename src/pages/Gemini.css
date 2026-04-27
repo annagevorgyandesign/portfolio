@@ -1,0 +1,83 @@
+.gemini-page {
+  padding: 40px 48px;
+  max-width: 980px;
+  min-height: 700px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.gemini-stack {
+  width: 100%;
+}
+
+.gemini-page .ant-typography {
+  color: #111;
+}
+
+.gemini-page .ant-typography p,
+.gemini-page .ant-typography.ant-typography-secondary {
+  color: #4a4a4a;
+}
+
+.gemini-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  background: #fff !important;
+}
+
+.gemini-card .ant-card-body,
+.gemini-card .ant-form,
+.gemini-card .ant-form-item-label > label {
+  background: #fff !important;
+  color: #111827 !important;
+}
+
+.gemini-textarea {
+  border-radius: 8px;
+}
+
+.gemini-page .ant-input,
+.gemini-page .ant-input-outlined,
+.gemini-page .ant-input-affix-wrapper,
+.gemini-page .ant-input-affix-wrapper.ant-input-outlined,
+.gemini-page .ant-input-textarea .ant-input {
+  background: #fff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  color: #111827;
+  box-shadow: none;
+}
+
+.gemini-page .ant-input:focus,
+.gemini-page .ant-input-focused,
+.gemini-page .ant-input-outlined.ant-input-focused,
+.gemini-page .ant-input-affix-wrapper-focused,
+.gemini-page .ant-input-affix-wrapper.ant-input-outlined.ant-input-affix-wrapper-focused,
+.gemini-page .ant-input-textarea .ant-input:focus {
+  border-color: #cfd4dc !important;
+  box-shadow: none !important;
+}
+
+.gemini-send-btn {
+  height: 56px;
+  background-color: #fa8c16 !important;
+  border-color: #fa8c16 !important;
+  color: #111 !important;
+}
+
+.gemini-response-card {
+  border-left: 4px solid #fa8c16;
+  margin-top: 20px;
+}
+
+.gemini-response-text {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .gemini-page {
+    padding: 28px 20px;
+  }
+}
