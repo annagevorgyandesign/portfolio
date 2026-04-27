@@ -33,16 +33,16 @@ export const HOME_COPY = {
 
 export const SERVICE_ITEMS: ServiceItem[] = [
   {
-    title: 'Graphic Design',
-    description: 'Visual identity systems and campaign materials that stand out.',
+    title: 'UI/UX Design',
+    description: 'Creating intuitive and engaging user experiences',
   },
   {
-    title: 'UI/UX Design',
-    description: 'Modern digital experiences built for clarity and conversion.',
+    title: 'Graphic Design',
+    description: 'Creating functional and creative designs',
   },
   {
     title: 'Brand Identity',
-    description: 'Distinct brand direction from concept through launch assets.',
+    description: 'Inspiring identity for your business',
   },
 ]
 
