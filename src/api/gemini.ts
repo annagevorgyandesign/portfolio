@@ -27,7 +27,7 @@ export const generateGeminiContent = async (prompt: string): Promise<string> => 
     const generatedText = response.data.candidates?.[0]?.content?.parts?.[0]?.text;
     
     return generatedText || "";
-  } catch (error: any) {
+  } catch (error: unknown) {
     if (axios.isAxiosError(error) && error.response) {
       const apiError = error.response.data as GeminiError;
       console.error("API Error:", apiError.error.message);
