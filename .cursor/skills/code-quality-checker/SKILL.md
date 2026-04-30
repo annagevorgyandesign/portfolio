@@ -9,7 +9,7 @@ This skill ensures that the codebase maintains a high standard of quality, follo
 
 ## When to Use
 
-- Use this skill when the user asks to "check the code", "run lint", "verify", or "test the component".
+- Use this skill when the user asks to "check the code", "check", "run lint", "verify", or "test the component".
 - Use it to confirm that newly generated or modified code aligns with project standards.
 
 ## Instructions
