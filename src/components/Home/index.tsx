@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'antd'
 import atomImage from '../../assets/atom.jpg'
 import heroImage from '../../assets/hero.png'
 import portfolioSetImage from '../../assets/portfolio-set.png'
@@ -8,121 +9,121 @@ import {
   SERVICE_ITEMS,
   STAT_ITEMS,
 } from './consts'
-import './styles.css'
+import styles from './styles.module.css'
 
 const Home: React.FC = () => {
   const [firstStat, ...remainingStats] = STAT_ITEMS
 
   return (
-    <div className="home-page">
-      <div className="home-shell">
-        <section id="home" className="home-hero">
-          <div className="hero-copy">
+    <div className={styles.homePage}>
+      <div className={styles.homeShell}>
+        <section id="home" className={styles.homeHero}>
+          <div className={styles.heroCopy}>
             <h1>
               I Design.
               <br />
               You Grow.
             </h1>
             <p>{HOME_COPY.heroSubtitle}</p>
-            <div className="hero-actions">
-              <button type="button" className="hero-btn hero-btn-black">
+            <div className={styles.heroActions}>
+              <Button type="primary" className={`${styles.heroBtn} ${styles.heroBtnBlack}`}>
                 {HOME_COPY.primaryAction}
-              </button>
-              <button type="button" className="hero-btn hero-btn-outline">
+              </Button>
+              <Button className={`${styles.heroBtn} ${styles.heroBtnOutline}`}>
                 {HOME_COPY.secondaryAction}
-              </button>
+              </Button>
             </div>
           </div>
-          <div className="hero-visual">
+          <div className={styles.heroVisual}>
             <img src={heroImage} alt="Design and growth hero screenshot" />
           </div>
         </section>
 
-        <section className="services-section">
+        <section className={styles.servicesSection}>
           <h2>My Services</h2>
-          <div className="services-grid">
+          <div className={styles.servicesGrid}>
             {SERVICE_ITEMS.map((item) => (
-              <article key={item.title} className="service-item">
-                <div className="service-circle">
+              <article key={item.title} className={styles.serviceItem}>
+                <div className={styles.serviceCircle}>
                   <h3>{item.title}</h3>
                 </div>
                 <p>{item.description}</p>
               </article>
             ))}
           </div>
-          <button type="button" className="brand-btn">
+          <Button className={styles.brandBtn}>
             {HOME_COPY.servicesAction}
-          </button>
+          </Button>
         </section>
 
-        <section className="works-section">
+        <section className={styles.worksSection}>
           <h2>My Works</h2>
-          <div className="works-preview">
+          <div className={styles.worksPreview}>
             <img src={portfolioSetImage} alt="Portfolio works preview collage" />
           </div>
-          <button type="button" className="brand-btn">
+          <Button className={styles.brandBtn}>
             {HOME_COPY.worksAction}
-          </button>
+          </Button>
         </section>
 
-        <section className="why-section">
+        <section className={styles.whySection}>
           <h2>Why Work With Me?</h2>
-          <div className="why-grid">
-            <div className="why-card why-atom-card">
+          <div className={styles.whyGrid}>
+            <div className={`${styles.whyCard} ${styles.whyAtomCard}`}>
               <img src={atomImage} alt="Atom icon" />
             </div>
-            <div className="why-card top-rated-card">
-              <p className="top-rated-title">Top Rated</p>
-              <p className="top-rated-subtitle">3% <span>on Upwork</span></p>
+            <div className={styles.whyCard}>
+              <p className={styles.topRatedTitle}>Top Rated</p>
+              <p className={styles.topRatedSubtitle}>3% <span>on Upwork</span></p>
             </div>
 
             {firstStat && (
-              <div key={firstStat.label} className="why-card stat-card">
-                <p className="stat-value">{firstStat.value}</p>
-                <p className="stat-label">{firstStat.label}</p>
+              <div key={firstStat.label} className={styles.whyCard}>
+                <p className={styles.statValue}>{firstStat.value}</p>
+                <p className={styles.statLabel}>{firstStat.label}</p>
               </div>
             )}
 
-            <div className="why-text-card">
+            <div className={styles.whyTextCard}>
               <p>{HOME_COPY.whyDescription}</p>
             </div>
 
             {remainingStats.map((stat) => (
-              <div key={stat.label} className="why-card stat-card">
-                <p className="stat-value">{stat.value}</p>
-                <p className="stat-label">{stat.label}</p>
+              <div key={stat.label} className={styles.whyCard}>
+                <p className={styles.statValue}>{stat.value}</p>
+                <p className={styles.statLabel}>{stat.label}</p>
               </div>
             ))}
           </div>
         </section>
       </div>
 
-      <section className="testimonial-section">
-        <div className="home-shell testimonial-shell">
-          <div className="testimonial-left">
+      <section className={styles.testimonialSection}>
+        <div className={`${styles.homeShell} ${styles.testimonialShell}`}>
+          <div className={styles.testimonialLeft}>
             <h2>{HOME_COPY.testimonialTitle}</h2>
-            <div className="quote-mark">
+            <div className={styles.quoteMark}>
               <img src={quoteMarkImage} alt="Quote mark" />
             </div>
           </div>
-          <div className="testimonial-right">
-            <p className="testimonial-stars">★★★★★</p>
-            <p className="testimonial-copy">{HOME_COPY.testimonialQuote}</p>
-            <p className="testimonial-author">- {HOME_COPY.testimonialAuthor},</p>
-            <p className="testimonial-author-role">{HOME_COPY.testimonialAuthorRole}</p>
+          <div>
+            <p className={styles.testimonialStars}>★★★★★</p>
+            <p className={styles.testimonialCopy}>{HOME_COPY.testimonialQuote}</p>
+            <p className={styles.testimonialAuthor}>- {HOME_COPY.testimonialAuthor},</p>
+            <p className={styles.testimonialAuthorRole}>{HOME_COPY.testimonialAuthorRole}</p>
           </div>
         </div>
       </section>
 
-      <section className="contact-cta">
-        <div className="home-shell cta-shell">
+      <section className={styles.contactCta}>
+        <div className={`${styles.homeShell} ${styles.ctaShell}`}>
           <h2>
             <span>Want To Launch Your Brand</span>
             <span>Into The Future?</span>
           </h2>
-          <button type="button" className="brand-btn">
+          <Button className={styles.brandBtn}>
             {HOME_COPY.ctaAction}
-          </button>
+          </Button>
         </div>
       </section>
 

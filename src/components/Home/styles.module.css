@@ -1,10 +1,10 @@
-.home-page {
+.homePage {
   background-color: #fff;
   color: #111;
   font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
-.home-shell {
+.homeShell {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -12,24 +12,23 @@
   box-sizing: border-box;
 }
 
-.home-page h1,
-.home-page h2,
-.home-page h3,
-.stat-value,
-.top-rated-title {
+.homePage h1,
+.homePage h2,
+.homePage h3,
+.statValue,
+.topRatedTitle {
   font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif;
 }
 
-.home-hero {
+.homeHero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
-  height: 648px;
-  padding: 0;
+  min-height: 648px;
   gap: 24px;
 }
 
-.hero-copy {
+.heroCopy {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,17 +36,16 @@
   text-align: left;
 }
 
-.hero-copy h1 {
+.heroCopy h1 {
   font-size: 80px;
   line-height: 0.95;
   margin: 0;
   letter-spacing: -1.2px;
-  text-align: left;
   font-weight: 600;
   color: #111;
 }
 
-.hero-copy p {
+.heroCopy p {
   max-width: 560px;
   margin: 22px 0 34px;
   color: #4a4a4a;
@@ -55,34 +53,34 @@
   line-height: 1.6;
 }
 
-.hero-actions {
+.heroActions {
   display: flex;
   align-items: flex-start;
   gap: 14px;
 }
 
-.hero-btn,
-.brand-btn {
+.heroBtn,
+.brandBtn {
   border-radius: 8px;
   height: 56px;
   padding: 0 18px;
   border: 1px solid #111;
-  cursor: pointer;
   font-weight: 600;
   font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
-.hero-btn-black {
-  background: #111;
-  color: #fff;
+.heroBtnBlack {
+  background: #111 !important;
+  color: #fff !important;
+  border-color: #111 !important;
 }
 
-.hero-btn-outline {
-  background: transparent;
-  color: #111;
+.heroBtnOutline {
+  background: transparent !important;
+  color: #111 !important;
 }
 
-.hero-visual {
+.heroVisual {
   width: calc(100% + 48px);
   height: calc(100% + 10px);
   overflow: hidden;
@@ -90,7 +88,7 @@
   margin-top: -10px;
 }
 
-.hero-visual img {
+.heroVisual img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -99,7 +97,7 @@
   transform: scale(1.03);
 }
 
-.services-section {
+.servicesSection {
   background: #000;
   color: #fff;
   width: 100vw;
@@ -109,28 +107,28 @@
   text-align: center;
 }
 
-.services-section h2,
-.works-section h2,
-.why-section h2,
-.testimonial-left h2,
-.cta-shell h2 {
+.servicesSection h2,
+.worksSection h2,
+.whySection h2,
+.testimonialLeft h2,
+.ctaShell h2 {
   margin: 0 0 32px;
   font-size: 46px;
   line-height: 1.05;
   font-weight: 600;
 }
 
-.services-section h2 {
+.servicesSection h2 {
   font-size: 50px;
 }
 
-.services-grid {
+.servicesGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 34px;
 }
 
-.service-item {
+.serviceItem {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,7 +138,7 @@
   margin: 0 auto;
 }
 
-.service-circle {
+.serviceCircle {
   width: 142px;
   height: 142px;
   border-radius: 50%;
@@ -151,66 +149,61 @@
   text-align: center;
 }
 
-.service-circle h3 {
+.serviceCircle h3 {
   margin: 0;
   font-size: 21px;
   line-height: 1.15;
 }
 
-.service-item p {
+.serviceItem p {
   margin: 16px 0 0;
   color: #d9d9d9;
   font-size: 16px;
-  font-weight: 400;
   line-height: 24px;
-  letter-spacing: 0;
   width: 240px;
   max-width: 240px;
   min-height: 48px;
   text-align: center;
 }
 
-.brand-btn {
+.brandBtn {
   margin-top: 48px;
-  background-color: rgba(250, 140, 22, 1);
-  border-color: #fa8c16;
-  color: #111;
+  background-color: #fa8c16 !important;
+  border-color: #fa8c16 !important;
+  color: #111 !important;
   font-size: 18px;
 }
 
-.works-section {
+.worksSection {
   padding: 58px 0 64px;
   text-align: center;
   margin: 0 -40px;
 }
 
-.works-preview {
+.worksPreview {
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
-  background: transparent;
-  padding: 0;
-  box-sizing: border-box;
 }
 
-.works-preview img {
+.worksPreview img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.why-section {
+.whySection {
   padding: 58px 0 64px;
   text-align: center;
 }
 
-.why-grid {
+.whyGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 
-.why-card {
+.whyCard {
   background: #f0f0f0;
   min-height: 116px;
   display: flex;
@@ -218,24 +211,23 @@
   justify-content: center;
   align-items: flex-start;
   padding: 20px;
-  box-sizing: border-box;
   border-radius: 8px;
 }
 
-.why-atom-card {
+.whyAtomCard {
   background: transparent;
   align-items: center;
   justify-content: center;
   min-height: 200px;
 }
 
-.why-atom-card img {
+.whyAtomCard img {
   width: 270px;
   height: 270px;
   object-fit: cover;
 }
 
-.top-rated-title {
+.topRatedTitle {
   margin: 0;
   color: #d57a0d;
   font-size: 58px;
@@ -243,7 +235,7 @@
   line-height: 1;
 }
 
-.top-rated-subtitle {
+.topRatedSubtitle {
   margin: 16px 0 0;
   color: #111;
   font-size: 40px;
@@ -251,31 +243,27 @@
   line-height: 1;
 }
 
-.top-rated-subtitle span {
+.topRatedSubtitle span {
   font-size: 32px;
-  font-weight: 600;
 }
 
-.why-text-card {
+.whyTextCard {
   min-height: 120px;
   display: flex;
   align-items: center;
   padding: 0;
 }
 
-.why-text-card p {
+.whyTextCard p {
   margin: 0;
   max-width: 501px;
   color: #222;
-  font-family: 'Inter', 'Segoe UI', sans-serif;
   font-size: 22px;
-  font-weight: 400;
   line-height: 30px;
-  letter-spacing: 0;
   text-align: left;
 }
 
-.stat-value {
+.statValue {
   margin: 0;
   color: #d57a0d;
   font-size: 58px;
@@ -283,20 +271,20 @@
   line-height: 1;
 }
 
-.stat-label {
+.statLabel {
   margin: 14px 0 0;
   color: #222;
   font-size: 26px;
-  font-weight: 600 !important;
+  font-weight: 600;
   line-height: 1.05;
 }
 
-.testimonial-section {
+.testimonialSection {
   background: #000;
   color: #fff;
 }
 
-.testimonial-shell {
+.testimonialShell {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   padding-top: 72px;
@@ -304,45 +292,41 @@
   gap: 44px;
 }
 
-.testimonial-left {
+.testimonialLeft {
   min-height: 520px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.quote-mark {
-  margin: 0;
+.quoteMark {
   align-self: center;
   width: 220px;
   max-width: 100%;
 }
 
-.quote-mark img {
+.quoteMark img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.testimonial-stars {
+.testimonialStars {
   color: #fa8c16;
   margin: 0 0 16px;
   letter-spacing: 6px;
   font-size: 22px;
 }
 
-.testimonial-copy {
+.testimonialCopy {
   margin: 0;
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-  font-weight: 400;
   font-size: 18px;
   line-height: 30px;
-  letter-spacing: 0;
   color: #d0d0d0;
   white-space: pre-line;
 }
 
-.testimonial-author {
+.testimonialAuthor {
   margin: 24px 0 4px;
   color: #fff;
   font-weight: 600;
@@ -350,7 +334,7 @@
   text-align: right;
 }
 
-.testimonial-author-role {
+.testimonialAuthorRole {
   margin: 2px 0 0;
   color: #fff;
   font-weight: 500;
@@ -358,175 +342,81 @@
   text-align: right;
 }
 
-.contact-cta {
+.contactCta {
   background: #ececec;
   text-align: center;
   padding: 110px 0 120px;
 }
 
-.cta-shell h2 {
-  max-width: none;
+.ctaShell h2 {
   margin: 0 auto 26px;
   color: #111;
   font-size: 52px;
   line-height: 1.2;
 }
 
-.cta-shell h2 span {
+.ctaShell h2 span {
   display: block;
   white-space: nowrap;
 }
 
-.home-bottom-footer {
-  background: #000;
-  color: #f2f2f2;
-  border-top: 2px solid #0f0f0f;
-  border-bottom: 2px solid #0f0f0f;
-  font-size: 16px;
-}
-
-.bottom-footer-shell {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 28px;
-  min-height: 96px;
-}
-
-.bottom-footer-shell p {
-  margin: 0;
-}
-
-.footer-copyright {
-  font-size: 16px;
-  color: #e0e0e0;
-  font-weight: 400;
-}
-
-.bottom-footer-meta {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  font-size: 16px;
-  color: #fff;
-  font-weight: 400;
-}
-
-.bottom-footer-meta a {
-  color: #f2f2f2;
-  text-decoration: none;
-  font-weight: 400;
-}
-
-.social-links {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.social-links a {
-  font-size: 34px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1;
-}
-
-@media (max-width: 1200px) {
-  .hero-copy h1 {
-    font-size: 80px;
-  }
-}
-
 @media (max-width: 900px) {
-  .home-shell {
+  .homeShell {
     padding: 0 20px;
   }
 
-  .services-section {
+  .servicesSection {
     width: auto;
     margin: 0 -20px;
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  .works-section {
+  .worksSection {
     margin: 0;
   }
 
-  .home-hero {
+  .homeHero {
     grid-template-columns: 1fr;
-    text-align: left;
-    height: auto;
+    min-height: auto;
   }
 
-  .hero-copy p {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .hero-actions {
-    justify-content: flex-start;
-  }
-
-  .hero-visual {
+  .heroVisual {
     width: calc(100% + 20px);
     margin-right: -20px;
   }
 
-  .hero-visual img {
-    width: calc(100% + 20px);
-    margin-right: -20px;
-  }
-
-  .services-grid,
-  .why-grid,
-  .testimonial-shell {
+  .servicesGrid,
+  .whyGrid,
+  .testimonialShell {
     grid-template-columns: 1fr;
   }
 
-  .testimonial-left {
+  .testimonialLeft {
     min-height: auto;
     gap: 18px;
   }
 
-  .quote-mark {
+  .quoteMark {
     align-self: flex-start;
   }
 
-  .testimonial-author,
-  .testimonial-author-role {
+  .testimonialAuthor,
+  .testimonialAuthorRole {
     text-align: left;
   }
 
-  .why-card {
+  .whyCard {
     align-items: center;
     text-align: center;
   }
 
-  .why-text-card {
+  .whyTextCard {
     padding: 8px 0;
     justify-content: center;
   }
 
-  .why-text-card p {
+  .whyTextCard p {
     text-align: center;
-  }
-
-  .bottom-footer-shell,
-  .bottom-footer-meta {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  .bottom-footer-meta {
-    font-size: 16px;
-    gap: 14px;
-  }
-
-  .social-links a {
-    font-size: 28px;
   }
 }

@@ -1,4 +1,4 @@
-.cv-page {
+.cvPage {
   padding: 24px 0 40px;
   max-width: 1000px;
   min-height: 100vh;
@@ -6,11 +6,11 @@
   background: #ececec;
 }
 
-.cv-layout {
+.cvLayout {
   background: transparent;
 }
 
-.cv-paper-card {
+.cvPaperCard {
   border-radius: 0;
   border: 2px solid #1d1d1d;
   box-shadow: none;
@@ -18,31 +18,30 @@
   overflow: hidden;
 }
 
-.cv-paper-card .ant-card-body {
+.cvPaperCard :global(.ant-card-body) {
   padding: 0;
 }
 
-.cv-paper-card,
-.cv-paper-card * {
+.cvPaperCard,
+.cvPaperCard * {
   font-family: 'Poppins', 'Inter', 'Segoe UI', sans-serif;
   color: #1f1f1f;
 }
 
-.cv-top-banner {
+.cvTopBanner {
   background: #000;
   padding: 28px 46px 26px;
 }
 
-.cv-top-banner h1 {
+.cvTopBanner h1 {
   margin: 0;
   color: #fff;
   font-size: 40px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.01em;
 }
 
-.cv-top-banner h2 {
+.cvTopBanner h2 {
   margin: 10px 0 8px;
   color: #fff;
   font-size: 26px;
@@ -50,19 +49,19 @@
   line-height: 1.2;
 }
 
-.cv-top-banner p {
+.cvTopBanner p {
   margin: 0;
   color: #fff;
   font-size: 20px;
   line-height: 1.2;
 }
 
-.cv-contact-block {
+.cvContactBlock {
   padding: 36px 46px 22px;
   background: #fff;
 }
 
-.cv-contact-grid {
+.cvContactGrid {
   max-width: 660px;
   margin: 0 auto;
   display: grid;
@@ -71,180 +70,175 @@
   row-gap: 6px;
 }
 
-.cv-contact-grid .ant-typography {
+.cvContactGrid :global(.ant-typography) {
   margin: 0;
   font-size: 13px;
   line-height: 1.4;
 }
 
-.cv-contact-grid .ant-typography:first-child,
-.cv-contact-grid .ant-typography:nth-child(3),
-.cv-contact-grid .ant-typography:nth-child(5),
-.cv-contact-grid .ant-typography:nth-child(7) {
+.cvContactGrid :global(.ant-typography:first-child),
+.cvContactGrid :global(.ant-typography:nth-child(3)),
+.cvContactGrid :global(.ant-typography:nth-child(5)),
+.cvContactGrid :global(.ant-typography:nth-child(7)) {
   text-align: right;
   font-style: italic;
   font-weight: 700;
 }
 
-.cv-section {
+.cvSection {
   padding: 0 46px;
   margin-bottom: 26px;
 }
 
-.cv-section h3 {
+.cvSection h3 {
   margin: 0;
   font-size: 32px;
   font-weight: 700;
-  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
-.cv-divider {
-  display: none;
-}
-
-.cv-rule {
+.cvRule {
   width: 100%;
   height: 2px;
   background: #5f5f5f;
   margin: 10px 0 16px;
 }
 
-.cv-section p {
+.cvSection p {
   margin: 0 0 12px;
   font-size: 14px;
   line-height: 1.4;
 }
 
-.cv-two-col-row {
+.cvTwoColRow {
   display: grid;
   grid-template-columns: 230px 1fr;
   column-gap: 20px;
   margin-bottom: 18px;
 }
 
-.cv-left-col h4 {
+.cvLeftCol h4 {
   margin: 0 0 6px;
   font-size: 18px;
   font-weight: 700;
 }
 
-.cv-left-col p {
+.cvLeftCol p {
   margin: 0;
   font-size: 14px;
   line-height: 1.35;
 }
 
-.cv-right-col {
+.cvRightCol {
   margin: 0;
   padding-left: 22px;
 }
 
-.cv-right-col li {
+.cvRightCol li {
   margin-bottom: 5px;
   font-size: 14px;
   line-height: 1.35;
 }
 
-.cv-education-item {
+.cvEducationItem {
   margin-bottom: 18px;
 }
 
-.cv-education-item p {
+.cvEducationItem p {
   margin: 0;
 }
 
-.cv-plain-list {
+.cvPlainList {
   margin: 0;
   padding-left: 24px;
 }
 
-.cv-plain-list li {
+.cvPlainList li {
   margin-bottom: 4px;
   font-size: 14px;
   line-height: 1.35;
 }
 
-.cv-last-section {
+.cvLastSection {
   padding-bottom: 20px;
 }
 
 @media (max-width: 992px) {
-  .cv-top-banner h1 {
+  .cvTopBanner h1 {
     font-size: 42px;
   }
 
-  .cv-top-banner h2 {
+  .cvTopBanner h2 {
     font-size: 28px;
   }
 
-  .cv-top-banner p {
+  .cvTopBanner p {
     font-size: 22px;
   }
 
-  .cv-section h3 {
+  .cvSection h3 {
     font-size: 27px;
   }
 
-  .cv-section p,
-  .cv-left-col h4,
-  .cv-left-col p,
-  .cv-right-col li,
-  .cv-plain-list li {
+  .cvSection p,
+  .cvLeftCol h4,
+  .cvLeftCol p,
+  .cvRightCol li,
+  .cvPlainList li {
     font-size: 20px;
   }
 
-  .cv-two-col-row {
+  .cvTwoColRow {
     grid-template-columns: 1fr;
     row-gap: 8px;
   }
 }
 
 @media (max-width: 768px) {
-  .cv-page {
+  .cvPage {
     padding: 12px 0 28px;
   }
 
-  .cv-top-banner,
-  .cv-contact-block,
-  .cv-section {
+  .cvTopBanner,
+  .cvContactBlock,
+  .cvSection {
     padding-left: 16px;
     padding-right: 16px;
   }
 
-  .cv-top-banner h1 {
+  .cvTopBanner h1 {
     font-size: 30px;
   }
 
-  .cv-top-banner h2 {
+  .cvTopBanner h2 {
     font-size: 20px;
   }
 
-  .cv-top-banner p {
+  .cvTopBanner p {
     font-size: 16px;
   }
 
-  .cv-contact-grid {
+  .cvContactGrid {
     grid-template-columns: 1fr;
     row-gap: 4px;
   }
 
-  .cv-contact-grid .ant-typography:first-child,
-  .cv-contact-grid .ant-typography:nth-child(3),
-  .cv-contact-grid .ant-typography:nth-child(5),
-  .cv-contact-grid .ant-typography:nth-child(7) {
+  .cvContactGrid :global(.ant-typography:first-child),
+  .cvContactGrid :global(.ant-typography:nth-child(3)),
+  .cvContactGrid :global(.ant-typography:nth-child(5)),
+  .cvContactGrid :global(.ant-typography:nth-child(7)) {
     text-align: left;
   }
 
-  .cv-section h3 {
+  .cvSection h3 {
     font-size: 21px;
   }
 
-  .cv-section p,
-  .cv-left-col h4,
-  .cv-left-col p,
-  .cv-right-col li,
-  .cv-plain-list li {
+  .cvSection p,
+  .cvLeftCol h4,
+  .cvLeftCol p,
+  .cvRightCol li,
+  .cvPlainList li {
     font-size: 15px;
   }
 }

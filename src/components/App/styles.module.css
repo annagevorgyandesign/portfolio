@@ -1,4 +1,8 @@
-.app-header {
+.appLayout {
+  min-height: 100vh;
+}
+
+.appHeader {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -20,13 +24,13 @@
   font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif;
 }
 
-.top-nav {
+.topNav {
   display: flex;
   gap: 32px;
   align-items: center;
 }
 
-.nav-link {
+.navLink {
   color: #222 !important;
   font-size: 16px;
   padding: 6px 0;
@@ -35,23 +39,23 @@
   font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
-.nav-link span {
+.navLink span {
   font-size: 18px;
   font-weight: 600;
 }
 
-.nav-link.active {
-  color: #FA8C16 !important; /* Քո նարնջագույնը */
+.active {
+  color: #fa8c16 !important;
   font-weight: 600;
-  border-bottom: 2px solid #FA8C16;
+  border-bottom: 2px solid #fa8c16;
 }
 
-.header-actions {
+.headerActions {
   display: flex;
   align-items: center;
 }
 
-.download-cv-btn {
+.downloadCvBtn {
   height: 56px;
   border-radius: 8px !important;
   background-color: rgba(250, 140, 22, 1) !important;
@@ -67,12 +71,12 @@
   font-weight: 500;
 }
 
-.app-content {
+.appContent {
   background: #fff;
   padding-top: 8px;
 }
 
-.app-footer {
+.appFooter {
   background: #000 !important;
   color: #f2f2f2;
   border-top: 2px solid #0f0f0f;
@@ -81,7 +85,7 @@
   padding: 0 48px !important;
 }
 
-.app-footer-shell {
+.appFooterShell {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -92,14 +96,14 @@
   min-height: 96px;
 }
 
-.footer-copyright {
+.footerCopyright {
   margin: 0;
   font-size: 16px;
   color: #e0e0e0;
   font-weight: 400;
 }
 
-.bottom-footer-meta {
+.bottomFooterMeta {
   display: flex;
   align-items: center;
   gap: 30px;
@@ -108,20 +112,20 @@
   font-weight: 400;
 }
 
-.bottom-footer-meta .ant-typography {
+.bottomFooterMeta :global(.ant-typography) {
   color: #f2f2f2 !important;
   text-decoration: none;
   margin-bottom: 0;
   font-weight: 400;
 }
 
-.social-links {
+.socialLinks {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.social-links .ant-typography {
+.socialLinks :global(.ant-typography) {
   font-size: 34px;
   font-weight: 500;
   letter-spacing: 0;
@@ -129,11 +133,11 @@
 }
 
 @media (max-width: 1024px) {
-  .app-header {
+  .appHeader {
     padding: 0 20px !important;
   }
 
-  .app-footer {
+  .appFooter {
     padding: 0 20px !important;
   }
 
@@ -141,13 +145,13 @@
     font-size: 24px;
   }
 
-  .top-nav {
+  .topNav {
     gap: 10px;
   }
 }
 
 @media (max-width: 768px) {
-  .app-header {
+  .appHeader {
     height: auto;
     min-height: 88px;
     flex-wrap: wrap;
@@ -156,26 +160,26 @@
     padding-bottom: 12px !important;
   }
 
-  .top-nav {
+  .topNav {
     width: 100%;
     justify-content: center;
     order: 3;
   }
 
-  .app-footer-shell,
-  .bottom-footer-meta {
+  .appFooterShell,
+  .bottomFooterMeta {
     flex-direction: column;
     justify-content: center;
     text-align: center;
     padding: 10px 0;
   }
 
-  .bottom-footer-meta {
+  .bottomFooterMeta {
     font-size: 16px;
     gap: 14px;
   }
 
-  .social-links .ant-typography {
+  .socialLinks :global(.ant-typography) {
     font-size: 28px;
   }
 }

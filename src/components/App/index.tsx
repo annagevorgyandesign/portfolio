@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Layout, Button, Typography } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
-import Portfolio from '../../pages/portfolio';
+import Portfolio from '../../pages/Portfolio';
 import WriteMyCV from '../../pages/WriteMyCV';
 import Gemini from '../../pages/Gemini';
 import { FOOTER_LINKS } from '../Home/consts';
-import './styles.css';
+import styles from './styles.module.css';
 
 const { Header, Content, Footer } = Layout;
 const { Link } = Typography;
@@ -14,58 +14,58 @@ const App: React.FC = () => {
   const [view, setView] = useState<'home' | 'cv' | 'gemini'>('home');
 
   return (
-    <Layout className="app-layout">
-      <Header className="app-header">
-        <div className="brand" onClick={() => setView('home')}>
+    <Layout className={styles.appLayout}>
+      <Header className={styles.appHeader}>
+        <div className={styles.brand} onClick={() => setView('home')}>
           Anna Gevorgyan
         </div>
 
-        <nav className="top-nav">
+        <nav className={styles.topNav}>
           <Button
             type="text"
             onClick={() => setView('home')}
-            className={`nav-link ${view === 'home' ? 'active' : ''}`}
+            className={`${styles.navLink} ${view === 'home' ? styles.active : ''}`}
           >
             Home
           </Button>
           <Button
             type="text"
             onClick={() => setView('gemini')}
-            className={`nav-link ${view === 'gemini' ? 'active' : ''}`}
+            className={`${styles.navLink} ${view === 'gemini' ? styles.active : ''}`}
           >
             Gemini
           </Button>
           <Button
             type="text"
             onClick={() => setView('cv')}
-            className={`nav-link ${view === 'cv' ? 'active' : ''}`}
+            className={`${styles.navLink} ${view === 'cv' ? styles.active : ''}`}
           >
             CV Writer
           </Button>
         </nav>
 
-        <div className="header-actions">
-          <Button type="default" className="download-cv-btn">
+        <div className={styles.headerActions}>
+          <Button type="default" className={styles.downloadCvBtn}>
             <DownloadOutlined />
             <span>Download CV</span>
           </Button>
         </div>
       </Header>
 
-      <Content className="app-content">
+      <Content className={styles.appContent}>
         {view === 'home' && <Portfolio />}
         {view === 'cv' && <WriteMyCV />}
         {view === 'gemini' && <Gemini />}
       </Content>
 
-      <Footer className="app-footer">
-        <div className="app-footer-shell">
-          <p className="footer-copyright">&copy; 2026 Anna Gevorgyan</p>
-          <div className="bottom-footer-meta">
+      <Footer className={styles.appFooter}>
+        <div className={styles.appFooterShell}>
+          <p className={styles.footerCopyright}>&copy; 2026 Anna Gevorgyan</p>
+          <div className={styles.bottomFooterMeta}>
             <span>Yerevan, AM</span>
             <Link href="mailto:anna.gevorgyan.design@gmail.com">anna.gevorgyan.design@gmail.com</Link>
             <Link href="tel:+37455048820">+374 55 40 88 20</Link>
-            <div className="social-links">
+            <div className={styles.socialLinks}>
               {FOOTER_LINKS.map((link) => (
                 <Link href="#/" key={link}>
                   {link}

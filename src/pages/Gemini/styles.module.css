@@ -1,0 +1,100 @@
+.geminiPage {
+  padding: 40px 48px;
+  max-width: 980px;
+  min-height: 700px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.geminiStack {
+  width: 100%;
+}
+
+.geminiPage :global(.ant-typography) {
+  color: #111;
+}
+
+.geminiPage :global(.ant-typography p),
+.geminiPage :global(.ant-typography.ant-typography-secondary) {
+  color: #4a4a4a;
+}
+
+.geminiCard {
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
+  background: #fff !important;
+}
+
+.geminiCard :global(.ant-card-body),
+.geminiCard :global(.ant-form),
+.geminiCard :global(.ant-form-item-label > label) {
+  background: #fff !important;
+  color: #111827 !important;
+}
+
+.geminiTextarea {
+  border-radius: 8px;
+}
+
+.geminiPage :global(.ant-input),
+.geminiPage :global(.ant-input-outlined),
+.geminiPage :global(.ant-input-affix-wrapper),
+.geminiPage :global(.ant-input-affix-wrapper.ant-input-outlined),
+.geminiPage :global(.ant-input-textarea .ant-input) {
+  background: #fff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  color: #111827;
+  box-shadow: none;
+}
+
+.geminiPage :global(.ant-input:focus),
+.geminiPage :global(.ant-input-focused),
+.geminiPage :global(.ant-input-outlined.ant-input-focused),
+.geminiPage :global(.ant-input-affix-wrapper-focused),
+.geminiPage :global(.ant-input-affix-wrapper.ant-input-outlined.ant-input-affix-wrapper-focused),
+.geminiPage :global(.ant-input-textarea .ant-input:focus) {
+  border-color: #cfd4dc !important;
+  box-shadow: none !important;
+}
+
+.geminiSendBtn {
+  height: 56px;
+  background-color: #fa8c16 !important;
+  border-color: #fa8c16 !important;
+  color: #111 !important;
+}
+
+.geminiResponseCard {
+  border: 1px solid #f0f0f0 !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  margin-top: 20px;
+}
+
+.geminiResponseCard :global(.ant-card-head) {
+  border-bottom: 1px solid #f0f0f0 !important;
+  background: #fff !important;
+}
+
+.geminiResponseCard :global(.ant-card-head-title) {
+  color: #111827;
+  font-weight: 600;
+}
+
+.geminiResponseCard :global(.ant-card-body) {
+  background: #fff !important;
+}
+
+.geminiResponseText {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  color: #1f2937;
+}
+
+@media (max-width: 900px) {
+  .geminiPage {
+    padding: 28px 20px;
+  }
+}
