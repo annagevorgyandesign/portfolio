@@ -17,11 +17,11 @@ Follow these instructions strictly for any code generation, refactoring, or edit
 
 ## Component Folder Structure
 Every component must be placed in its own folder named after the component. 
-The folder must contain:
-- `index.tsx`: The main component logic and UI.
-- `styles.module.css`: Use CSS Modules for styling.
-- `consts.ts`: For component-specific constants (if needed).
-- `utils.ts`: For component-specific helper functions (if needed).
+- `index.tsx`: The main component logic and UI (Mandatory).
+- `styles.module.css`: Use CSS Modules for styling **ONLY IF** the component requires styling.
+- `consts.ts`: For component-specific constants **ONLY IF** needed.
+- `utils.ts`: For component-specific helper functions **ONLY IF** needed.
+- Do not create empty files.
 
 ## Styling and Quality Rules
 - Strictly NO inline styles. Use CSS Modules.

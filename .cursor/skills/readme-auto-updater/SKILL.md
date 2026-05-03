@@ -8,7 +8,7 @@ description: Uses GitHub MCP to automatically update the repository's README.md 
 This skill helps keep project's GitHub front page (README.md) professional and up-to-date without writing markdown manually.
 
 ## When to Use
-- Use this when the user says "Update my README", "README", "Document my new feature", or "Add my recent changes to the project description".
+- Use this when the user says "Update my README", "Document my new feature", or "Add my recent changes to the project description".
 
 ## Instructions
 - **Tool Usage:** Use the GitHub MCP to read the current `README.md` and then update/commit it with new information.

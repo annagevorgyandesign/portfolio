@@ -1,6 +1,6 @@
 ---
 name: code-quality-checker
-description: Verifies code quality, folder structure, and tech stack compliance before saving.
+description: Verifies code quality, flexible folder structure, and tech stack compliance before saving.
 ---
 
 # Code Quality Checker
@@ -16,8 +16,8 @@ This skill ensures that the codebase maintains a high standard of quality, follo
 
 - Run the `pnpm lint` command in the terminal to identify syntax or formatting errors.
 - Strictly check if the code follows all the rules defined in the `.cursor/rules/` folder (especially `project-standards.mdc`).
-- Verify the component structure: Ensure the code is placed in its dedicated folder with an `index.tsx` and a `styles.module.css` file.
-- Verify the styling: Confirm that NO inline styles are used.
+- **Verify Flexible Component Structure:** Ensure the code is placed in its dedicated folder. An `index.tsx` file is mandatory. **However, ONLY create other files like `styles.module.css`, `consts.ts`, or `utils.ts` IF they are actively needed by the component.** Do not enforce or create empty files.
+- Verify the styling: Confirm that NO inline styles are used. If styling is needed, ensure it uses CSS Modules.
 - Verify TypeScript rules: Confirm there are no `eslint-disable` comments and no missing types.
 - If any issues or errors are found, fix them automatically and provide a clear explanation.
 - If the code meets all standards, reply with: "Quality check passed. The code follows all project standards."
