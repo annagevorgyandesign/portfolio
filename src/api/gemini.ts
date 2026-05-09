@@ -3,9 +3,16 @@ import type { GeminiResponse, GeminiError } from '../types/gemini';
 
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const MODEL = "gemini-2.5-flash";
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
 
 export const generateGeminiContent = async (prompt: string): Promise<string> => {
+  if (!API_KEY || typeof API_KEY !== 'string') {
+    throw new Error(
+      'Gemini API key is not configured. Add VITE_GEMINI_API_KEY to your environment.',
+    );
+  }
+
+  const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`;
+
   const payload = {
     contents: [
       {
@@ -23,18 +30,30 @@ export const generateGeminiContent = async (prompt: string): Promise<string> => 
       }
     });
 
-    // Extract text from the response structure defined in slides
     const generatedText = response.data.candidates?.[0]?.content?.parts?.[0]?.text;
-    
-    return generatedText || "";
-  } catch (error: unknown) {
-    if (axios.isAxiosError(error) && error.response) {
-      const apiError = error.response.data as GeminiError;
-      console.error("API Error:", apiError.error.message);
-      return `Error: ${apiError.error.message}`;
+
+    if (!generatedText?.trim()) {
+      throw new Error('The model returned an empty response.');
     }
-    
-    console.error("Unexpected Error:", error);
-    return "An unexpected error occurred.";
+
+    return generatedText;
+  } catch (error: unknown) {
+    if (axios.isAxiosError(error)) {
+      if (error.response) {
+        const apiError = error.response.data as GeminiError;
+        const message = apiError.error?.message ?? 'Gemini API request failed';
+        console.error('API Error:', message);
+        throw new Error(message);
+      }
+      console.error('Network Error:', error.message);
+      throw new Error(error.message || 'Could not reach the Gemini API.');
+    }
+
+    if (error instanceof Error) {
+      throw error;
+    }
+
+    console.error('Unexpected Error:', error);
+    throw new Error('An unexpected error occurred.');
   }
 };

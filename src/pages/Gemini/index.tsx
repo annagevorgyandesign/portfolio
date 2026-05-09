@@ -18,8 +18,10 @@ const Gemini: React.FC = () => {
     try {
       const result = await generateGeminiContent(values.prompt);
       setResponse(result);
-    } catch {
-      setResponse('Error: Could not fetch response from Gemini API.');
+    } catch (err) {
+      const detail =
+        err instanceof Error ? err.message : 'Could not fetch response from Gemini API.';
+      setResponse(`Error: ${detail}`);
       messageApi.error('Failed to fetch Gemini response.');
     } finally {
       setLoading(false);
