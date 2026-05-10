@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { Button } from 'antd'
 import { DownloadOutlined } from '@ant-design/icons'
 import atomImage from '../../assets/atom.jpg'
@@ -18,15 +18,8 @@ export interface HomeProps {
   onOpenWorks: () => void
 }
 
-const scrollToSection = (sectionId: string) => {
-  document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-}
-
 const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenCv, onOpenWorks }) => {
   const [firstStat, ...remainingStats] = STAT_ITEMS
-  const onScrollToServices = useCallback(() => {
-    scrollToSection('services')
-  }, [])
 
   return (
     <div className={styles.homePage}>
@@ -75,7 +68,7 @@ const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenCv, onOpenWorks }) => 
               </article>
             ))}
           </div>
-          <Button className={styles.brandBtn} onClick={onScrollToServices}>
+          <Button className={styles.brandBtn} onClick={onOpenWorks}>
             {HOME_COPY.servicesAction}
           </Button>
         </section>

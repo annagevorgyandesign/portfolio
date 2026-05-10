@@ -88,10 +88,12 @@
 
 .infoTitleLine {
   display: block;
+  text-transform: capitalize;
 }
 
 .infoTitleSegment {
   font-weight: 600;
+  text-transform: capitalize;
 }
 
 .infoTitleAccent {
@@ -100,6 +102,7 @@
   box-sizing: border-box;
   font-weight: 700;
   font-style: italic;
+  text-transform: capitalize;
   padding-bottom: 0.08em;
   background: linear-gradient(
     120deg,
