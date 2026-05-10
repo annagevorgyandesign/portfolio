@@ -89,8 +89,8 @@ export const WORKS_PROJECTS: readonly WorkProject[] = [
     imageSeed: 'works-heritage',
   },
   {
-    title: 'Graphic Design | Social Campaign Poster Design',
-    tags: ['Social', 'Campaign', 'Poster'],
+    title: 'Google Slides / PowerPoint Presentation Design',
+    tags: ['Deck', 'Storytelling', 'Layout'],
     coverSrc: worksSocialCampaignPoster,
     imageSeed: 'works-social-poster',
   },
@@ -101,8 +101,8 @@ export const WORKS_PROJECTS: readonly WorkProject[] = [
     imageSeed: 'works-slides-2',
   },
   {
-    title: 'Google Slides / PowerPoint Presentation Design',
-    tags: ['Deck', 'Storytelling', 'Layout'],
+    title: 'Graphic Design | Social Campaign Poster Design',
+    tags: ['Social', 'Campaign', 'Poster'],
     coverSrc: worksLifeInPlasticEditorial,
     imageSeed: 'works-slides-3',
   },
