@@ -1,0 +1,138 @@
+.section {
+  background-color: #f8f9fa;
+  border-top: 1px solid #eaeaea;
+}
+
+.shell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 64px 48px 96px;
+  box-sizing: border-box;
+}
+
+.header {
+  margin-bottom: 40px;
+  max-width: 640px;
+}
+
+.title {
+  margin: 0 0 12px !important;
+  color: #1a1a1a !important;
+  font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0 !important;
+  color: #6b6b6b;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+}
+
+.thumb {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #ececec;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.cardTitle {
+  margin: 0 !important;
+  color: #1a1a1a !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  font-family: 'Inter', 'Segoe UI', sans-serif !important;
+}
+
+.behanceLink {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 0 !important;
+  font-weight: 500 !important;
+  color: #444 !important;
+  transition: color 0.2s ease;
+}
+
+.behanceLink:hover {
+  color: #5b4fcf !important;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.tag {
+  font-size: 12px;
+  line-height: 1;
+  color: #555;
+  background: #f0f0f0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .shell {
+    padding: 48px 24px 72px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

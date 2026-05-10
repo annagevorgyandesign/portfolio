@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Layout, Button, Typography } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
 import Portfolio from '../../pages/Portfolio';
+import Works from '../../pages/Works';
 import ContactPage from '../../pages/Contact';
 import WriteMyCV from '../../pages/WriteMyCV';
 import Gemini from '../../pages/Gemini';
@@ -12,7 +13,7 @@ const { Header, Content, Footer } = Layout;
 const { Link } = Typography;
 
 const App: React.FC = () => {
-  const [view, setView] = useState<'home' | 'contact' | 'cv' | 'gemini'>('home');
+  const [view, setView] = useState<'home' | 'works' | 'contact' | 'cv' | 'gemini'>('home');
 
   return (
     <Layout className={styles.appLayout}>
@@ -28,6 +29,13 @@ const App: React.FC = () => {
             className={`${styles.navLink} ${view === 'home' ? styles.active : ''}`}
           >
             Home
+          </Button>
+          <Button
+            type="text"
+            onClick={() => setView('works')}
+            className={`${styles.navLink} ${view === 'works' ? styles.active : ''}`}
+          >
+            Works
           </Button>
           <Button
             type="text"
@@ -62,6 +70,7 @@ const App: React.FC = () => {
 
       <Content className={styles.appContent}>
         {view === 'home' && <Portfolio />}
+        {view === 'works' && <Works />}
         {view === 'contact' && <ContactPage />}
         {view === 'cv' && <WriteMyCV />}
         {view === 'gemini' && <Gemini onOpenCv={() => setView('cv')} />}
