@@ -107,38 +107,38 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
           <Paragraph className={styles.geminiSubtitle}>{GEMINI_SUBTITLE}</Paragraph>
         </header>
 
+        <Space wrap className={styles.geminiActionsRow}>
+          <Button
+            type="default"
+            icon={<FileTextOutlined />}
+            onClick={handleShowResume}
+            className={styles.geminiOutlineBtn}
+          >
+            {GEMINI_SHOW_RESUME_LABEL}
+          </Button>
+          {onOpenCv ? (
+            <Button type="link" onClick={onOpenCv} className={styles.geminiCvLink}>
+              <span className={styles.geminiCvLinkRest}>{GEMINI_RESUME_PAGE_NOTE_PARTS.before}</span>
+              <span className={styles.geminiCvLinkHighlight}>
+                {GEMINI_RESUME_PAGE_NOTE_PARTS.highlight}
+              </span>
+              <span className={styles.geminiCvLinkRest}>{GEMINI_RESUME_PAGE_NOTE_PARTS.after}</span>
+            </Button>
+          ) : (
+            <Text type="secondary" className={styles.geminiCvNote}>
+              <span className={styles.geminiCvLinkRest}>{GEMINI_RESUME_PAGE_NOTE_PARTS.before}</span>
+              <span className={styles.geminiCvLinkHighlight}>
+                {GEMINI_RESUME_PAGE_NOTE_PARTS.highlight}
+              </span>
+              <span className={styles.geminiCvLinkRest}>{GEMINI_RESUME_PAGE_NOTE_PARTS.after}</span>
+            </Text>
+          )}
+        </Space>
+
         <Card bordered={false} className={styles.geminiChatCard} title={GEMINI_CONVERSATION_LABEL}>
           <Paragraph type="secondary" className={styles.geminiHint}>
             {GEMINI_HINT_TEXT}
           </Paragraph>
-
-          <Space wrap className={styles.geminiActionsRow}>
-            <Button
-              type="default"
-              icon={<FileTextOutlined />}
-              onClick={handleShowResume}
-              className={styles.geminiOutlineBtn}
-            >
-              {GEMINI_SHOW_RESUME_LABEL}
-            </Button>
-            {onOpenCv ? (
-              <Button type="link" onClick={onOpenCv} className={styles.geminiCvLink}>
-                <span className={styles.geminiCvLinkRest}>{GEMINI_RESUME_PAGE_NOTE_PARTS.before}</span>
-                <span className={styles.geminiCvLinkHighlight}>
-                  {GEMINI_RESUME_PAGE_NOTE_PARTS.highlight}
-                </span>
-                <span className={styles.geminiCvLinkRest}>{GEMINI_RESUME_PAGE_NOTE_PARTS.after}</span>
-              </Button>
-            ) : (
-              <Text type="secondary" className={styles.geminiCvNote}>
-                <span className={styles.geminiCvLinkRest}>{GEMINI_RESUME_PAGE_NOTE_PARTS.before}</span>
-                <span className={styles.geminiCvLinkHighlight}>
-                  {GEMINI_RESUME_PAGE_NOTE_PARTS.highlight}
-                </span>
-                <span className={styles.geminiCvLinkRest}>{GEMINI_RESUME_PAGE_NOTE_PARTS.after}</span>
-              </Text>
-            )}
-          </Space>
 
           <div ref={scrollRef} className={styles.chatScroll}>
             <div className={styles.chatThread}>

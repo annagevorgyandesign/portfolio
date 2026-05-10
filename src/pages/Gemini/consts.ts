@@ -4,12 +4,12 @@ export const OWNER_FIRST_NAME = 'Anna'
 
 export const GEMINI_PAGE_TITLE = 'Gemini Chat'
 
-export const GEMINI_HEADING = 'Ask Gemini About the Portfolio'
+export const GEMINI_HEADING = 'Ask AI Assistant About the Portfolio'
 
 export const GEMINI_SUBTITLE =
-  'Chat here about projects, experience, or ask Gemini to bring the saved resume directly into the conversation.'
+  'Curious about my portfolio, experience, or skills? My digital twin is here to answer your questions in real-time.'
 
-export const GEMINI_CONVERSATION_LABEL = 'Gemini Conversation'
+export const GEMINI_CONVERSATION_LABEL = 'Gemini AI Chat'
 
 export const GEMINI_HINT_TEXT =
   'Try prompts like "show my resume", "summarize my experience", or "write a short recruiter intro".'

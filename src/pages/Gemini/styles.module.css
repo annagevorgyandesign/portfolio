@@ -27,7 +27,7 @@
   margin-bottom: 0 !important;
   margin-top: 0 !important;
   font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif;
-  font-size: clamp(32px, 4vw, 46px) !important;
+  font-size: 48px !important;
   line-height: 1.08 !important;
   font-weight: 600 !important;
   letter-spacing: -0.02em;
@@ -66,8 +66,8 @@
   border-bottom: 1px solid #d9d9d9 !important;
   background: #fff !important;
   min-height: auto;
-  padding-top: 14px;
-  padding-bottom: 12px;
+  padding-top: 8px;
+  padding-bottom: 6px;
 }
 
 .geminiChatCard :global(.ant-card-head-title) {
@@ -82,7 +82,7 @@
 
 .geminiChatCard :global(.ant-card-body) {
   background: #fff !important;
-  padding: 20px 24px 24px !important;
+  padding: 6px 24px 24px !important;
 }
 
 .geminiHint {
@@ -234,8 +234,8 @@
 
 .bubbleModel {
   align-self: flex-start;
-  background: #fff;
-  border: 1px solid #e5e7eb;
+  background: unset;
+  border: none;
   box-shadow: none;
 }
 

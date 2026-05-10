@@ -42,7 +42,7 @@ const App: React.FC = () => {
               onClick={() => setView('gemini')}
               className={`${styles.navLink} ${view === 'gemini' ? styles.active : ''}`}
             >
-              Gemini
+              AI Assistant
             </Button>
             <Button
               type="text"
