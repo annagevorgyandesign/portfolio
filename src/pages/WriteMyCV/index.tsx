@@ -34,7 +34,6 @@ const WriteMyCV: React.FC = () => {
 
           <section className={styles.cvSection}>
             <h3>SUMMARY</h3>
-            <div className={styles.cvRule} />
             <p>
               Results-driven and analytical UI/UX, Product, and Graphic Designer with a human-centered approach to
               creating intuitive and user-friendly experiences across both digital and print media.
@@ -47,7 +46,6 @@ const WriteMyCV: React.FC = () => {
 
           <section className={styles.cvSection}>
             <h3>WORK EXPERIENCE</h3>
-            <div className={styles.cvRule} />
 
             <div className={styles.cvTwoColRow}>
               <div className={styles.cvLeftCol}>
@@ -89,7 +87,6 @@ const WriteMyCV: React.FC = () => {
 
           <section className={styles.cvSection}>
             <h3>ACHIEVEMENTS</h3>
-            <div className={styles.cvRule} />
             <div className={styles.cvTwoColRow}>
               <div className={styles.cvLeftCol}>
                 <h4>Upwork</h4>
@@ -107,7 +104,6 @@ const WriteMyCV: React.FC = () => {
 
           <section className={styles.cvSection}>
             <h3>EDUCATION</h3>
-            <div className={styles.cvRule} />
             <div className={styles.cvEducationItem}>
               <p>
                 <strong>ARDY Academy</strong> | UI/UX and Product Design
@@ -158,7 +154,6 @@ const WriteMyCV: React.FC = () => {
 
           <section className={styles.cvSection}>
             <h3>TECHNICAL SKILLS</h3>
-            <div className={styles.cvRule} />
             <p>
               <strong>UI/UX &amp; Product Design:</strong> UI/UX Design, Product Design, Web Design, Website Design,
               App Design, Landing Page Design, User Interface (UI) Design, User Research, Competitor Analysis,
@@ -184,7 +179,6 @@ const WriteMyCV: React.FC = () => {
 
           <section className={styles.cvSection}>
             <h3>SOFT SKILLS</h3>
-            <div className={styles.cvRule} />
             <p>
               <strong>Empathy &amp; User-Centricity:</strong> Empathy, User-Centric Mindset
             </p>
@@ -202,7 +196,6 @@ const WriteMyCV: React.FC = () => {
 
           <section className={`${styles.cvSection} ${styles.cvLastSection}`}>
             <h3>LANGUAGES</h3>
-            <div className={styles.cvRule} />
             <ul className={styles.cvPlainList}>
               <li>Armenian (Native)</li>
               <li>English (Conversational)</li>

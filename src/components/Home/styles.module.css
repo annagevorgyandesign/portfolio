@@ -24,8 +24,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
-  min-height: 648px;
-  gap: 24px;
+  height: calc(100svh - 88px);
+  max-height: calc(100svh - 88px);
+  min-height: 0;
+  gap: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .heroCopy {
@@ -33,24 +37,27 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  align-self: stretch;
   text-align: left;
+  min-height: 0;
+  height: 100%;
 }
 
 .heroCopy h1 {
-  font-size: 80px;
+  font-size: clamp(52px, 6.5vw, 88px);
   line-height: 0.95;
   margin: 0;
-  letter-spacing: -1.2px;
+  letter-spacing: -1.35px;
   font-weight: 600;
   color: #111;
 }
 
 .heroCopy p {
   max-width: 560px;
-  margin: 22px 0 34px;
+  margin: 16px 0 22px;
   color: #4a4a4a;
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.55;
 }
 
 .heroActions {
@@ -82,10 +89,10 @@
 
 .heroVisual {
   width: calc(100% + 48px);
-  height: calc(100% + 10px);
+  height: 100%;
+  min-height: 0;
   overflow: hidden;
   margin-right: -48px;
-  margin-top: -10px;
 }
 
 .heroVisual img {
@@ -385,11 +392,20 @@
 
   .homeHero {
     grid-template-columns: 1fr;
-    min-height: auto;
+    grid-template-rows: 1fr minmax(200px, 1fr);
+    height: calc(100svh - 88px);
+    max-height: calc(100svh - 88px);
+  }
+
+  .heroCopy {
+    justify-content: center;
+    padding-top: 0;
   }
 
   .heroVisual {
     width: calc(100% + 20px);
+    height: 100%;
+    min-height: 0;
     margin-right: -20px;
   }
 
@@ -425,5 +441,12 @@
 
   .whyTextCard p {
     text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeHero {
+    height: calc(100svh - 120px);
+    max-height: calc(100svh - 120px);
   }
 }
