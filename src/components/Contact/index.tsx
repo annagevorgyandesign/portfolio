@@ -85,18 +85,22 @@ const Contact: React.FC = () => {
               <div className={styles.infoBlock}>
                 <div className={styles.infoIntro}>
                   <h2 className={styles.infoTitle}>
-                    <span className={styles.infoTitleSegment}>
-                      {CONTACT_COPY.infoTitleLead}{' '}
+                    <span className={styles.infoTitleLine}>
+                      <span className={styles.infoTitleSegment}>
+                        {CONTACT_COPY.infoTitleLead}
+                      </span>
                     </span>
-                    <span className={styles.infoTitleAccent}>
-                      {CONTACT_COPY.infoTitleAccent}
+                    <span className={styles.infoTitleLine}>
+                      <span className={styles.infoTitleAccent}>
+                        {CONTACT_COPY.infoTitleAccent}
+                      </span>
                     </span>
-                    <span className={styles.infoTitleSegment}>
-                      {' '}
-                      {CONTACT_COPY.infoTitleTrail}
+                    <span className={styles.infoTitleLine}>
+                      <span className={styles.infoTitleSegment}>
+                        {CONTACT_COPY.infoTitleTrail}
+                      </span>
                     </span>
                   </h2>
-                  <p className={styles.lead}>{CONTACT_COPY.infoSubheading}</p>
                 </div>
                 <div className={styles.infoTopics}>
                   <p className={styles.topicsHeading}>{CONTACT_COPY.topicsHeading}</p>

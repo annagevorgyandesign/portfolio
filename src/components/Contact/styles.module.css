@@ -59,14 +59,15 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: start;
+  gap: 96px;
+  align-items: stretch;
 }
 
 .infoBlock {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  min-height: 100%;
 }
 
 .infoIntro {
@@ -78,11 +79,15 @@
 .infoTitle {
   margin: 0;
   font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif;
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: clamp(30px, 4.6vw, 48px);
   font-weight: 600;
   color: #111;
-  line-height: 1.15;
+  line-height: 1.06;
   letter-spacing: -0.02em;
+}
+
+.infoTitleLine {
+  display: block;
 }
 
 .infoTitleSegment {
@@ -90,8 +95,12 @@
 }
 
 .infoTitleAccent {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
   font-weight: 700;
   font-style: italic;
+  padding-bottom: 0.08em;
   background: linear-gradient(
     120deg,
     #fa8c16 0%,
@@ -101,14 +110,6 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-.lead {
-  margin: 0;
-  max-width: 36em;
-  font-size: 17px;
-  line-height: 1.55;
-  color: #3d3d3d;
 }
 
 .infoTopics {
@@ -173,8 +174,15 @@
   text-decoration: underline;
 }
 
+.formBlock {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 .form {
   margin-top: 0;
+  flex: 1;
 }
 
 .form :global(.ant-form-item) {
@@ -205,7 +213,7 @@
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 56px;
   }
 
   .infoBlock {

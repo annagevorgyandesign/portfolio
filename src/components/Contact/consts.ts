@@ -3,7 +3,6 @@ export const CONTACT_COPY = {
   infoTitleLead: "Let's create something",
   infoTitleAccent: 'extraordinary',
   infoTitleTrail: 'together',
-  infoSubheading: 'Message me today to discuss your next big project!',
   topicsHeading: 'I can help you with:',
   locationLabel: 'Yerevan, AM & remote worldwide',
   contactEmail: 'anna.gevorgyan.design@gmail.com',
