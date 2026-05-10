@@ -64,7 +64,7 @@ const App: React.FC = () => {
         {view === 'home' && <Portfolio />}
         {view === 'contact' && <ContactPage />}
         {view === 'cv' && <WriteMyCV />}
-        {view === 'gemini' && <Gemini />}
+        {view === 'gemini' && <Gemini onOpenCv={() => setView('cv')} />}
       </Content>
 
       <Footer className={styles.appFooter}>

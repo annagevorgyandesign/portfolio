@@ -1,67 +1,191 @@
-import React, { useState } from 'react';
-import { Typography, Form, Input, Button, Space, Card, Divider, message } from 'antd';
-import { SendOutlined, ReloadOutlined } from '@ant-design/icons';
-import { generateGeminiContent } from '../../api/gemini';
-import styles from './styles.module.css';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  Typography,
+  Form,
+  Input,
+  Button,
+  Space,
+  Card,
+  message,
+  Tag,
+  Spin,
+} from 'antd'
+import { SendOutlined, ReloadOutlined, FileTextOutlined } from '@ant-design/icons'
+import { sendGeminiChat } from '../../api/gemini'
+import type { GeminiChatTurn } from '../../types/gemini'
+import {
+  buildSystemInstruction,
+  GEMINI_CONVERSATION_LABEL,
+  GEMINI_HEADING,
+  GEMINI_HINT_TEXT,
+  GEMINI_RESUME_PAGE_NOTE,
+  GEMINI_SHOW_RESUME_LABEL,
+  GEMINI_SUBTITLE,
+  GEMINI_WELCOME_MESSAGE,
+  SHOW_RESUME_USER_PROMPT,
+  SUGGESTED_PROMPTS,
+} from './consts'
+import styles from './styles.module.css'
 
-const { Title, Paragraph } = Typography;
-const { TextArea } = Input;
+const { Title, Paragraph, Text } = Typography
 
-const Gemini: React.FC = () => {
-  const [form] = Form.useForm();
-  const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState<string>('');
-  const [messageApi, contextHolder] = message.useMessage();
+export interface GeminiProps {
+  onOpenCv?: () => void
+}
 
-  const handleSend = async (values: { prompt: string }) => {
-    setLoading(true);
+const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
+  const [form] = Form.useForm<{ message: string }>()
+  const [conversation, setConversation] = useState<GeminiChatTurn[]>([])
+  const [loading, setLoading] = useState(false)
+  const [messageApi, contextHolder] = message.useMessage()
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  const systemInstruction = useMemo(() => buildSystemInstruction(), [])
+
+  const scrollToBottom = useCallback(() => {
+    const el = scrollRef.current
+    if (el) {
+      el.scrollTop = el.scrollHeight
+    }
+  }, [])
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [conversation, loading, scrollToBottom])
+
+  const submitUserText = async (raw: string) => {
+    if (loading) {
+      return
+    }
+    const text = raw.trim()
+    if (!text) {
+      messageApi.warning('Please enter a message.')
+      return
+    }
+
+    const previous = conversation
+    const historyForApi: GeminiChatTurn[] = [...previous, { role: 'user', text }]
+
+    setConversation(historyForApi)
+    setLoading(true)
+    form.resetFields(['message'])
+
     try {
-      const result = await generateGeminiContent(values.prompt);
-      setResponse(result);
+      const reply = await sendGeminiChat(historyForApi, systemInstruction)
+      setConversation([...historyForApi, { role: 'model', text: reply }])
     } catch (err) {
+      setConversation(previous)
       const detail =
-        err instanceof Error ? err.message : 'Could not fetch response from Gemini API.';
-      setResponse(`Error: ${detail}`);
-      messageApi.error('Failed to fetch Gemini response.');
+        err instanceof Error ? err.message : 'Could not fetch response from Gemini API.'
+      messageApi.error(detail)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
-  const handleReset = () => {
-    form.resetFields();
-    setResponse('');
-  };
+  const handleSend = async (values: { message: string }) => {
+    await submitUserText(values.message ?? '')
+  }
 
-  const copyResponse = async () => {
-    try {
-      await navigator.clipboard.writeText(response);
-      messageApi.success('Response copied to clipboard.');
-    } catch {
-      messageApi.error('Could not copy response.');
-    }
-  };
+  const handleShowResume = () => {
+    void submitUserText(SHOW_RESUME_USER_PROMPT)
+  }
+
+  const handleClear = () => {
+    form.resetFields()
+    setConversation([])
+  }
 
   return (
     <div className={styles.geminiPage}>
       {contextHolder}
       <Space direction="vertical" size="large" className={styles.geminiStack}>
         <div>
-          <Title level={2}>Gemini AI Chat</Title>
-          <Paragraph>Ask any question or provide a prompt, and the AI will generate a response.</Paragraph>
+          <Title level={2} className={styles.geminiMainTitle}>
+            {GEMINI_HEADING}
+          </Title>
+          <Paragraph className={styles.geminiSubtitle}>{GEMINI_SUBTITLE}</Paragraph>
         </div>
 
-        <Card bordered={false} className={styles.geminiCard}>
-          <Form form={form} layout="vertical" onFinish={handleSend}>
-            <Form.Item
-              name="prompt"
-              label={<strong>Your Prompt</strong>}
-              rules={[{ required: true, message: 'Please enter a prompt.' }]}
-            >
-              <TextArea rows={5} placeholder="Type your message here..." className={styles.geminiTextarea} />
+        <Card bordered={false} className={styles.geminiChatCard} title={GEMINI_CONVERSATION_LABEL}>
+          <Paragraph type="secondary" className={styles.geminiHint}>
+            {GEMINI_HINT_TEXT}
+          </Paragraph>
+
+          <Space wrap className={styles.geminiActionsRow}>
+            <Button type="default" icon={<FileTextOutlined />} onClick={handleShowResume}>
+              {GEMINI_SHOW_RESUME_LABEL}
+            </Button>
+            {onOpenCv ? (
+              <Button type="link" onClick={onOpenCv} className={styles.geminiCvLink}>
+                {GEMINI_RESUME_PAGE_NOTE}
+              </Button>
+            ) : (
+              <Text type="secondary" className={styles.geminiCvNote}>
+                {GEMINI_RESUME_PAGE_NOTE}
+              </Text>
+            )}
+          </Space>
+
+          <div ref={scrollRef} className={styles.chatScroll}>
+            <div className={styles.chatThread}>
+              <div className={`${styles.bubble} ${styles.bubbleModel}`}>
+                <Text className={styles.bubbleText}>{GEMINI_WELCOME_MESSAGE}</Text>
+              </div>
+
+              {conversation.map((turn, index) => (
+                <div
+                  key={`${turn.role}-${index}-${turn.text.slice(0, 24)}`}
+                  className={`${styles.bubble} ${
+                    turn.role === 'user' ? styles.bubbleUser : styles.bubbleModel
+                  }`}
+                >
+                  <Text className={styles.bubbleText}>{turn.text}</Text>
+                </div>
+              ))}
+
+              {loading ? (
+                <div className={styles.chatLoading}>
+                  <Spin size="small" />
+                  <Text type="secondary">Thinking…</Text>
+                </div>
+              ) : null}
+            </div>
+          </div>
+
+          <div className={styles.suggestedRow}>
+            <Text type="secondary" className={styles.suggestedLabel}>
+              Quick prompts:
+            </Text>
+            <Space wrap size="small">
+              {SUGGESTED_PROMPTS.map((p) => (
+                <Tag
+                  key={p}
+                  className={styles.suggestedTag}
+                  onClick={() => void submitUserText(p)}
+                >
+                  {p}
+                </Tag>
+              ))}
+            </Space>
+          </div>
+
+          <Form form={form} layout="vertical" onFinish={handleSend} className={styles.chatForm}>
+            <Form.Item name="message" className={styles.chatFormItem}>
+              <Input.TextArea
+                rows={5}
+                placeholder="Message"
+                className={styles.geminiTextarea}
+                onPressEnter={(e) => {
+                  if (!e.shiftKey) {
+                    e.preventDefault()
+                    void form.submit()
+                  }
+                }}
+              />
             </Form.Item>
 
-            <Space>
+            <Space wrap>
               <Button
                 type="primary"
                 htmlType="submit"
@@ -69,27 +193,17 @@ const Gemini: React.FC = () => {
                 icon={<SendOutlined />}
                 className={styles.geminiSendBtn}
               >
-                Send Request
+                Send
               </Button>
-              <Button onClick={handleReset} icon={<ReloadOutlined />}>
-                Clear
+              <Button onClick={handleClear} icon={<ReloadOutlined />} disabled={loading}>
+                Clear chat
               </Button>
             </Space>
           </Form>
         </Card>
-
-        {response && (
-          <Card title="AI Response" className={styles.geminiResponseCard}>
-            <div className={styles.geminiResponseText}>{response}</div>
-            <Divider />
-            <Button size="small" onClick={copyResponse}>
-              Copy Response
-            </Button>
-          </Card>
-        )}
       </Space>
     </div>
-  );
-};
+  )
+}
 
-export default Gemini;
+export default Gemini
