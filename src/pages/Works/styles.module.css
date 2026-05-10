@@ -1,16 +1,16 @@
 .worksPage {
   width: 100%;
-  background-color: #f8f9fa;
+  background-color: #fff;
   color: #111;
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  padding-bottom: 64px;
+  padding-bottom: 0;
 }
 
 .shell {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 48px 64px;
   box-sizing: border-box;
 }
 
@@ -24,7 +24,7 @@
   font-weight: 600;
   letter-spacing: -0.02em;
   font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif;
-  color: #1a1a1a;
+  color: #fa8c16 !important;
 }
 
 .lead {
@@ -43,18 +43,39 @@
 }
 
 .primaryBtn {
-  height: 48px !important;
+  height: 56px !important;
+  padding: 0 18px !important;
   border-radius: 8px !important;
   font-weight: 600 !important;
-  background: rgba(250, 140, 22, 1) !important;
-  border: none !important;
-  color: #1f1f1f !important;
+  font-family: 'Inter', 'Segoe UI', sans-serif !important;
+  background: #111 !important;
+  border: 1px solid #111 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.primaryBtn:hover {
+  background: #2a2a2a !important;
+  border-color: #2a2a2a !important;
+  color: #fff !important;
 }
 
 .secondaryBtn {
-  height: 48px !important;
-  border-radius: 8px !important;
+  height: 56px !important;
+  padding: 0 22px !important;
+  border-radius: 10px !important;
   font-weight: 600 !important;
+  font-family: 'Inter', 'Segoe UI', sans-serif !important;
+  background: #fff !important;
+  border: 1px solid #111 !important;
+  color: #111 !important;
+  box-shadow: none !important;
+}
+
+.secondaryBtn:hover {
+  background: #fafafa !important;
+  border-color: #111 !important;
+  color: #111 !important;
 }
 
 .projectGrid {
@@ -147,6 +168,51 @@
   font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
+.ctaSection {
+  background: #ececec;
+  text-align: center;
+  padding: 110px 48px 120px;
+  box-sizing: border-box;
+}
+
+.ctaInner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.ctaHeading {
+  margin: 0 auto 26px;
+  padding: 0;
+  color: #111;
+  font-size: clamp(1.75rem, 5vw, 52px);
+  line-height: 1.2;
+  font-weight: 600;
+  font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.ctaHeading span {
+  display: block;
+}
+
+.ctaButton {
+  height: 56px !important;
+  padding: 0 28px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-family: 'Inter', 'Segoe UI', sans-serif !important;
+  background: #fa8c16 !important;
+  border: none !important;
+  color: #111 !important;
+  box-shadow: none !important;
+}
+
+.ctaButton:hover {
+  background: #ffa940 !important;
+  border: none !important;
+  color: #111 !important;
+}
+
 @media (max-width: 1024px) {
   .shell {
     padding: 0 20px;
@@ -168,5 +234,9 @@
 
   .projectGrid {
     grid-template-columns: 1fr;
+  }
+
+  .ctaSection {
+    padding: 72px 20px 88px;
   }
 }

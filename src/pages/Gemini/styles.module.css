@@ -15,28 +15,11 @@
 }
 
 .geminiHero {
-  margin-bottom: 4px;
-}
-
-.geminiTitleRow {
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
+  flex-direction: column;
+  gap: 8px;
   margin-bottom: 4px;
-}
-
-.geminiTitleIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-  margin-top: 2px;
-  border-radius: 8px;
-  background: rgba(250, 140, 22, 1);
-  color: #1f1f1f;
-  font-size: 20px;
+  max-width: 52rem;
 }
 
 .geminiMainTitle {
@@ -44,7 +27,7 @@
   margin-top: 0 !important;
   font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif;
   font-size: clamp(32px, 4vw, 46px) !important;
-  line-height: 1.05 !important;
+  line-height: 1.08 !important;
   font-weight: 600 !important;
   letter-spacing: -0.02em;
   color: #111;
@@ -52,24 +35,11 @@
 
 .geminiSubtitle {
   margin-bottom: 0 !important;
-  margin-top: 18px !important;
+  margin-top: 0 !important;
   max-width: 100%;
   font-size: 16px !important;
-  line-height: 1.6 !important;
-  white-space: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(17, 17, 17, 0.2) transparent;
-}
-
-.geminiSubtitle::-webkit-scrollbar {
-  height: 4px;
-}
-
-.geminiSubtitle::-webkit-scrollbar-thumb {
-  background: rgba(17, 17, 17, 0.12);
-  border-radius: 4px;
+  line-height: 1.5 !important;
+  white-space: normal;
 }
 
 .geminiPage :global(.ant-typography) {
@@ -131,16 +101,16 @@
   border-radius: 8px !important;
   font-weight: 600 !important;
   font-family: 'Inter', 'Segoe UI', sans-serif !important;
-  border: 1px solid #111 !important;
-  color: #fff !important;
-  background: #111 !important;
+  border: 1px solid #fa8c16 !important;
+  color: #111 !important;
+  background: #fa8c16 !important;
   box-shadow: none !important;
 }
 
-.geminiOutlineBtn:hover {
-  color: #fff !important;
-  border-color: #2a2a2a !important;
-  background: #2a2a2a !important;
+.geminiOutlineBtn:hover:not(:disabled) {
+  color: #111 !important;
+  border-color: #ffa940 !important;
+  background: #ffa940 !important;
 }
 
 .geminiOutlineBtn:focus-visible {
@@ -382,32 +352,23 @@
   min-height: 56px;
   padding: 0 22px !important;
   border-radius: 8px !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   font-family: 'Inter', 'Segoe UI', sans-serif !important;
-  background-color: rgba(250, 140, 22, 1) !important;
-  border-color: rgba(250, 140, 22, 1) !important;
-  border-width: 0 !important;
-  color: #1f1f1f !important;
+  background: #111 !important;
+  border: 1px solid #111 !important;
+  color: #fff !important;
+  box-shadow: none !important;
 }
 
 .geminiSendBtn:hover:not(:disabled) {
-  background-color: rgba(235, 130, 20, 1) !important;
-  border-color: rgba(235, 130, 20, 1) !important;
-  color: #1f1f1f !important;
+  background: #2a2a2a !important;
+  border-color: #2a2a2a !important;
+  color: #fff !important;
 }
 
 @media (max-width: 900px) {
   .geminiPage {
     padding: 24px 20px 40px;
-  }
-
-  .geminiTitleRow {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .geminiTitleIcon {
-    margin-top: 0;
   }
 
   .bubble {

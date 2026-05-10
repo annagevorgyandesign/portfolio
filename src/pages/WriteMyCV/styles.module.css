@@ -3,11 +3,12 @@
   max-width: 1000px;
   min-height: 100vh;
   margin: 0 auto;
-  background: #ececec;
+  background: #f8f9fa;
 }
 
 .cvLayout {
-  background: transparent;
+  min-height: 100%;
+  background: #f8f9fa;
 }
 
 .cvPaperCard {

@@ -10,12 +10,7 @@ import {
   Tag,
   Spin,
 } from 'antd'
-import {
-  SendOutlined,
-  ReloadOutlined,
-  FileTextOutlined,
-  CommentOutlined,
-} from '@ant-design/icons'
+import { SendOutlined, ReloadOutlined, FileTextOutlined } from '@ant-design/icons'
 import { sendGeminiChat } from '../../api/gemini'
 import type { GeminiChatTurn } from '../../types/gemini'
 import {
@@ -106,14 +101,9 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
       {contextHolder}
       <Space direction="vertical" size="large" className={styles.geminiStack}>
         <header className={styles.geminiHero}>
-          <div className={styles.geminiTitleRow}>
-            <span className={styles.geminiTitleIcon} aria-hidden>
-              <CommentOutlined />
-            </span>
-            <Title level={2} className={styles.geminiMainTitle}>
-              {GEMINI_HEADING}
-            </Title>
-          </div>
+          <Title level={2} className={styles.geminiMainTitle}>
+            {GEMINI_HEADING}
+          </Title>
           <Paragraph className={styles.geminiSubtitle}>{GEMINI_SUBTITLE}</Paragraph>
         </header>
 

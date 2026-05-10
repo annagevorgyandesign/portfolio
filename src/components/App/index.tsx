@@ -70,7 +70,7 @@ const App: React.FC = () => {
 
       <Content className={styles.appContent}>
         {view === 'home' && <Portfolio />}
-        {view === 'works' && <Works />}
+        {view === 'works' && <Works onOpenContact={() => setView('contact')} />}
         {view === 'contact' && <ContactPage />}
         {view === 'cv' && <WriteMyCV />}
         {view === 'gemini' && <Gemini onOpenCv={() => setView('cv')} />}

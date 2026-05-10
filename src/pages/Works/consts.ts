@@ -10,6 +10,12 @@ export type WorkProject = {
 export const WORKS_INTRO =
   'UI/UX, product and web design, graphic design, logo and branding, packaging, and presentation design — selected work on Behance.'
 
+export const WORKS_CTA = {
+  headingLine1: 'Have a project in mind?',
+  headingLine2: "Let's talk.",
+  buttonLabel: 'Contact Now',
+} as const
+
 export const WORKS_PROJECTS: readonly WorkProject[] = [
   {
     title: 'Google Slides / PowerPoint Presentation Design',

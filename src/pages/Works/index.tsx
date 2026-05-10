@@ -1,12 +1,21 @@
 import React from 'react'
 import { Button, Typography } from 'antd'
 import { ExportOutlined } from '@ant-design/icons'
-import { BEHANCE_PROFILE_URL, WORKS_INTRO, WORKS_PROJECTS } from './consts'
+import {
+  BEHANCE_PROFILE_URL,
+  WORKS_CTA,
+  WORKS_INTRO,
+  WORKS_PROJECTS,
+} from './consts'
 import styles from './styles.module.css'
 
 const { Title, Paragraph, Link } = Typography
 
-const Works: React.FC = () => {
+export interface WorksProps {
+  onOpenContact: () => void
+}
+
+const Works: React.FC<WorksProps> = ({ onOpenContact }) => {
   return (
     <div className={styles.worksPage}>
       <div className={styles.shell}>
@@ -75,6 +84,18 @@ const Works: React.FC = () => {
           ))}
         </ul>
       </div>
+
+      <section className={styles.ctaSection} aria-labelledby="works-cta-heading">
+        <div className={styles.ctaInner}>
+          <h2 id="works-cta-heading" className={styles.ctaHeading}>
+            <span>{WORKS_CTA.headingLine1}</span>
+            <span>{WORKS_CTA.headingLine2}</span>
+          </h2>
+          <Button type="default" size="large" className={styles.ctaButton} onClick={onOpenContact}>
+            {WORKS_CTA.buttonLabel}
+          </Button>
+        </div>
+      </section>
     </div>
   )
 }
