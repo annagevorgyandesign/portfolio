@@ -1,3 +1,5 @@
+import { BEHANCE_PROFILE_URL, LINKEDIN_PROFILE_URL } from '../../pages/Works/consts'
+
 export interface ServiceItem {
   title: string
   description: string
@@ -16,8 +18,8 @@ export const HOME_COPY = {
   heroTitle: 'I Design. You Grow.',
   heroSubtitle:
     'Graphic Design, UI/UX Design, and AI-Enhanced Frontend Dev (AI-Powered Digital Solutions)',
-  primaryAction: 'Get Free Consultation',
-  secondaryAction: 'View Portfolio',
+  primaryAction: 'View Portfolio',
+  secondaryAction: 'Download CV',
   servicesAction: 'All Services',
   worksAction: 'See More',
   testimonialTitle: 'Client Testimonial',
@@ -63,4 +65,7 @@ export const STAT_ITEMS: StatItem[] = [
   { value: '110 +', label: 'Total Hours on Upwork' },
 ]
 
-export const FOOTER_LINKS = ['Bē', 'in']
+export const FOOTER_LINKS = [
+  { label: 'Bē', href: BEHANCE_PROFILE_URL },
+  { label: 'in', href: LINKEDIN_PROFILE_URL },
+] as const

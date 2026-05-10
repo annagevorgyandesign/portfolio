@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Button } from 'antd'
+import { DownloadOutlined } from '@ant-design/icons'
 import atomImage from '../../assets/atom.jpg'
 import heroImage from '../../assets/hero.png'
 import portfolioSetImage from '../../assets/portfolio-set.png'
@@ -11,8 +12,21 @@ import {
 } from './consts'
 import styles from './styles.module.css'
 
-const Home: React.FC = () => {
+export interface HomeProps {
+  onOpenContact: () => void
+  onOpenCv: () => void
+  onOpenWorks: () => void
+}
+
+const scrollToSection = (sectionId: string) => {
+  document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenCv, onOpenWorks }) => {
   const [firstStat, ...remainingStats] = STAT_ITEMS
+  const onScrollToServices = useCallback(() => {
+    scrollToSection('services')
+  }, [])
 
   return (
     <div className={styles.homePage}>
@@ -26,10 +40,18 @@ const Home: React.FC = () => {
             </h1>
             <p>{HOME_COPY.heroSubtitle}</p>
             <div className={styles.heroActions}>
-              <Button type="primary" className={`${styles.heroBtn} ${styles.heroBtnBlack}`}>
+              <Button
+                type="primary"
+                className={`${styles.heroBtn} ${styles.heroBtnBlack}`}
+                onClick={onOpenWorks}
+              >
                 {HOME_COPY.primaryAction}
               </Button>
-              <Button className={`${styles.heroBtn} ${styles.heroBtnOutline}`}>
+              <Button
+                className={`${styles.heroBtn} ${styles.heroBtnOutline}`}
+                icon={<DownloadOutlined />}
+                onClick={onOpenCv}
+              >
                 {HOME_COPY.secondaryAction}
               </Button>
             </div>
@@ -39,7 +61,7 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        <section className={styles.servicesSection}>
+        <section id="services" className={styles.servicesSection}>
           <h2>My Services</h2>
           <div className={styles.servicesGrid}>
             {SERVICE_ITEMS.map((item) => (
@@ -51,22 +73,22 @@ const Home: React.FC = () => {
               </article>
             ))}
           </div>
-          <Button className={styles.brandBtn}>
+          <Button className={styles.brandBtn} onClick={onScrollToServices}>
             {HOME_COPY.servicesAction}
           </Button>
         </section>
 
-        <section className={styles.worksSection}>
+        <section id="home-works" className={styles.worksSection}>
           <h2>My Works</h2>
           <div className={styles.worksPreview}>
             <img src={portfolioSetImage} alt="Portfolio works preview collage" />
           </div>
-          <Button className={styles.brandBtn}>
+          <Button className={styles.brandBtn} onClick={onOpenWorks}>
             {HOME_COPY.worksAction}
           </Button>
         </section>
 
-        <section className={styles.whySection}>
+        <section id="why" className={styles.whySection}>
           <h2>Why Work With Me?</h2>
           <div className={styles.whyGrid}>
             <div className={`${styles.whyCard} ${styles.whyAtomCard}`}>
@@ -98,7 +120,7 @@ const Home: React.FC = () => {
         </section>
       </div>
 
-      <section className={styles.testimonialSection}>
+      <section id="testimonial" className={styles.testimonialSection}>
         <div className={`${styles.homeShell} ${styles.testimonialShell}`}>
           <div className={styles.testimonialLeft}>
             <h2>{HOME_COPY.testimonialTitle}</h2>
@@ -115,13 +137,13 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className={styles.contactCta}>
+      <section id="contact-cta" className={styles.contactCta}>
         <div className={`${styles.homeShell} ${styles.ctaShell}`}>
           <h2>
             <span>Want To Launch Your Brand</span>
             <span>Into The Future?</span>
           </h2>
-          <Button className={styles.brandBtn}>
+          <Button className={styles.brandBtn} onClick={onOpenContact}>
             {HOME_COPY.ctaAction}
           </Button>
         </div>

@@ -1,11 +1,11 @@
 import React from 'react'
-import Home from '../../components/Home'
+import Home, { type HomeProps } from '../../components/Home'
 import styles from './styles.module.css'
 
-const PortfolioPage: React.FC = () => {
+const PortfolioPage: React.FC<HomeProps> = (props) => {
   return (
     <div className={styles.portfolioPage}>
-      <Home />
+      <Home {...props} />
     </div>
   )
 }

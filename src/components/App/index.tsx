@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Layout, Button, Typography } from 'antd';
-import { DownloadOutlined } from '@ant-design/icons';
 import Portfolio from '../../pages/Portfolio';
 import Works from '../../pages/Works';
 import ContactPage from '../../pages/Contact';
@@ -61,9 +60,12 @@ const App: React.FC = () => {
         </nav>
 
         <div className={styles.headerActions}>
-          <Button type="default" className={styles.downloadCvBtn}>
-            <DownloadOutlined />
-            <span>Download CV</span>
+          <Button
+            type="default"
+            className={styles.downloadCvBtn}
+            onClick={() => setView('contact')}
+          >
+            Contact Me
           </Button>
         </div>
       </Header>
@@ -71,7 +73,13 @@ const App: React.FC = () => {
       <Content
         className={`${styles.appContent} ${view === 'gemini' ? styles.appContentGemini : ''}`}
       >
-        {view === 'home' && <Portfolio />}
+        {view === 'home' && (
+          <Portfolio
+            onOpenContact={() => setView('contact')}
+            onOpenCv={() => setView('cv')}
+            onOpenWorks={() => setView('works')}
+          />
+        )}
         {view === 'works' && <Works onOpenContact={() => setView('contact')} />}
         {view === 'contact' && <ContactPage />}
         {view === 'cv' && <WriteMyCV />}
@@ -87,8 +95,8 @@ const App: React.FC = () => {
             <Link href="tel:+37455048820">+374 55 40 88 20</Link>
             <div className={styles.socialLinks}>
               {FOOTER_LINKS.map((link) => (
-                <Link href="#/" key={link}>
-                  {link}
+                <Link href={link.href} key={link.label} target="_blank" rel="noopener noreferrer">
+                  {link.label}
                 </Link>
               ))}
             </div>
