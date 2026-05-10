@@ -83,34 +83,40 @@ const Contact: React.FC = () => {
           <div className={styles.shell}>
             <div className={styles.grid}>
               <div className={styles.infoBlock}>
-                <h2 className={styles.infoTitle}>
-                  <span className={styles.infoTitleSegment}>
-                    {CONTACT_COPY.infoTitleLead}{' '}
-                  </span>
-                  <span className={styles.infoTitleAccent}>
-                    {CONTACT_COPY.infoTitleAccent}
-                  </span>
-                  <span className={styles.infoTitleSegment}>
-                    {' '}
-                    {CONTACT_COPY.infoTitleTrail}
-                  </span>
-                </h2>
-                <p className={styles.lead}>{CONTACT_COPY.infoSubheading}</p>
-                <p className={styles.topicsHeading}>{CONTACT_COPY.topicsHeading}</p>
-                <ul className={styles.topicList}>
-                  {CONTACT_TOPICS.map((topic) => (
-                    <li key={topic}>{topic}</li>
-                  ))}
-                </ul>
-                <div className={styles.locationRow}>
-                  <MailOutlined className={styles.locationIcon} aria-hidden />
-                  <a className={styles.emailLink} href={`mailto:${CONTACT_COPY.contactEmail}`}>
-                    {CONTACT_COPY.contactEmail}
-                  </a>
+                <div className={styles.infoIntro}>
+                  <h2 className={styles.infoTitle}>
+                    <span className={styles.infoTitleSegment}>
+                      {CONTACT_COPY.infoTitleLead}{' '}
+                    </span>
+                    <span className={styles.infoTitleAccent}>
+                      {CONTACT_COPY.infoTitleAccent}
+                    </span>
+                    <span className={styles.infoTitleSegment}>
+                      {' '}
+                      {CONTACT_COPY.infoTitleTrail}
+                    </span>
+                  </h2>
+                  <p className={styles.lead}>{CONTACT_COPY.infoSubheading}</p>
                 </div>
-                <div className={styles.locationRow}>
-                  <EnvironmentOutlined className={styles.locationIcon} aria-hidden />
-                  <span>{CONTACT_COPY.locationLabel}</span>
+                <div className={styles.infoTopics}>
+                  <p className={styles.topicsHeading}>{CONTACT_COPY.topicsHeading}</p>
+                  <ul className={styles.topicList}>
+                    {CONTACT_TOPICS.map((topic) => (
+                      <li key={topic}>{topic}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className={styles.contactRows}>
+                  <div className={styles.locationRow}>
+                    <MailOutlined className={styles.locationIcon} aria-hidden />
+                    <a className={styles.emailLink} href={`mailto:${CONTACT_COPY.contactEmail}`}>
+                      {CONTACT_COPY.contactEmail}
+                    </a>
+                  </div>
+                  <div className={styles.locationRow}>
+                    <EnvironmentOutlined className={styles.locationIcon} aria-hidden />
+                    <span>{CONTACT_COPY.locationLabel}</span>
+                  </div>
                 </div>
               </div>
 
