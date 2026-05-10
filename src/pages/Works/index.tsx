@@ -53,7 +53,10 @@ const Works: React.FC<WorksProps> = ({ onOpenContact }) => {
               <article className={styles.projectCard}>
                 <div className={styles.thumb}>
                   <img
-                    src={`https://picsum.photos/seed/${project.imageSeed}/800/600`}
+                    src={
+                      project.coverSrc ??
+                      `https://picsum.photos/seed/${project.imageSeed}/800/600`
+                    }
                     alt={`${project.title} preview`}
                     loading="lazy"
                   />
