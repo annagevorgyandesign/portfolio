@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Layout, Button, Typography } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
 import Portfolio from '../../pages/Portfolio';
+import ContactPage from '../../pages/Contact';
 import WriteMyCV from '../../pages/WriteMyCV';
 import Gemini from '../../pages/Gemini';
 import { FOOTER_LINKS } from '../Home/consts';
@@ -11,7 +12,7 @@ const { Header, Content, Footer } = Layout;
 const { Link } = Typography;
 
 const App: React.FC = () => {
-  const [view, setView] = useState<'home' | 'cv' | 'gemini'>('home');
+  const [view, setView] = useState<'home' | 'contact' | 'cv' | 'gemini'>('home');
 
   return (
     <Layout className={styles.appLayout}>
@@ -42,6 +43,13 @@ const App: React.FC = () => {
           >
             CV Writer
           </Button>
+          <Button
+            type="text"
+            onClick={() => setView('contact')}
+            className={`${styles.navLink} ${view === 'contact' ? styles.active : ''}`}
+          >
+            Contact
+          </Button>
         </nav>
 
         <div className={styles.headerActions}>
@@ -54,6 +62,7 @@ const App: React.FC = () => {
 
       <Content className={styles.appContent}>
         {view === 'home' && <Portfolio />}
+        {view === 'contact' && <ContactPage />}
         {view === 'cv' && <WriteMyCV />}
         {view === 'gemini' && <Gemini />}
       </Content>
