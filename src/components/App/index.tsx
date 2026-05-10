@@ -68,7 +68,9 @@ const App: React.FC = () => {
         </div>
       </Header>
 
-      <Content className={styles.appContent}>
+      <Content
+        className={`${styles.appContent} ${view === 'gemini' ? styles.appContentGemini : ''}`}
+      >
         {view === 'home' && <Portfolio />}
         {view === 'works' && <Works onOpenContact={() => setView('contact')} />}
         {view === 'contact' && <ContactPage />}

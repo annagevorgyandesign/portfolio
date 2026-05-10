@@ -76,6 +76,10 @@
   padding-top: 0px;
 }
 
+.appContentGemini {
+  background: #fff;
+}
+
 .appFooter {
   background: #000 !important;
   color: #f2f2f2;
