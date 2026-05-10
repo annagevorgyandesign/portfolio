@@ -10,7 +10,12 @@ import {
   Tag,
   Spin,
 } from 'antd'
-import { SendOutlined, ReloadOutlined, FileTextOutlined } from '@ant-design/icons'
+import {
+  SendOutlined,
+  ReloadOutlined,
+  FileTextOutlined,
+  CommentOutlined,
+} from '@ant-design/icons'
 import { sendGeminiChat } from '../../api/gemini'
 import type { GeminiChatTurn } from '../../types/gemini'
 import {
@@ -18,7 +23,7 @@ import {
   GEMINI_CONVERSATION_LABEL,
   GEMINI_HEADING,
   GEMINI_HINT_TEXT,
-  GEMINI_RESUME_PAGE_NOTE,
+  GEMINI_RESUME_PAGE_NOTE_PARTS,
   GEMINI_SHOW_RESUME_LABEL,
   GEMINI_SUBTITLE,
   GEMINI_WELCOME_MESSAGE,
@@ -100,12 +105,17 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
     <div className={styles.geminiPage}>
       {contextHolder}
       <Space direction="vertical" size="large" className={styles.geminiStack}>
-        <div>
-          <Title level={2} className={styles.geminiMainTitle}>
-            {GEMINI_HEADING}
-          </Title>
+        <header className={styles.geminiHero}>
+          <div className={styles.geminiTitleRow}>
+            <span className={styles.geminiTitleIcon} aria-hidden>
+              <CommentOutlined />
+            </span>
+            <Title level={2} className={styles.geminiMainTitle}>
+              {GEMINI_HEADING}
+            </Title>
+          </div>
           <Paragraph className={styles.geminiSubtitle}>{GEMINI_SUBTITLE}</Paragraph>
-        </div>
+        </header>
 
         <Card bordered={false} className={styles.geminiChatCard} title={GEMINI_CONVERSATION_LABEL}>
           <Paragraph type="secondary" className={styles.geminiHint}>
@@ -113,16 +123,29 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
           </Paragraph>
 
           <Space wrap className={styles.geminiActionsRow}>
-            <Button type="default" icon={<FileTextOutlined />} onClick={handleShowResume}>
+            <Button
+              type="default"
+              icon={<FileTextOutlined />}
+              onClick={handleShowResume}
+              className={styles.geminiOutlineBtn}
+            >
               {GEMINI_SHOW_RESUME_LABEL}
             </Button>
             {onOpenCv ? (
               <Button type="link" onClick={onOpenCv} className={styles.geminiCvLink}>
-                {GEMINI_RESUME_PAGE_NOTE}
+                <span className={styles.geminiCvLinkRest}>{GEMINI_RESUME_PAGE_NOTE_PARTS.before}</span>
+                <span className={styles.geminiCvLinkHighlight}>
+                  {GEMINI_RESUME_PAGE_NOTE_PARTS.highlight}
+                </span>
+                <span className={styles.geminiCvLinkRest}>{GEMINI_RESUME_PAGE_NOTE_PARTS.after}</span>
               </Button>
             ) : (
               <Text type="secondary" className={styles.geminiCvNote}>
-                {GEMINI_RESUME_PAGE_NOTE}
+                <span className={styles.geminiCvLinkRest}>{GEMINI_RESUME_PAGE_NOTE_PARTS.before}</span>
+                <span className={styles.geminiCvLinkHighlight}>
+                  {GEMINI_RESUME_PAGE_NOTE_PARTS.highlight}
+                </span>
+                <span className={styles.geminiCvLinkRest}>{GEMINI_RESUME_PAGE_NOTE_PARTS.after}</span>
               </Text>
             )}
           </Space>
@@ -157,23 +180,25 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
             <Text type="secondary" className={styles.suggestedLabel}>
               Quick prompts:
             </Text>
-            <Space wrap size="small">
-              {SUGGESTED_PROMPTS.map((p) => (
-                <Tag
-                  key={p}
-                  className={styles.suggestedTag}
-                  onClick={() => void submitUserText(p)}
-                >
-                  {p}
-                </Tag>
-              ))}
-            </Space>
+            <div className={styles.suggestedTagsScroll}>
+              <Space size={24} wrap className={styles.suggestedTagsSpace}>
+                {SUGGESTED_PROMPTS.map((p) => (
+                  <Tag
+                    key={p}
+                    className={styles.suggestedTag}
+                    onClick={() => void submitUserText(p)}
+                  >
+                    {p}
+                  </Tag>
+                ))}
+              </Space>
+            </div>
           </div>
 
           <Form form={form} layout="vertical" onFinish={handleSend} className={styles.chatForm}>
             <Form.Item name="message" className={styles.chatFormItem}>
               <Input.TextArea
-                rows={5}
+                rows={4}
                 placeholder="Message"
                 className={styles.geminiTextarea}
                 onPressEnter={(e) => {
@@ -195,7 +220,12 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
               >
                 Send
               </Button>
-              <Button onClick={handleClear} icon={<ReloadOutlined />} disabled={loading}>
+              <Button
+                onClick={handleClear}
+                icon={<ReloadOutlined />}
+                disabled={loading}
+                className={styles.geminiGhostBtn}
+              >
                 Clear chat
               </Button>
             </Space>

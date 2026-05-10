@@ -14,7 +14,13 @@ export const GEMINI_CONVERSATION_LABEL = 'Gemini Conversation'
 export const GEMINI_HINT_TEXT =
   'Try prompts like "show my resume", "summarize my experience", or "write a short recruiter intro".'
 
-export const GEMINI_RESUME_PAGE_NOTE = 'The resume itself now lives on the separate CV Writer page.'
+export const GEMINI_RESUME_PAGE_NOTE_PARTS = {
+  before: 'The full resume is on the ',
+  highlight: 'CV Writer',
+  after: ' page.',
+} as const
+
+export const GEMINI_RESUME_PAGE_NOTE = `${GEMINI_RESUME_PAGE_NOTE_PARTS.before}${GEMINI_RESUME_PAGE_NOTE_PARTS.highlight}${GEMINI_RESUME_PAGE_NOTE_PARTS.after}`
 
 export const GEMINI_SHOW_RESUME_LABEL = 'Show Saved Resume'
 
