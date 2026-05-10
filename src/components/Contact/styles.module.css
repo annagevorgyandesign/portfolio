@@ -205,9 +205,26 @@
 .submitBtn {
   margin-top: 24px;
   width: 100%;
-  height: 52px !important;
+  height: auto !important;
+  padding: 16px 32px !important;
   font-weight: 600 !important;
   border-radius: 8px !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease,
+    color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease !important;
+}
+
+.submitBtn:hover,
+.submitBtn:focus-visible {
+  background-color: #ffa940 !important;
+  border-color: #ffa940 !important;
+  color: #111 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(250, 140, 22, 0.3);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(250, 140, 22, 0.25);
 }
 
 @media (max-width: 900px) {

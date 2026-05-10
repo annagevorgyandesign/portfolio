@@ -75,11 +75,13 @@
 .heroBtn,
 .brandBtn {
   border-radius: 8px;
-  height: 56px;
-  padding: 0 18px;
+  height: auto;
+  padding: 16px 32px !important;
   border: 1px solid #111;
   font-weight: 600;
   font-family: 'Inter', 'Segoe UI', sans-serif;
+  transition: background-color 0.25s ease, border-color 0.25s ease,
+    color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
 
 .heroBtnBlack {
@@ -88,9 +90,37 @@
   border-color: #111 !important;
 }
 
+.heroBtnBlack:hover,
+.heroBtnBlack:focus-visible {
+  background: #333 !important;
+  border-color: #333 !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(17, 17, 17, 0.25);
+}
+
+.heroBtnBlack:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(17, 17, 17, 0.2);
+}
+
 .heroBtnOutline {
   background: transparent !important;
   color: #111 !important;
+}
+
+.heroBtnOutline:hover,
+.heroBtnOutline:focus-visible {
+  background: #f5f5f5 !important;
+  border-color: #111 !important;
+  color: #111 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(17, 17, 17, 0.12);
+}
+
+.heroBtnOutline:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(17, 17, 17, 0.12);
 }
 
 .heroVisual {
