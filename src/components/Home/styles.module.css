@@ -168,6 +168,7 @@
 
 .brandBtn {
   margin-top: 48px;
+  padding-top: 1px;
   background-color: #fa8c16 !important;
   border-color: #fa8c16 !important;
   color: #111 !important;
@@ -245,6 +246,7 @@
 
 .topRatedSubtitle span {
   font-size: 32px;
+  font-weight: 600;
 }
 
 .whyTextCard {
@@ -337,7 +339,7 @@
 .testimonialAuthorRole {
   margin: 2px 0 0;
   color: #fff;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 18px;
   text-align: right;
 }
@@ -346,6 +348,10 @@
   background: #ececec;
   text-align: center;
   padding: 110px 0 120px;
+}
+
+.contactCta .brandBtn {
+  margin-top: 16px;
 }
 
 .ctaShell h2 {
@@ -358,6 +364,7 @@
 .ctaShell h2 span {
   display: block;
   white-space: nowrap;
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
