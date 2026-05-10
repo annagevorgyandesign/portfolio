@@ -17,56 +17,58 @@ const App: React.FC = () => {
   return (
     <Layout className={styles.appLayout}>
       <Header className={styles.appHeader}>
-        <div className={styles.brand} onClick={() => setView('home')}>
-          Anna Gevorgyan
-        </div>
+        <div className={styles.headerShell}>
+          <div className={styles.brand} onClick={() => setView('home')}>
+            Anna Gevorgyan
+          </div>
 
-        <nav className={styles.topNav}>
-          <Button
-            type="text"
-            onClick={() => setView('home')}
-            className={`${styles.navLink} ${view === 'home' ? styles.active : ''}`}
-          >
-            Home
-          </Button>
-          <Button
-            type="text"
-            onClick={() => setView('works')}
-            className={`${styles.navLink} ${view === 'works' ? styles.active : ''}`}
-          >
-            Works
-          </Button>
-          <Button
-            type="text"
-            onClick={() => setView('gemini')}
-            className={`${styles.navLink} ${view === 'gemini' ? styles.active : ''}`}
-          >
-            Gemini
-          </Button>
-          <Button
-            type="text"
-            onClick={() => setView('cv')}
-            className={`${styles.navLink} ${view === 'cv' ? styles.active : ''}`}
-          >
-            CV Writer
-          </Button>
-          <Button
-            type="text"
-            onClick={() => setView('contact')}
-            className={`${styles.navLink} ${view === 'contact' ? styles.active : ''}`}
-          >
-            Contact
-          </Button>
-        </nav>
+          <nav className={styles.topNav}>
+            <Button
+              type="text"
+              onClick={() => setView('home')}
+              className={`${styles.navLink} ${view === 'home' ? styles.active : ''}`}
+            >
+              Home
+            </Button>
+            <Button
+              type="text"
+              onClick={() => setView('works')}
+              className={`${styles.navLink} ${view === 'works' ? styles.active : ''}`}
+            >
+              Works
+            </Button>
+            <Button
+              type="text"
+              onClick={() => setView('gemini')}
+              className={`${styles.navLink} ${view === 'gemini' ? styles.active : ''}`}
+            >
+              Gemini
+            </Button>
+            <Button
+              type="text"
+              onClick={() => setView('cv')}
+              className={`${styles.navLink} ${view === 'cv' ? styles.active : ''}`}
+            >
+              CV Writer
+            </Button>
+            <Button
+              type="text"
+              onClick={() => setView('contact')}
+              className={`${styles.navLink} ${view === 'contact' ? styles.active : ''}`}
+            >
+              Contact
+            </Button>
+          </nav>
 
-        <div className={styles.headerActions}>
-          <Button
-            type="default"
-            className={styles.downloadCvBtn}
-            onClick={() => setView('contact')}
-          >
-            Contact Me
-          </Button>
+          <div className={styles.headerActions}>
+            <Button
+              type="default"
+              className={styles.downloadCvBtn}
+              onClick={() => setView('contact')}
+            >
+              Contact Me
+            </Button>
+          </div>
         </div>
       </Header>
 

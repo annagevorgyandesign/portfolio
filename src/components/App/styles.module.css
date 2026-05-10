@@ -7,20 +7,32 @@
   top: 0;
   z-index: 1000;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 48px !important;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0 !important;
   background-color: #fafafa !important;
   border-bottom: 1px solid #f0f0f0;
   height: 88px;
 }
 
+.headerShell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 48px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .brand {
   cursor: pointer;
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 600;
   color: #111;
-  letter-spacing: 0.4px;
+  letter-spacing: -0.8px;
   font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif;
 }
 
@@ -103,13 +115,15 @@
   border-top: 2px solid #0f0f0f;
   border-bottom: 2px solid #0f0f0f;
   font-size: 16px;
-  padding: 0 48px !important;
+  padding: 0 !important;
 }
 
 .appFooterShell {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 48px;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -154,16 +168,16 @@
 }
 
 @media (max-width: 1024px) {
-  .appHeader {
-    padding: 0 20px !important;
+  .headerShell {
+    padding: 0 20px;
   }
 
-  .appFooter {
-    padding: 0 20px !important;
+  .appFooterShell {
+    padding: 0 20px;
   }
 
   .brand {
-    font-size: 24px;
+    font-size: 16px;
   }
 
   .topNav {
@@ -175,10 +189,13 @@
   .appHeader {
     height: auto;
     min-height: 88px;
-    flex-wrap: wrap;
-    row-gap: 8px;
     padding-top: 12px !important;
     padding-bottom: 12px !important;
+  }
+
+  .headerShell {
+    flex-wrap: wrap;
+    row-gap: 8px;
   }
 
   .topNav {
