@@ -30,8 +30,8 @@ const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenCv, onOpenWorks }) => 
 
   return (
     <div className={styles.homePage}>
-      <div className={styles.homeShell}>
-        <section id="home" className={styles.homeHero}>
+      <section id="home" className={styles.homeHero}>
+        <div className={styles.heroCopyWrapper}>
           <div className={styles.heroCopy}>
             <h1>
               I Design.
@@ -56,11 +56,13 @@ const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenCv, onOpenWorks }) => 
               </Button>
             </div>
           </div>
-          <div className={styles.heroVisual}>
-            <img src={heroImage} alt="Design and growth hero screenshot" />
-          </div>
-        </section>
+        </div>
+        <div className={styles.heroVisual}>
+          <img src={heroImage} alt="Design and growth hero screenshot" />
+        </div>
+      </section>
 
+      <div className={styles.homeShell}>
         <section id="services" className={styles.servicesSection}>
           <h2>My Services</h2>
           <div className={styles.servicesGrid}>
