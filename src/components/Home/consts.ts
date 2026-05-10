@@ -17,7 +17,7 @@ export interface StatItem {
 export const HOME_COPY = {
   heroTitle: 'I Design. You Grow.',
   heroSubtitle:
-    'Graphic Design, UI/UX Design, and AI-Enhanced Frontend Dev (AI-Powered Digital Solutions)',
+    'UI/UX, Product, Web Design, Graphic Design & Branding Solutions for Startups and Brands',
   primaryAction: 'View Portfolio',
   secondaryAction: 'Download CV',
   servicesAction: 'All Services',
