@@ -12,7 +12,7 @@ export const GEMINI_SUBTITLE =
 export const GEMINI_CONVERSATION_LABEL = 'Gemini AI Chat'
 
 export const GEMINI_HINT_TEXT =
-  'Try prompts like "show my resume", "summarize my experience", or "write a short recruiter intro".'
+  'Try prompts like "show resume", "summarize experience", or "write a short recruiter intro".'
 
 export const GEMINI_RESUME_PAGE_NOTE_PARTS = {
   before: 'The full resume is on the ',
