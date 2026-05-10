@@ -6,6 +6,7 @@ import heroImage from '../../assets/hero.png'
 import portfolioSetImage from '../../assets/portfolio-set.png'
 import quoteMarkImage from '../../assets/quote-mark.png'
 import {
+  HERO_HEADLINE,
   HOME_COPY,
   SERVICE_ITEMS,
   STAT_ITEMS,
@@ -27,9 +28,9 @@ const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenCv, onOpenWorks }) => 
         <div className={styles.heroCopyWrapper}>
           <div className={styles.heroCopy}>
             <h1>
-              I Design.
+              {HERO_HEADLINE.lead}
               <br />
-              You Grow.
+              <span className={styles.heroTitleAccent}>{HERO_HEADLINE.accent}</span>
             </h1>
             <p>{HOME_COPY.heroSubtitle}</p>
             <div className={styles.heroActions}>

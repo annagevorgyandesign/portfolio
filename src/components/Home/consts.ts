@@ -14,8 +14,16 @@ export interface StatItem {
   label: string
 }
 
+const HERO_HEADLINE_LEAD = 'I Design.' as const
+const HERO_HEADLINE_ACCENT = 'You Grow.' as const
+
+export const HERO_HEADLINE = {
+  lead: HERO_HEADLINE_LEAD,
+  accent: HERO_HEADLINE_ACCENT,
+} as const
+
 export const HOME_COPY = {
-  heroTitle: 'I Design. You Grow.',
+  heroTitle: `${HERO_HEADLINE_LEAD} ${HERO_HEADLINE_ACCENT}`,
   heroSubtitle:
     'UI/UX, Product, Web Design, Graphic Design & Branding Solutions for Startups and Brands',
   primaryAction: 'View Portfolio',

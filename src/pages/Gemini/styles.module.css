@@ -102,7 +102,8 @@
   height: auto !important;
   padding: 16px 32px !important;
   border-radius: 8px !important;
-  font-weight: 600 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
   font-family: 'Inter', 'Segoe UI', sans-serif !important;
   border: 1px solid #fa8c16 !important;
   color: #111 !important;
@@ -125,7 +126,8 @@
   height: auto !important;
   padding: 16px 32px !important;
   border-radius: 8px !important;
-  font-weight: 600 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
   font-family: 'Inter', 'Segoe UI', sans-serif !important;
   color: #222 !important;
   border: 1px solid #111 !important;
@@ -357,7 +359,8 @@
   min-height: auto;
   padding: 16px 32px !important;
   border-radius: 8px !important;
-  font-weight: 600 !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
   font-family: 'Inter', 'Segoe UI', sans-serif !important;
   background: #111 !important;
   border: 1px solid #111 !important;

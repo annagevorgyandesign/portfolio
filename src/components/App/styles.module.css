@@ -69,6 +69,7 @@
   align-items: center;
   gap: 8px;
   font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 16px;
   font-weight: 500;
   transition: background-color 0.25s ease, color 0.25s ease,
     transform 0.2s ease, box-shadow 0.25s ease !important;

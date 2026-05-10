@@ -21,6 +21,14 @@ createRoot(rootElement).render(
           borderRadius: 8,
           fontFamily: 'Inter, Segoe UI, Roboto, Arial, sans-serif',
         },
+        components: {
+          Button: {
+            contentFontSize: 16,
+            contentFontSizeLG: 16,
+            contentFontSizeSM: 16,
+            fontWeight: 500,
+          },
+        },
       }}
     >
       <App />

@@ -77,6 +77,14 @@ const Contact: React.FC = () => {
             colorTextSecondary: '#4a4a4a',
             colorBorder: '#d9d9d9',
           },
+          components: {
+            Button: {
+              contentFontSize: 16,
+              contentFontSizeLG: 16,
+              contentFontSizeSM: 16,
+              fontWeight: 500,
+            },
+          },
         }}
       >
         <section className={styles.main}>
