@@ -383,6 +383,15 @@
     font-size: 36px !important;
     line-height: 1.1 !important;
   }
+
+  .geminiHero {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .geminiSubtitle {
+    text-align: left !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -392,33 +401,33 @@
 
   .geminiHero {
     max-width: none;
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    align-items: flex-start;
   }
 
   .geminiMainTitle {
     font-size: 28px !important;
-    text-align: center;
+    text-align: left;
   }
 
   .geminiSubtitle {
-    text-align: center !important;
+    text-align: left !important;
   }
 
   .geminiChatCard :global(.ant-card-head-title) {
-    text-align: center;
+    text-align: left;
   }
 
   .geminiHint {
-    text-align: center !important;
+    text-align: left !important;
   }
 
   .suggestedLabel {
-    text-align: center !important;
+    text-align: left !important;
   }
 
   .suggestedTagsSpace {
-    justify-content: center !important;
+    justify-content: flex-start !important;
   }
 
   .geminiActionsRow {
@@ -440,7 +449,7 @@
 
   .geminiCvNote {
     margin-inline-start: 0 !important;
-    text-align: center !important;
+    text-align: left !important;
     display: block !important;
   }
 

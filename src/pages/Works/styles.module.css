@@ -244,6 +244,13 @@
 
   .ctaSection {
     padding: 80px 24px 96px;
+    text-align: left;
+  }
+
+  .ctaHeading {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
   }
 }
 
@@ -254,18 +261,18 @@
 
   .hero {
     padding: 28px 0 20px;
-    text-align: center;
+    text-align: left;
   }
 
   .hero h1 {
-    text-align: center;
+    text-align: left;
   }
 
   .lead {
     font-size: 16px;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: center;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left;
   }
 
   .heroActions {
@@ -290,11 +297,11 @@
 
   .ctaSection {
     padding: 56px 16px 72px;
-    text-align: center;
+    text-align: left;
   }
 
   .ctaHeading {
-    text-align: center;
+    text-align: left;
   }
 
   .ctaButton {

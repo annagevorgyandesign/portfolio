@@ -206,7 +206,7 @@
   }
 
   .cvTopBanner {
-    text-align: center;
+    text-align: left;
   }
 
   .cvTopBanner h1 {
@@ -224,23 +224,23 @@
   .cvContactGrid {
     grid-template-columns: 1fr;
     row-gap: 4px;
-    text-align: center;
+    text-align: left;
   }
 
   .cvContactGrid :global(.ant-typography:first-child),
   .cvContactGrid :global(.ant-typography:nth-child(3)),
   .cvContactGrid :global(.ant-typography:nth-child(5)),
   .cvContactGrid :global(.ant-typography:nth-child(7)) {
-    text-align: center;
+    text-align: left;
   }
 
   .cvSection {
-    text-align: center;
+    text-align: left;
   }
 
   .cvSection h3 {
     font-size: 21px;
-    text-align: center;
+    text-align: left;
   }
 
   .cvSection p,
@@ -254,25 +254,25 @@
   .cvTwoColRow {
     grid-template-columns: 1fr;
     row-gap: 8px;
-    text-align: center;
+    text-align: left;
   }
 
   .cvLeftCol {
-    text-align: center;
+    text-align: left;
   }
 
   .cvRightCol {
-    padding-left: 0;
-    list-style-position: inside;
-    text-align: center;
+    padding-left: 1.25em;
+    list-style-position: outside;
+    text-align: left;
   }
 
   .cvEducationItem {
-    text-align: center;
+    text-align: left;
   }
 
   .cvPlainList {
-    padding-left: 0;
-    list-style-position: inside;
+    padding-left: 1.25em;
+    list-style-position: outside;
   }
 }

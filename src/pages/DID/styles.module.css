@@ -247,6 +247,18 @@
   .formTitle {
     font-size: clamp(26px, 4vw, 40px);
   }
+
+  .formBlock {
+    text-align: left;
+  }
+
+  .form :global(.ant-form-item-label) {
+    text-align: left;
+  }
+
+  .statusText {
+    text-align: left;
+  }
 }
 
 @media (max-width: 767px) {
@@ -260,17 +272,17 @@
   }
 
   .formBlock {
-    text-align: center;
+    text-align: left;
   }
 
   .formTitle {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .form :global(.ant-form-item-label) {
-    text-align: center;
+    text-align: left;
   }
 
   .form :global(.ant-input),
@@ -301,6 +313,6 @@
   }
 
   .statusText {
-    text-align: center;
+    text-align: left;
   }
 }

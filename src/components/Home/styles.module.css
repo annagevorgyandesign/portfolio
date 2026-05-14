@@ -467,6 +467,50 @@
   .servicesGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .servicesSection,
+  .worksSection,
+  .whySection,
+  .testimonialSection,
+  .contactCta {
+    text-align: left;
+  }
+
+  .servicesSection h2,
+  .worksSection h2,
+  .whySection h2,
+  .testimonialLeft h2,
+  .ctaShell h2 {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .serviceItem {
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  .serviceItem p {
+    text-align: left;
+    width: 100%;
+    max-width: none;
+  }
+
+  .quoteMark {
+    align-self: flex-start;
+  }
+
+  .testimonialAuthor,
+  .testimonialAuthorRole {
+    text-align: left;
+  }
+
+  .ctaShell {
+    text-align: left;
+  }
 }
 
 @media (max-width: 767px) {
@@ -497,12 +541,12 @@
 
   .heroCopyWrapper {
     padding: 24px 16px 16px;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .heroCopy {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .heroCopy h1 {
@@ -511,8 +555,8 @@
   }
 
   .heroCopy p {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
     max-width: 100%;
     font-size: 18px;
   }
@@ -543,7 +587,7 @@
   .whySection,
   .contactCta,
   .testimonialSection {
-    text-align: center;
+    text-align: left;
   }
 
   .servicesSection h2,
@@ -552,9 +596,9 @@
   .testimonialLeft h2,
   .ctaShell h2 {
     font-size: clamp(26px, 7vw, 34px);
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .servicesGrid,
@@ -563,10 +607,17 @@
     grid-template-columns: 1fr;
   }
 
-  .serviceItem,
-  .serviceItem p {
+  .serviceItem {
+    align-items: flex-start;
+    margin: 0;
     width: 100%;
-    max-width: 100%;
+    max-width: none;
+  }
+
+  .serviceItem p {
+    text-align: left;
+    width: 100%;
+    max-width: none;
   }
 
   .worksPreview img {
@@ -578,16 +629,16 @@
   .testimonialLeft {
     min-height: auto;
     gap: 18px;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .testimonialLeft h2 {
-    text-align: center;
+    text-align: left;
   }
 
   .quoteMark {
-    align-self: center;
+    align-self: flex-start;
     width: 100%;
     max-width: 220px;
   }
@@ -599,26 +650,26 @@
 
   .testimonialStars,
   .testimonialCopy {
-    text-align: center;
+    text-align: left;
   }
 
   .testimonialAuthor,
   .testimonialAuthorRole {
-    text-align: center;
+    text-align: left;
   }
 
   .whyCard {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .whyTextCard {
     padding: 8px 0;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .whyTextCard p {
-    text-align: center;
+    text-align: left;
     max-width: 100%;
   }
 
@@ -632,6 +683,6 @@
   }
 
   .ctaShell {
-    text-align: center;
+    text-align: left;
   }
 }
