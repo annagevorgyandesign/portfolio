@@ -159,6 +159,59 @@
   padding-bottom: 20px;
 }
 
+.cvDownloadFooter {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.cvDownloadLink {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.cvDownloadBtn {
+  border-radius: 8px;
+  height: auto;
+  padding: 16px 32px !important;
+  border: 1px solid #111;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.cvDownloadBtnDark {
+  background: #111 !important;
+  color: #fff !important;
+  border-color: #111 !important;
+}
+
+.cvDownloadBtnDark :global(.anticon) {
+  color: #fff !important;
+}
+
+.cvDownloadBtnDark:hover,
+.cvDownloadBtnDark:focus-visible {
+  background: #333 !important;
+  border-color: #333 !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(17, 17, 17, 0.25);
+}
+
+.cvDownloadBtnDark:hover :global(.anticon),
+.cvDownloadBtnDark:focus-visible :global(.anticon) {
+  color: #fff !important;
+}
+
+.cvDownloadBtnDark:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(17, 17, 17, 0.2);
+}
+
 @media (max-width: 1023px) {
   .cvPage {
     padding: 20px 16px 36px;
@@ -274,5 +327,20 @@
   .cvPlainList {
     padding-left: 1.25em;
     list-style-position: outside;
+  }
+
+  .cvDownloadFooter {
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  .cvDownloadLink {
+    width: 100%;
+  }
+
+  .cvDownloadBtn {
+    width: 100% !important;
+    justify-content: center !important;
   }
 }

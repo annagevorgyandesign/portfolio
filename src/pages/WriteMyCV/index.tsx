@@ -1,5 +1,7 @@
 import React from 'react';
-import { Card, Layout, Typography } from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
+import { Button, Card, Layout, Typography } from 'antd';
+import { HOME_COPY } from '../../components/Home/consts';
 import styles from './styles.module.css';
 
 const { Content } = Layout;
@@ -203,6 +205,17 @@ const WriteMyCV: React.FC = () => {
             </ul>
           </section>
         </Card>
+
+        <div className={styles.cvDownloadFooter}>
+          <a href="/cv.pdf" download="Anna_Gevorgyan_CV.pdf" className={styles.cvDownloadLink}>
+            <Button
+              className={`${styles.cvDownloadBtn} ${styles.cvDownloadBtnDark}`}
+              icon={<DownloadOutlined />}
+            >
+              {HOME_COPY.secondaryAction}
+            </Button>
+          </a>
+        </div>
       </Content>
     </Layout>
   );
