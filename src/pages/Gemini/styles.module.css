@@ -137,7 +137,7 @@
 .geminiGhostBtn:hover:not(:disabled) {
   color: #111 !important;
   border-color: #111 !important;
-  background: rgba(17, 17, 17, 0.04) !important;
+  background: #f0f0f0 !important;
 }
 
 .geminiCvLink {

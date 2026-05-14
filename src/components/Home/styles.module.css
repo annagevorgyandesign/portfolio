@@ -117,7 +117,7 @@
 
 .heroBtnOutline:hover,
 .heroBtnOutline:focus-visible {
-  background: #f5f5f5 !important;
+  background: #f0f0f0 !important;
   border-color: #111 !important;
   color: #111 !important;
   transform: translateY(-2px);
