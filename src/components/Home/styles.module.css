@@ -697,8 +697,8 @@
     align-self: center;
     width: 100%;
     max-width: 220px;
-    margin-top: -26px;
-    margin-bottom: -30px;
+    margin-top: -42px;
+    margin-bottom: -48px;
   }
 
   .quoteMark img {
@@ -708,6 +708,7 @@
 
   .testimonialStars {
     text-align: center;
+    margin-top: -8px;
   }
 
   .testimonialSection .testimonialCopy {
