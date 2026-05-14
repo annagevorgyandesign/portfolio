@@ -332,16 +332,26 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 16px 16px 20px;
+  }
+
+  .appFooterShell {
+    gap: 14px;
+    padding: 28px 16px;
   }
 
   .footerCopyright {
     text-align: center;
+    line-height: 1.5;
   }
 
   .bottomFooterMeta {
+    padding: 0;
     font-size: 16px;
     gap: 14px;
+  }
+
+  .bottomFooterMeta :global(.ant-typography) {
+    margin: 0 !important;
   }
 
   .socialLinks :global(.ant-typography) {
