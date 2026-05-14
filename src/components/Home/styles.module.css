@@ -586,9 +586,9 @@
   }
 
   .heroCopy h1 {
-    font-size: clamp(44px, 12vw, 64px);
+    font-size: clamp(54px, 14vw, 78px);
     line-height: 1.05;
-    letter-spacing: -0.75px;
+    letter-spacing: -0.9px;
   }
 
   .heroCopy p {
