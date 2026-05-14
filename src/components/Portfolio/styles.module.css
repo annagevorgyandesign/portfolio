@@ -121,18 +121,64 @@
   font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1023px) {
+  .shell {
+    padding: 48px 24px 72px;
+  }
+
+  .title {
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .shell {
-    padding: 48px 24px 72px;
+    padding: 40px 16px 64px;
+  }
+
+  .header {
+    max-width: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .subtitle {
+    text-align: center;
+  }
+
+  .title {
+    text-align: center !important;
   }
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .thumb img {
+    max-width: 100%;
+  }
+
+  .body {
+    text-align: center;
+    align-items: center;
+  }
+
+  .cardTitle {
+    text-align: center !important;
+  }
+
+  .behanceLink {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .tags {
+    justify-content: center;
   }
 }

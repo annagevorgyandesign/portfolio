@@ -177,6 +177,10 @@
   text-decoration: underline;
 }
 
+.formActionsItem {
+  margin-bottom: 0 !important;
+}
+
 .buttonRow {
   display: flex;
   gap: 12px;
@@ -235,31 +239,68 @@
   color: #555;
 }
 
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 56px;
-  }
-
+@media (max-width: 1023px) {
   .shell {
     padding: 48px 24px 64px;
   }
+
+  .formTitle {
+    font-size: clamp(26px, 4vw, 40px);
+  }
 }
 
-@media (max-width: 768px) {
-  .hero {
-    min-height: 180px;
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
-  .heroTitle {
-    padding: 32px 16px;
+  .shell {
+    padding: 36px 16px 48px;
+  }
+
+  .formBlock {
+    text-align: center;
+  }
+
+  .formTitle {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form :global(.ant-form-item-label) {
+    text-align: center;
+  }
+
+  .form :global(.ant-input),
+  .form :global(.ant-input-affix-wrapper),
+  .form :global(.ant-select),
+  .form :global(.ant-input-textarea textarea) {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .avatarWrap,
+  .resultVideo,
+  .avatarImg {
+    max-width: 100%;
   }
 
   .buttonRow {
     flex-direction: column;
+    width: 100%;
   }
 
+  .createBtn,
   .resetBtn {
-    width: 100%;
+    width: 100% !important;
+    flex: none !important;
+    justify-content: center !important;
+  }
+
+  .statusText {
+    text-align: center;
   }
 }

@@ -263,7 +263,7 @@ const DID: React.FC = () => {
                     />
                   </Form.Item>
 
-                  <Form.Item style={{ marginBottom: 0 }}>
+                  <Form.Item className={styles.formActionsItem}>
                     <div className={styles.buttonRow}>
                       <Button
                         htmlType="submit"

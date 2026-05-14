@@ -25,6 +25,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  gap: 16px;
 }
 
 .brand {
@@ -34,6 +35,7 @@
   color: #111;
   letter-spacing: -0.8px;
   font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif;
+  flex-shrink: 0;
 }
 
 .topNav {
@@ -72,13 +74,14 @@
 .headerActions {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .downloadCvBtn {
   height: auto;
   padding: 16px 32px !important;
   border-radius: 8px !important;
-  background-color: rgba(250, 140, 22, 1) !important;
+  background-color: #ff9e3d !important;
   border-width: 0 !important;
   border-color: rgba(0, 0, 0, 0) !important;
   border-style: none !important;
@@ -105,6 +108,70 @@
 .downloadCvBtn:active {
   transform: translateY(0);
   box-shadow: 0 4px 10px rgba(250, 140, 22, 0.25);
+}
+
+.menuButton {
+  display: none;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #111 !important;
+}
+
+.menuButton:hover,
+.menuButton:focus-visible {
+  color: #111 !important;
+  background: rgba(17, 17, 17, 0.06) !important;
+}
+
+.navDrawerRoot :global(.ant-drawer-body) {
+  padding: 16px 20px 24px;
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.drawerNavBtn {
+  width: 100%;
+  height: auto !important;
+  justify-content: flex-start !important;
+  padding: 12px 14px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #111 !important;
+  border-radius: 8px !important;
+}
+
+.drawerNavBtnActive {
+  color: #fa8c16 !important;
+  background: rgba(250, 140, 22, 0.08) !important;
+}
+
+.drawerCtaBtn {
+  margin-top: 12px;
+  width: 100%;
+  height: auto !important;
+  padding: 16px 32px !important;
+  border-radius: 8px !important;
+  background-color: #ff9e3d !important;
+  border: none !important;
+  color: #1f1f1f !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  font-family: 'Inter', 'Segoe UI', sans-serif !important;
+}
+
+.drawerCtaBtn:hover,
+.drawerCtaBtn:focus-visible {
+  background-color: #ffa940 !important;
+  color: #111 !important;
 }
 
 .appContent {
@@ -174,41 +241,44 @@
   line-height: 1;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .headerShell {
-    padding: 0 20px;
+    padding: 0 24px;
   }
 
   .appFooterShell {
-    padding: 0 20px;
+    padding: 0 24px;
   }
 
   .brand {
-    font-size: 16px;
+    font-size: 22px;
+    letter-spacing: -0.4px;
   }
 
   .topNav {
     gap: 10px;
   }
+
+  .desktopNav {
+    display: none !important;
+  }
+
+  .menuButton {
+    display: inline-flex !important;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .appHeader {
     height: auto;
-    min-height: 88px;
-    padding-top: 12px !important;
-    padding-bottom: 12px !important;
+    min-height: 72px;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
   }
 
   .headerShell {
-    flex-wrap: wrap;
-    row-gap: 8px;
-  }
-
-  .topNav {
-    width: 100%;
-    justify-content: center;
-    order: 3;
+    padding: 0 16px;
+    flex-wrap: nowrap;
   }
 
   .appFooterShell,
@@ -216,7 +286,11 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 10px 0;
+    padding: 16px 16px 20px;
+  }
+
+  .footerCopyright {
+    text-align: center;
   }
 
   .bottomFooterMeta {

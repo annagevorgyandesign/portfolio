@@ -217,7 +217,7 @@
   font-size: 16px !important;
   font-weight: 500 !important;
   font-family: 'Inter', 'Segoe UI', sans-serif !important;
-  background: #fa8c16 !important;
+  background: #ff9e3d !important;
   border: none !important;
   color: #111 !important;
   box-shadow: none !important;
@@ -229,30 +229,81 @@
   color: #111 !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .shell {
-    padding: 0 20px;
+    padding: 0 24px 56px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
   }
 
   .projectGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .ctaSection {
+    padding: 80px 24px 96px;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  .shell {
+    padding: 0 16px 48px;
+  }
+
   .hero {
-    padding: 32px 0 24px;
+    padding: 28px 0 20px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    text-align: center;
   }
 
   .lead {
     font-size: 16px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100% !important;
+    justify-content: center !important;
   }
 
   .projectGrid {
     grid-template-columns: 1fr;
   }
 
+  .thumb img {
+    max-width: 100%;
+  }
+
   .ctaSection {
-    padding: 72px 20px 88px;
+    padding: 56px 16px 72px;
+    text-align: center;
+  }
+
+  .ctaHeading {
+    text-align: center;
+  }
+
+  .ctaButton {
+    width: 100% !important;
+    justify-content: center !important;
+    background: #ff9e3d !important;
+  }
+
+  .ctaButton:hover {
+    background: #ffa940 !important;
   }
 }

@@ -159,38 +159,41 @@
   padding-bottom: 20px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1023px) {
+  .cvPage {
+    padding: 20px 16px 36px;
+  }
+
   .cvTopBanner h1 {
-    font-size: 42px;
+    font-size: 34px;
   }
 
   .cvTopBanner h2 {
-    font-size: 28px;
-  }
-
-  .cvTopBanner p {
     font-size: 22px;
   }
 
-  .cvSection h3 {
-    font-size: 27px;
+  .cvTopBanner p {
+    font-size: 18px;
   }
 
-  .cvSection p,
-  .cvLeftCol h4,
-  .cvLeftCol p,
-  .cvRightCol li,
-  .cvPlainList li {
-    font-size: 20px;
+  .cvTopBanner,
+  .cvContactBlock,
+  .cvSection {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .cvSection h3 {
+    font-size: 26px;
   }
 
   .cvTwoColRow {
-    grid-template-columns: 1fr;
-    row-gap: 8px;
+    grid-template-columns: 200px 1fr;
+    column-gap: 16px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .cvPage {
     padding: 12px 0 28px;
   }
@@ -202,12 +205,16 @@
     padding-right: 16px;
   }
 
+  .cvTopBanner {
+    text-align: center;
+  }
+
   .cvTopBanner h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .cvTopBanner h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .cvTopBanner p {
@@ -217,17 +224,23 @@
   .cvContactGrid {
     grid-template-columns: 1fr;
     row-gap: 4px;
+    text-align: center;
   }
 
   .cvContactGrid :global(.ant-typography:first-child),
   .cvContactGrid :global(.ant-typography:nth-child(3)),
   .cvContactGrid :global(.ant-typography:nth-child(5)),
   .cvContactGrid :global(.ant-typography:nth-child(7)) {
-    text-align: left;
+    text-align: center;
+  }
+
+  .cvSection {
+    text-align: center;
   }
 
   .cvSection h3 {
     font-size: 21px;
+    text-align: center;
   }
 
   .cvSection p,
@@ -236,5 +249,30 @@
   .cvRightCol li,
   .cvPlainList li {
     font-size: 15px;
+  }
+
+  .cvTwoColRow {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+    text-align: center;
+  }
+
+  .cvLeftCol {
+    text-align: center;
+  }
+
+  .cvRightCol {
+    padding-left: 0;
+    list-style-position: inside;
+    text-align: center;
+  }
+
+  .cvEducationItem {
+    text-align: center;
+  }
+
+  .cvPlainList {
+    padding-left: 0;
+    list-style-position: inside;
   }
 }

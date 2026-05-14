@@ -105,9 +105,9 @@
   font-size: 16px !important;
   font-weight: 500 !important;
   font-family: 'Inter', 'Segoe UI', sans-serif !important;
-  border: 1px solid #fa8c16 !important;
+  border: 1px solid #ff9e3d !important;
   color: #111 !important;
-  background: #fa8c16 !important;
+  background: #ff9e3d !important;
   box-shadow: none !important;
 }
 
@@ -374,21 +374,97 @@
   color: #fff !important;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
   .geminiPage {
-    padding: 24px 20px 40px;
+    padding: 28px 24px 48px;
+  }
+
+  .geminiMainTitle {
+    font-size: 36px !important;
+    line-height: 1.1 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .geminiPage {
+    padding: 20px 16px 40px;
+  }
+
+  .geminiHero {
+    max-width: none;
+    text-align: center;
+    align-items: center;
+  }
+
+  .geminiMainTitle {
+    font-size: 28px !important;
+    text-align: center;
+  }
+
+  .geminiSubtitle {
+    text-align: center !important;
+  }
+
+  .geminiChatCard :global(.ant-card-head-title) {
+    text-align: center;
+  }
+
+  .geminiHint {
+    text-align: center !important;
+  }
+
+  .suggestedLabel {
+    text-align: center !important;
+  }
+
+  .suggestedTagsSpace {
+    justify-content: center !important;
+  }
+
+  .geminiActionsRow {
+    width: 100% !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .geminiOutlineBtn,
+  .geminiGhostBtn,
+  .geminiSendBtn,
+  .geminiCvLink {
+    width: 100% !important;
+    margin-inline-start: 0 !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .geminiCvNote {
+    margin-inline-start: 0 !important;
+    text-align: center !important;
+    display: block !important;
   }
 
   .bubble {
     max-width: 92%;
   }
 
-  .geminiOutlineBtn,
-  .geminiGhostBtn {
-    padding: 12px 24px !important;
+  .chatForm :global(.ant-space) {
+    width: 100%;
+    flex-direction: column !important;
+    align-items: stretch !important;
   }
 
-  .geminiSendBtn {
-    padding: 12px 24px !important;
+  .geminiPage :global(.ant-input),
+  .geminiPage :global(.ant-input-affix-wrapper),
+  .geminiPage :global(.ant-input-textarea .ant-input) {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .geminiTextarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
   }
 }

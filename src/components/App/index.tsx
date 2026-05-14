@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Layout, Button, Typography } from 'antd';
+import { Layout, Button, Typography, Drawer } from 'antd';
+import { MenuOutlined } from '@ant-design/icons';
 import Portfolio from '../../pages/Portfolio';
 import Works from '../../pages/Works';
 import ContactPage from '../../pages/Contact';
@@ -12,63 +13,48 @@ import styles from './styles.module.css';
 const { Header, Content, Footer } = Layout;
 const { Link } = Typography;
 
+type AppView = 'home' | 'works' | 'contact' | 'cv' | 'gemini' | 'did';
+
+const MENU_LINKS: { view: AppView; label: string }[] = [
+  { view: 'home', label: 'Home' },
+  { view: 'works', label: 'Works' },
+  { view: 'gemini', label: 'AI Assistant' },
+  { view: 'did', label: 'D-ID Talk' },
+  { view: 'cv', label: 'CV Writer' },
+  { view: 'contact', label: 'Contact' },
+];
+
 const App: React.FC = () => {
-  const [view, setView] = useState<'home' | 'works' | 'contact' | 'cv' | 'gemini' | 'did'>('home');
+  const [view, setView] = useState<AppView>('home');
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const goTo = (next: AppView) => {
+    setView(next);
+    setDrawerOpen(false);
+  };
 
   return (
     <Layout className={styles.appLayout}>
       <Header className={styles.appHeader}>
         <div className={styles.headerShell}>
-          <div className={styles.brand} onClick={() => setView('home')}>
+          <div className={styles.brand} onClick={() => goTo('home')}>
             Anna Gevorgyan
           </div>
 
-          <nav className={styles.topNav}>
-            <Button
-              type="text"
-              onClick={() => setView('home')}
-              className={`${styles.navLink} ${view === 'home' ? styles.active : ''}`}
-            >
-              Home
-            </Button>
-            <Button
-              type="text"
-              onClick={() => setView('works')}
-              className={`${styles.navLink} ${view === 'works' ? styles.active : ''}`}
-            >
-              Works
-            </Button>
-            <Button
-              type="text"
-              onClick={() => setView('gemini')}
-              className={`${styles.navLink} ${view === 'gemini' ? styles.active : ''}`}
-            >
-              AI Assistant
-            </Button>
-            <Button
-              type="text"
-              onClick={() => setView('did')}
-              className={`${styles.navLink} ${view === 'did' ? styles.active : ''}`}
-            >
-              D-ID Talk
-            </Button>
-            <Button
-              type="text"
-              onClick={() => setView('cv')}
-              className={`${styles.navLink} ${view === 'cv' ? styles.active : ''}`}
-            >
-              CV Writer
-            </Button>
-            <Button
-              type="text"
-              onClick={() => setView('contact')}
-              className={`${styles.navLink} ${view === 'contact' ? styles.active : ''}`}
-            >
-              Contact
-            </Button>
+          <nav className={`${styles.topNav} ${styles.desktopNav}`} aria-label="Primary">
+            {MENU_LINKS.map(({ view: itemView, label }) => (
+              <Button
+                key={itemView}
+                type="text"
+                onClick={() => setView(itemView)}
+                className={`${styles.navLink} ${view === itemView ? styles.active : ''}`}
+              >
+                {label}
+              </Button>
+            ))}
           </nav>
 
-          <div className={styles.headerActions}>
+          <div className={`${styles.headerActions} ${styles.desktopNav}`}>
             <Button
               type="default"
               className={styles.downloadCvBtn}
@@ -77,8 +63,40 @@ const App: React.FC = () => {
               Contact Me
             </Button>
           </div>
+
+          <Button
+            type="text"
+            icon={<MenuOutlined />}
+            onClick={() => setDrawerOpen(true)}
+            className={styles.menuButton}
+            aria-label="Open navigation menu"
+          />
         </div>
       </Header>
+
+      <Drawer
+        title="Menu"
+        placement="right"
+        onClose={() => setDrawerOpen(false)}
+        open={drawerOpen}
+        rootClassName={styles.navDrawerRoot}
+      >
+        <div className={styles.drawerNav}>
+          {MENU_LINKS.map(({ view: itemView, label }) => (
+            <Button
+              key={itemView}
+              type="text"
+              onClick={() => goTo(itemView)}
+              className={`${styles.drawerNavBtn} ${view === itemView ? styles.drawerNavBtnActive : ''}`}
+            >
+              {label}
+            </Button>
+          ))}
+          <Button type="default" className={styles.drawerCtaBtn} onClick={() => goTo('contact')}>
+            Contact Me
+          </Button>
+        </div>
+      </Drawer>
 
       <Content
         className={`${styles.appContent} ${view === 'gemini' ? styles.appContentGemini : ''}`}
