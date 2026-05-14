@@ -49,7 +49,7 @@ const Works: React.FC<WorksProps> = ({ onOpenContact }) => {
 
         <ul className={styles.projectGrid}>
           {WORKS_PROJECTS.map((project) => (
-            <li key={project.imageSeed}>
+            <li key={project.behanceUrl}>
               <article className={styles.projectCard}>
                 <div className={styles.thumb}>
                   <img
@@ -66,7 +66,7 @@ const Works: React.FC<WorksProps> = ({ onOpenContact }) => {
                     {project.title}
                   </Title>
                   <Link
-                    href={BEHANCE_PROFILE_URL}
+                    href={project.behanceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.cardLink}
