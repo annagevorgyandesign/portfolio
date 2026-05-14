@@ -355,7 +355,8 @@
   grid-template-columns: 1fr 1.5fr;
   padding-top: 56px;
   padding-bottom: 56px;
-  gap: 44px;
+  column-gap: 44px;
+  row-gap: 6px;
   align-items: start;
 }
 
@@ -377,12 +378,13 @@
   font-size: 22px;
 }
 
-.testimonialCopy {
+.testimonialSection .testimonialCopy {
   grid-column: 2;
   grid-row: 2;
   margin: 0;
   font-size: 18px;
   line-height: 30px;
+  font-weight: 400;
   color: #d0d0d0;
   white-space: pre-line;
 }
@@ -409,7 +411,7 @@
 }
 
 .testimonialSection .testimonialAuthor {
-  margin: 24px 0 4px;
+  margin: 4px 0 4px;
   color: #fff;
   font-weight: 400;
   font-size: 15px;
@@ -647,7 +649,7 @@
   }
 
   .testimonialStars,
-  .testimonialCopy,
+  .testimonialSection .testimonialCopy,
   .testimonialAttribution {
     grid-column: 1;
     grid-row: auto;
@@ -706,7 +708,7 @@
     text-align: center;
   }
 
-  .testimonialCopy {
+  .testimonialSection .testimonialCopy {
     text-align: left;
   }
 
