@@ -95,26 +95,20 @@
   gap: 8px;
   width: fit-content;
   padding: 0 !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
-  color: #1769ff !important;
-  text-decoration: underline !important;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1.5px;
-  text-decoration-color: rgba(23, 105, 255, 0.55);
-  transition:
-    color 0.2s ease,
-    text-decoration-color 0.2s ease;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #3f77c0 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
 }
 
 .behanceLink:hover {
-  color: #0d52d9 !important;
-  text-decoration-color: currentColor !important;
+  color: #2f65ab !important;
 }
 
 .behanceLink:focus-visible {
-  outline: 2px solid #1769ff;
-  outline-offset: 3px;
+  outline: 2px solid rgba(63, 119, 192, 0.4);
+  outline-offset: 2px;
   border-radius: 2px;
 }
 
