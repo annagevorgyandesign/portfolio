@@ -171,7 +171,7 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
               Quick prompts:
             </Text>
             <div className={styles.suggestedTagsScroll}>
-              <Space size={24} wrap className={styles.suggestedTagsSpace}>
+              <Space wrap className={styles.suggestedTagsSpace}>
                 {SUGGESTED_PROMPTS.map((p) => (
                   <Tag
                     key={p}
