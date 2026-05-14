@@ -1,8 +1,17 @@
-const DID_API_BASE = 'https://api.d-id.com';
+const DID_API_BASE =
+  (import.meta.env.VITE_DID_API_BASE as string | undefined)?.trim() ||
+  (import.meta.env.DEV ? '/did-api' : 'https://api.d-id.com');
 
 function getAuthHeader(): string {
-  const apiKey = import.meta.env.VITE_DID_API_KEY as string;
-  return `Basic ${btoa(apiKey)}`;
+  const raw = import.meta.env.VITE_DID_API_KEY;
+  if (typeof raw !== 'string' || !raw.trim()) {
+    throw new Error(
+      'Missing VITE_DID_API_KEY. Add it to your .env file for D-ID requests.',
+    );
+  }
+  const trimmed = raw.trim();
+  const credentials = trimmed.includes(':') ? trimmed : `${trimmed}:`;
+  return `Basic ${btoa(credentials)}`;
 }
 
 export interface CreateTalkParams {
@@ -13,7 +22,7 @@ export interface CreateTalkParams {
 
 export interface TalkResult {
   id: string;
-  status: 'created' | 'started' | 'done' | 'error';
+  status: 'created' | 'started' | 'done' | 'error' | 'rejected';
   result_url?: string;
   error?: { kind: string; description: string };
 }

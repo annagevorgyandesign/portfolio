@@ -87,10 +87,13 @@ const DID: React.FC = () => {
             return;
           }
 
-          if (result.status === 'error') {
+          if (result.status === 'error' || result.status === 'rejected') {
             setStatus('error');
             messageApi.error(
-              result.error?.description ?? 'D-ID returned an error status.',
+              result.error?.description ??
+                (result.status === 'rejected'
+                  ? 'D-ID rejected this talk (for example moderation).'
+                  : 'D-ID returned an error status.'),
             );
             return;
           }
