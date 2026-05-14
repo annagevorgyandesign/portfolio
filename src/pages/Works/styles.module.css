@@ -24,7 +24,7 @@
   font-weight: 600;
   letter-spacing: -0.02em;
   font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif;
-  color: #fa8c16 !important;
+  color: var(--brand-orange) !important;
 }
 
 .lead {
@@ -225,14 +225,14 @@
   font-size: 16px !important;
   font-weight: 500 !important;
   font-family: 'Inter', 'Segoe UI', sans-serif !important;
-  background: #ff9e3d !important;
+  background: var(--brand-orange) !important;
   border: none !important;
   color: #111 !important;
   box-shadow: none !important;
 }
 
 .ctaButton:hover {
-  background: #ffa940 !important;
+  background: var(--brand-orange-hover) !important;
   border: none !important;
   color: #111 !important;
 }
@@ -315,11 +315,11 @@
   .ctaButton {
     width: 100% !important;
     justify-content: center !important;
-    background: #ff9e3d !important;
+    background: var(--brand-orange) !important;
   }
 
   .ctaButton:hover {
-    background: #ffa940 !important;
+    background: var(--brand-orange-hover) !important;
   }
 }
 

@@ -105,20 +105,20 @@
   font-size: 16px !important;
   font-weight: 500 !important;
   font-family: 'Inter', 'Segoe UI', sans-serif !important;
-  border: 1px solid #ff9e3d !important;
+  border: 1px solid var(--brand-orange) !important;
   color: #111 !important;
-  background: #ff9e3d !important;
+  background: var(--brand-orange) !important;
   box-shadow: none !important;
 }
 
 .geminiOutlineBtn:hover:not(:disabled) {
   color: #111 !important;
-  border-color: #ffa940 !important;
-  background: #ffa940 !important;
+  border-color: var(--brand-orange-hover) !important;
+  background: var(--brand-orange-hover) !important;
 }
 
 .geminiOutlineBtn:focus-visible {
-  outline: 2px solid #fa8c16;
+  outline: 2px solid var(--brand-orange);
   outline-offset: 2px;
 }
 
@@ -146,19 +146,19 @@
   height: auto;
   text-align: left;
   font-weight: 500;
-  color: #fa8c16 !important;
+  color: var(--brand-orange) !important;
 }
 
 .geminiCvLink:hover {
-  color: #fa8c16 !important;
+  color: var(--brand-orange) !important;
 }
 
 .geminiCvLinkRest {
-  color: #fa8c16 !important;
+  color: var(--brand-orange) !important;
 }
 
 .geminiCvLink:hover .geminiCvLinkRest {
-  color: #ffb347 !important;
+  color: var(--brand-orange-hover) !important;
 }
 
 .geminiCvLinkHighlight {
@@ -176,7 +176,7 @@
 }
 
 .geminiCvNote .geminiCvLinkRest {
-  color: #fa8c16 !important;
+  color: var(--brand-orange) !important;
 }
 
 .geminiCvNote .geminiCvLinkHighlight {

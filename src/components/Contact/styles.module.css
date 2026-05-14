@@ -106,8 +106,8 @@
   padding-bottom: 0.08em;
   background: linear-gradient(
     120deg,
-    #fa8c16 0%,
-    #ff9c3d 45%,
+    var(--brand-orange) 0%,
+    var(--brand-orange-hover) 45%,
     #d46b08 100%
   );
   -webkit-background-clip: text;
@@ -213,8 +213,8 @@
   font-size: 16px !important;
   font-weight: 500 !important;
   border-radius: 8px !important;
-  background: #ff9e3d !important;
-  border-color: #ff9e3d !important;
+  background: var(--brand-orange) !important;
+  border-color: var(--brand-orange) !important;
   color: #111 !important;
   transition: background-color 0.25s ease, border-color 0.25s ease,
     color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease !important;
@@ -222,8 +222,8 @@
 
 .submitBtn:hover,
 .submitBtn:focus-visible {
-  background-color: #ffa940 !important;
-  border-color: #ffa940 !important;
+  background-color: var(--brand-orange-hover) !important;
+  border-color: var(--brand-orange-hover) !important;
   color: #111 !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(250, 140, 22, 0.3);

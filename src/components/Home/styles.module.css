@@ -1,5 +1,4 @@
 .homePage {
-  --brand-orange: #e88b1b;
   background-color: #fff;
   color: #111;
   font-family: 'Inter', 'Segoe UI', sans-serif;
@@ -61,7 +60,7 @@
 }
 
 .heroTitleAccent {
-  color: var(--brand-orange, #e88b1b);
+  color: var(--brand-orange);
 }
 
 .heroCopy p {
@@ -192,7 +191,7 @@
   width: 142px;
   height: 142px;
   border-radius: 50%;
-  border: 2px solid #fa8c16;
+  border: 2px solid var(--brand-orange);
   display: grid;
   place-items: center;
   padding: 10px;
@@ -219,16 +218,16 @@
 .brandBtn {
   margin-top: 48px;
   padding-top: 1px;
-  background-color: #ff9e3d !important;
-  border-color: #ff9e3d !important;
+  background-color: var(--brand-orange) !important;
+  border-color: var(--brand-orange) !important;
   color: #111 !important;
   font-size: 16px;
 }
 
 .brandBtn:hover,
 .brandBtn:focus-visible {
-  background-color: #ffa940 !important;
-  border-color: #ffa940 !important;
+  background-color: var(--brand-orange-hover) !important;
+  border-color: var(--brand-orange-hover) !important;
   color: #111 !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(250, 140, 22, 0.3);
@@ -295,7 +294,7 @@
 
 .topRatedTitle {
   margin: 0;
-  color: var(--brand-orange, #e88b1b);
+  color: var(--brand-orange);
   font-size: 58px;
   font-weight: 600;
   line-height: 1;
@@ -332,7 +331,7 @@
 
 .statValue {
   margin: 0;
-  color: var(--brand-orange, #e88b1b);
+  color: var(--brand-orange);
   font-size: 58px;
   font-weight: 600;
   line-height: 1;
@@ -373,7 +372,7 @@
 .testimonialStars {
   grid-column: 2;
   grid-row: 1;
-  color: #fa8c16;
+  color: var(--brand-orange);
   margin: 0 0 16px;
   letter-spacing: 6px;
   font-size: 22px;

@@ -1,5 +1,6 @@
 :root {
-  --brand-orange: #FA8C16;
+  --brand-orange: #fa8c16;
+  --brand-orange-hover: #ffa940;
   --black: #000000;
   --white: #ffffff;
   --gray-bg: #f5f5f5;
@@ -22,6 +23,19 @@ body {
   font-size: 16px;
   font-weight: 500;
   border-radius: 8px !important;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus-visible {
+  background-color: var(--brand-orange-hover) !important;
+  border-color: var(--brand-orange-hover) !important;
+  color: #000 !important;
+}
+
+.ant-btn-primary:active {
+  background-color: var(--brand-orange-hover) !important;
+  border-color: var(--brand-orange-hover) !important;
+  color: #000 !important;
 }
 
 .ant-btn,
@@ -52,6 +66,6 @@ button:active {
 
 .ant-btn:focus-visible,
 button:focus-visible {
-  outline: 2px solid rgba(250, 140, 22, 0.45);
+  outline: 2px solid color-mix(in srgb, var(--brand-orange) 45%, transparent);
   outline-offset: 2px;
 }

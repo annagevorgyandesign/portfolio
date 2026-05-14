@@ -66,9 +66,9 @@
 }
 
 .active {
-  color: #fa8c16 !important;
+  color: var(--brand-orange) !important;
   font-weight: 600;
-  border-bottom: 2px solid #fa8c16;
+  border-bottom: 2px solid var(--brand-orange);
 }
 
 .headerActions {
@@ -81,7 +81,7 @@
   height: auto;
   padding: 16px 32px !important;
   border-radius: 8px !important;
-  background-color: #ff9e3d !important;
+  background-color: var(--brand-orange) !important;
   border-width: 0 !important;
   border-color: rgba(0, 0, 0, 0) !important;
   border-style: none !important;
@@ -99,7 +99,7 @@
 
 .downloadCvBtn:hover,
 .downloadCvBtn:focus-visible {
-  background-color: #ffa940 !important;
+  background-color: var(--brand-orange-hover) !important;
   color: #111 !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(250, 140, 22, 0.3);
@@ -185,19 +185,19 @@
 
 .drawerNavBtn:hover,
 .drawerNavBtn:focus-visible {
-  color: #ff9e3d !important;
-  background: rgba(255, 158, 61, 0.1) !important;
+  color: var(--brand-orange) !important;
+  background: color-mix(in srgb, var(--brand-orange) 10%, transparent) !important;
 }
 
 .drawerNavBtnActive {
-  color: #ff9e3d !important;
-  background: rgba(255, 158, 61, 0.12) !important;
+  color: var(--brand-orange) !important;
+  background: color-mix(in srgb, var(--brand-orange) 12%, transparent) !important;
 }
 
 .drawerNavBtnActive:hover,
 .drawerNavBtnActive:focus-visible {
-  color: #ff9e3d !important;
-  background: rgba(255, 158, 61, 0.16) !important;
+  color: var(--brand-orange) !important;
+  background: color-mix(in srgb, var(--brand-orange) 16%, transparent) !important;
 }
 
 .drawerCtaBtn {
@@ -206,7 +206,7 @@
   height: auto !important;
   padding: 16px 32px !important;
   border-radius: 8px !important;
-  background-color: #ff9e3d !important;
+  background-color: var(--brand-orange) !important;
   border: none !important;
   color: #1f1f1f !important;
   font-size: 16px !important;
@@ -216,7 +216,7 @@
 
 .drawerCtaBtn:hover,
 .drawerCtaBtn:focus-visible {
-  background-color: #ffa940 !important;
+  background-color: var(--brand-orange-hover) !important;
   color: #111 !important;
 }
 
