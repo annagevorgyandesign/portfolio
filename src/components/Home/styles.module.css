@@ -396,16 +396,18 @@
 .testimonialAuthor {
   margin: 24px 0 4px;
   color: #fff;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 15px;
+  font-style: italic;
   text-align: right;
 }
 
 .testimonialAuthorRole {
   margin: 2px 0 0;
   color: #fff;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 15px;
+  font-style: italic;
   text-align: right;
 }
 
@@ -698,7 +700,7 @@
 
   .testimonialAuthor,
   .testimonialAuthorRole {
-    text-align: center;
+    text-align: right;
   }
 
   .testimonialAuthor {
