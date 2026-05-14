@@ -402,6 +402,25 @@
 }
 
 @media (max-width: 767px) {
+  .geminiChatCard {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .geminiChatCard :global(.ant-card-head) {
+    padding-inline: 0 !important;
+  }
+
+  .geminiChatCard :global(.ant-card-body) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .chatScroll {
+    padding: 12px 0 14px;
+  }
+
   .geminiPage {
     padding: 20px 16px 40px;
   }

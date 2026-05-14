@@ -226,6 +226,18 @@
     padding: 16px 16px 48px;
   }
 
+  .card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .resultPlaceholder {
+    padding: 0 16px;
+  }
+
   .buttonRow {
     flex-direction: column;
   }
@@ -238,5 +250,16 @@
 
   .resultBox {
     min-height: 220px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+  }
+
+  .columns > .card:last-of-type .cardTitle {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
   }
 }
