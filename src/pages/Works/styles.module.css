@@ -39,7 +39,7 @@
 .heroActions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: var(--button-row-gap);
   align-items: center;
   margin-bottom: 24px;
 }

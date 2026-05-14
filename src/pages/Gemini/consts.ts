@@ -1,5 +1,8 @@
 import { HOME_COPY, SERVICE_ITEMS, STAT_ITEMS, WORK_ITEMS } from '../../components/Home/consts'
 
+/** Ant Design `Space` size; keep in sync with `--button-row-gap` in `src/index.css`. */
+export const BUTTON_ROW_GAP_PX = 14
+
 export const OWNER_FIRST_NAME = 'Anna'
 
 export const GEMINI_PAGE_TITLE = 'Gemini Chat'

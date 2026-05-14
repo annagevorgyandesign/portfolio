@@ -74,7 +74,7 @@
 .heroActions {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: var(--button-row-gap);
 }
 
 .heroBtn,
@@ -814,6 +814,6 @@
 
 .ctaActions {
   display: flex;
-  gap: 12px;
+  gap: var(--button-row-gap);
   flex-wrap: wrap;
 }

@@ -14,6 +14,7 @@ import { SendOutlined, ReloadOutlined, FileTextOutlined } from '@ant-design/icon
 import { sendGeminiChat } from '../../api/gemini'
 import type { GeminiChatTurn } from '../../types/gemini'
 import {
+  BUTTON_ROW_GAP_PX,
   buildSystemInstruction,
   GEMINI_CONVERSATION_LABEL,
   GEMINI_HEADING,
@@ -107,7 +108,7 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
           <Paragraph className={styles.geminiSubtitle}>{GEMINI_SUBTITLE}</Paragraph>
         </header>
 
-        <Space wrap className={styles.geminiActionsRow}>
+        <Space wrap size={BUTTON_ROW_GAP_PX} className={styles.geminiActionsRow}>
           <Button
             type="default"
             icon={<FileTextOutlined />}
@@ -200,7 +201,7 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
               />
             </Form.Item>
 
-            <Space wrap>
+            <Space wrap size={BUTTON_ROW_GAP_PX}>
               <Button
                 type="primary"
                 htmlType="submit"

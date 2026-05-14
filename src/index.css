@@ -3,6 +3,8 @@
   --black: #000000;
   --white: #ffffff;
   --gray-bg: #f5f5f5;
+  /* Horizontal gap between paired row buttons (matches Home hero `.heroActions`). */
+  --button-row-gap: 14px;
 }
 
 body {

@@ -108,7 +108,7 @@
 
 .buttonRow {
   display: flex;
-  gap: 12px;
+  gap: var(--button-row-gap);
 }
 
 .createBtn {
