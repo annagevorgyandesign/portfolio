@@ -4,10 +4,10 @@ export const OWNER_FIRST_NAME = 'Anna'
 
 export const GEMINI_PAGE_TITLE = 'Gemini Chat'
 
-export const GEMINI_HEADING = 'Ask AI Assistant About the Portfolio'
+export const GEMINI_HEADING = 'Ask AI Assistant About my Portfolio'
 
 export const GEMINI_SUBTITLE =
-  'Curious about my portfolio, experience, or skills? My digital twin is here to answer your questions in real-time.'
+  'Curious about my portfolio, experience, or skills? My AI assistant is here to answer your questions in real-time.'
 
 export const GEMINI_CONVERSATION_LABEL = 'Gemini AI Chat'
 
