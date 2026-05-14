@@ -124,9 +124,9 @@ const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenCv, onOpenWorks }) => 
               <img src={quoteMarkImage} alt="Quote mark" />
             </div>
           </div>
-          <div>
-            <p className={styles.testimonialStars}>★★★★★</p>
-            <p className={styles.testimonialCopy}>{HOME_COPY.testimonialQuote}</p>
+          <p className={styles.testimonialStars}>★★★★★</p>
+          <p className={styles.testimonialCopy}>{HOME_COPY.testimonialQuote}</p>
+          <div className={styles.testimonialAttribution}>
             <p className={styles.testimonialAuthor}>- {HOME_COPY.testimonialAuthor},</p>
             <p className={styles.testimonialAuthorRole}>{HOME_COPY.testimonialAuthorRole}</p>
           </div>
