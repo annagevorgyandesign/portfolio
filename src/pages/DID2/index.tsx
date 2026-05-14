@@ -178,9 +178,9 @@ const DID2: React.FC = () => {
                   name="imageUrl"
                   rules={[{ required: true, message: 'Please enter a source image URL' }]}
                   extra={
-                    <Text className={styles.hint}>
+                    <span className={styles.hint}>
                       Must be a reachable https (or s3) URL. You can use any image URL.
-                    </Text>
+                    </span>
                   }
                 >
                   <Input
@@ -261,9 +261,6 @@ const DID2: React.FC = () => {
                 >
                   <LinkOutlined /> Open video in a new tab
                 </a>
-              )}
-              {!videoUrl && (
-                <p className={styles.openLinkPlaceholder}>The rendered video appears here when ready.</p>
               )}
             </div>
           </div>
