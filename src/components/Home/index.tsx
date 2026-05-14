@@ -92,7 +92,7 @@ const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenCv, onOpenWorks }) => 
             </div>
             <div className={styles.whyCard}>
               <p className={styles.topRatedTitle}>Top Rated</p>
-              <p className={styles.topRatedSubtitle}>3% <span>on Upwork</span></p>
+              <p className={styles.topRatedSubtitle}>10% <span>on Upwork</span></p>
             </div>
 
             {firstStat && (

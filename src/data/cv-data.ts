@@ -20,7 +20,7 @@ Results-driven and analytical UI/UX, Product, and Graphic Designer with a human-
 * Managed design projects from initial concept to final execution.
 * Designed digital ads, banners, brochures, and email marketing materials.
 * Developed comprehensive Brand Books and visual identities.
-* **Achievements:** Recognized as a **Top Rated 3%** freelancer with a **100% Job Success Score**. Completed over 50 projects with 100% client satisfaction.
+* **Achievements:** Recognized as a **Top Rated 10%** freelancer with a **100% Job Success Score**. Completed over 50 projects with 100% client satisfaction.
 
 #### **Professionals LLC** | *Graphic Designer*
 **March 2022 - May 2024**

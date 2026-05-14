@@ -66,7 +66,7 @@ export const WORK_ITEMS: WorkItem[] = [
 ]
 
 export const STAT_ITEMS: StatItem[] = [
-  { value: '3 +', label: 'Years of Experience' },
+  { value: '5 +', label: 'Years of Experience' },
   { value: '100%', label: 'Job Success' },
   { value: '50 +', label: 'Clients on Upwork' },
   { value: '100 +', label: 'Total Jobs on Upwork' },

@@ -92,7 +92,7 @@ const WriteMyCV: React.FC = () => {
                 <h4>Upwork</h4>
               </div>
               <ul className={styles.cvRightCol}>
-                <li>Recognized as a Top Rated 3% freelancer on Upwork with a consistent 100% Job Success Score</li>
+                <li>Recognized as a Top Rated 10% freelancer on Upwork with a consistent 100% Job Success Score</li>
                 <li>Completed over 50 design projects with 100% client satisfaction</li>
                 <li>
                   Designed branding materials for over 10 clients, resulting in one project increasing client sales by
