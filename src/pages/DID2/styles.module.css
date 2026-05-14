@@ -12,7 +12,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 64px 48px 80px;
+  padding: 24px 48px 80px;
   box-sizing: border-box;
 }
 
@@ -23,7 +23,7 @@
   color: #111;
   letter-spacing: -0.02em;
   line-height: 1.05;
-  margin: 0 0 48px;
+  margin: 0 0 32px;
 }
 
 .accent {
@@ -104,23 +104,29 @@
   font-size: 15px !important;
   font-weight: 600 !important;
   border-radius: 8px !important;
-  background-color: var(--brand-orange, #fa8c16) !important;
-  border-color: var(--brand-orange, #fa8c16) !important;
-  color: #000 !important;
-  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease !important;
+  background-color: #111 !important;
+  border-color: #111 !important;
+  color: #fff !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease,
+    box-shadow 0.25s ease !important;
 }
 
 .createBtn:hover:not(:disabled),
 .createBtn:focus-visible:not(:disabled) {
-  background-color: #e07d0e !important;
-  border-color: #e07d0e !important;
-  color: #000 !important;
+  background-color: #333 !important;
+  border-color: #333 !important;
+  color: #fff !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(250, 140, 22, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .createBtn:active:not(:disabled) {
   transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.createBtn:global(.ant-btn-loading) :global(.anticon) {
+  color: #fff !important;
 }
 
 .resetBtn {
@@ -129,15 +135,23 @@
   border-radius: 8px !important;
   font-size: 15px !important;
   font-weight: 500 !important;
-  color: #222 !important;
-  border: 1px solid #d9d9d9 !important;
+  color: #111 !important;
+  border: 1px solid #111 !important;
   background: #fff !important;
-  transition: border-color 0.2s ease, background 0.2s ease !important;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease !important;
+}
+
+.resetBtn :global(.anticon) {
+  color: #111 !important;
 }
 
 .resetBtn:hover:not(:disabled) {
-  border-color: #bbb !important;
+  border-color: #111 !important;
   background: #f5f5f5 !important;
+  color: #111 !important;
+}
+
+.resetBtn:hover:not(:disabled) :global(.anticon) {
   color: #111 !important;
 }
 
@@ -200,7 +214,7 @@
 /* ── Responsive ── */
 @media (max-width: 1023px) {
   .shell {
-    padding: 48px 24px 64px;
+    padding: 20px 24px 64px;
   }
 }
 
@@ -211,7 +225,7 @@
   }
 
   .shell {
-    padding: 36px 16px 48px;
+    padding: 16px 16px 48px;
   }
 
   .buttonRow {
