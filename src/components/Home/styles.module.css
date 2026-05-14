@@ -554,11 +554,7 @@
 
   .worksSection {
     margin: 0;
-    padding: 56px 0 36px;
-  }
-
-  .worksSection .brandBtn {
-    margin-top: 28px;
+    padding: 56px 0 56px;
   }
 
   .whySection {
@@ -750,6 +746,8 @@
   .whyTextCard p {
     text-align: left;
     max-width: 100%;
+    font-size: 18px;
+    line-height: 26px;
   }
 
   .whyAtomCard img {
@@ -759,17 +757,24 @@
 
   .topRatedTitle,
   .statValue {
-    font-size: 38px;
+    font-size: 34px;
   }
 
-  .topRatedSubtitle,
-  .topRatedSubtitle span {
-    font-size: 26px;
+  .statLabel {
+    font-size: 23px;
+    margin-top: 12px;
     line-height: 1.05;
   }
 
   .topRatedSubtitle {
-    margin: 14px 0 0;
+    font-size: 23px;
+    line-height: 1.05;
+    margin: 12px 0 0;
+  }
+
+  .topRatedSubtitle span {
+    font-size: 19px;
+    line-height: 1.05;
   }
 
   .ctaShell h2 span {
