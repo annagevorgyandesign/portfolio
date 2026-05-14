@@ -17,6 +17,8 @@ export interface StatItem {
 const HERO_HEADLINE_LEAD = 'I Design.' as const
 const HERO_HEADLINE_ACCENT = 'You Grow.' as const
 
+const CTA_TITLE_LINES = ['Want To Launch', 'Your Brand', 'Into The Future?'] as const
+
 export const HERO_HEADLINE = {
   lead: HERO_HEADLINE_LEAD,
   accent: HERO_HEADLINE_ACCENT,
@@ -35,7 +37,8 @@ export const HOME_COPY = {
     'Anna played a key role in preparing and launching our new office in Florida. We collaborated closely for several months on our visual identity, and she brought it to life - from business cards and brochures to social media profiles and internal document templates.\n\nShe was always available, adjusting to the time difference, and consistently delivered clean, thoughtful design options. Her attention to detail is remarkable - from photos and avatars to icons and typography. We even explored motion design for social media intros, and the results exceeded expectations.\n\nIf you get the chance to work with her, you will be in good hands. She is not just a freelancer - she is a true design partner in your team.',
   testimonialAuthor: 'Evgeny',
   testimonialAuthorRole: 'Little Movers Marketing Director',
-  ctaTitle: 'Want To Launch Your Brand Into The Future?',
+  ctaTitleLines: CTA_TITLE_LINES,
+  ctaTitle: CTA_TITLE_LINES.join(' '),
   ctaAction: 'Contact Now',
   whyDescription:
     'I specialize in creating exceptional designs where Functionality meets Creativity, transforming businesses into outstanding Brands that engage audiences.',

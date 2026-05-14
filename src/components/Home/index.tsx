@@ -145,8 +145,9 @@ const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenWorks }) => {
       <section id="contact-cta" className={styles.contactCta}>
         <div className={`${styles.homeShell} ${styles.ctaShell}`}>
           <h2>
-            <span>Want To Launch Your Brand</span>
-            <span>Into The Future?</span>
+            {HOME_COPY.ctaTitleLines.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
           </h2>
           <Button className={styles.brandBtn} onClick={onOpenContact}>
             {HOME_COPY.ctaAction}
