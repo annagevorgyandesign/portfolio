@@ -127,8 +127,41 @@
   background: rgba(17, 17, 17, 0.06) !important;
 }
 
+.navDrawerRoot :global(.ant-drawer-content) {
+  background-color: #fafafa;
+}
+
+.navDrawerRoot :global(.ant-drawer-header) {
+  background-color: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.navDrawerRoot :global(.ant-drawer-title) {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.navDrawerRoot :global(.ant-drawer-close) {
+  color: #1a1a1a !important;
+}
+
+.navDrawerRoot :global(.ant-drawer-close .anticon) {
+  color: #1a1a1a !important;
+}
+
+.navDrawerRoot :global(.ant-drawer-close:hover),
+.navDrawerRoot :global(.ant-drawer-close:focus-visible) {
+  color: #111 !important;
+}
+
+.navDrawerRoot :global(.ant-drawer-close:hover .anticon),
+.navDrawerRoot :global(.ant-drawer-close:focus-visible .anticon) {
+  color: #111 !important;
+}
+
 .navDrawerRoot :global(.ant-drawer-body) {
   padding: 16px 20px 24px;
+  background-color: #fafafa;
 }
 
 .drawerNav {
@@ -145,13 +178,26 @@
   padding: 12px 14px !important;
   font-size: 16px !important;
   font-weight: 600 !important;
-  color: #111 !important;
+  color: #1a1a1a !important;
   border-radius: 8px !important;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.drawerNavBtn:hover,
+.drawerNavBtn:focus-visible {
+  color: #ff9e3d !important;
+  background: rgba(255, 158, 61, 0.1) !important;
 }
 
 .drawerNavBtnActive {
-  color: #fa8c16 !important;
-  background: rgba(250, 140, 22, 0.08) !important;
+  color: #ff9e3d !important;
+  background: rgba(255, 158, 61, 0.12) !important;
+}
+
+.drawerNavBtnActive:hover,
+.drawerNavBtnActive:focus-visible {
+  color: #ff9e3d !important;
+  background: rgba(255, 158, 61, 0.16) !important;
 }
 
 .drawerCtaBtn {
