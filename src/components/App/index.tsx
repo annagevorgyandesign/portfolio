@@ -19,7 +19,7 @@ const MENU_LINKS: { view: AppView; label: string }[] = [
   { view: 'home', label: 'Home' },
   { view: 'works', label: 'Works' },
   { view: 'gemini', label: 'AI Assistant' },
-  { view: 'did', label: 'D-ID Talk' },
+  { view: 'did', label: 'D-ID' },
   { view: 'cv', label: 'CV Writer' },
   { view: 'contact', label: 'Contact' },
 ];
@@ -104,7 +104,6 @@ const App: React.FC = () => {
         {view === 'home' && (
           <Portfolio
             onOpenContact={() => setView('contact')}
-            onOpenCv={() => setView('cv')}
             onOpenWorks={() => setView('works')}
           />
         )}

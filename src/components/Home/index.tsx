@@ -15,11 +15,10 @@ import styles from './styles.module.css'
 
 export interface HomeProps {
   onOpenContact: () => void
-  onOpenCv: () => void
   onOpenWorks: () => void
 }
 
-const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenCv, onOpenWorks }) => {
+const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenWorks }) => {
   const [firstStat, ...remainingStats] = STAT_ITEMS
 
   return (
@@ -41,13 +40,14 @@ const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenCv, onOpenWorks }) => 
               >
                 {HOME_COPY.primaryAction}
               </Button>
-              <Button
-                className={`${styles.heroBtn} ${styles.heroBtnOutline}`}
-                icon={<DownloadOutlined />}
-                onClick={onOpenCv}
-              >
-                {HOME_COPY.secondaryAction}
-              </Button>
+              <a href="/cv.pdf" download="Anna_Gevorgyan_CV.pdf">
+                <Button
+                  className={`${styles.heroBtn} ${styles.heroBtnOutline}`}
+                  icon={<DownloadOutlined />}
+                >
+                  {HOME_COPY.secondaryAction}
+                </Button>
+              </a>
             </div>
           </div>
         </div>

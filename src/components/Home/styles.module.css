@@ -796,3 +796,9 @@
     padding: 56px 0;
   }
 }
+
+.ctaActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
