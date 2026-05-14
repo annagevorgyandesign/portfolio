@@ -14,14 +14,14 @@ import styles from './styles.module.css';
 const { Header, Content, Footer } = Layout;
 const { Link } = Typography;
 
-type AppView = 'home' | 'works' | 'contact' | 'cv' | 'gemini' | 'did' | 'did2';
+type AppView = 'home' | 'works' | 'contact' | 'cv' | 'gemini' | 'did1' | 'did';
 
 const MENU_LINKS: { view: AppView; label: string }[] = [
   { view: 'home', label: 'Home' },
   { view: 'works', label: 'Works' },
   { view: 'gemini', label: 'AI Assistant' },
-  { view: 'did', label: 'D-ID' },
-  { view: 'did2', label: 'D-ID 2' },
+  { view: 'did1', label: 'D-ID 1' },
+  { view: 'did', label: 'D-ID 2' },
   { view: 'cv', label: 'CV Writer' },
   { view: 'contact', label: 'Contact' },
 ];
@@ -114,7 +114,7 @@ const App: React.FC = () => {
         {view === 'cv' && <WriteMyCV />}
         {view === 'gemini' && <Gemini onOpenCv={() => setView('cv')} />}
         {view === 'did' && <DID />}
-        {view === 'did2' && <DID2 />}
+        {view === 'did1' && <DID2 />}
       </Content>
 
       <Footer className={styles.appFooter}>
