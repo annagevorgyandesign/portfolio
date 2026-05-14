@@ -5,6 +5,7 @@ import Works from '../../pages/Works';
 import ContactPage from '../../pages/Contact';
 import WriteMyCV from '../../pages/WriteMyCV';
 import Gemini from '../../pages/Gemini';
+import DID from '../../pages/DID';
 import { FOOTER_LINKS } from '../Home/consts';
 import styles from './styles.module.css';
 
@@ -12,7 +13,7 @@ const { Header, Content, Footer } = Layout;
 const { Link } = Typography;
 
 const App: React.FC = () => {
-  const [view, setView] = useState<'home' | 'works' | 'contact' | 'cv' | 'gemini'>('home');
+  const [view, setView] = useState<'home' | 'works' | 'contact' | 'cv' | 'gemini' | 'did'>('home');
 
   return (
     <Layout className={styles.appLayout}>
@@ -43,6 +44,13 @@ const App: React.FC = () => {
               className={`${styles.navLink} ${view === 'gemini' ? styles.active : ''}`}
             >
               AI Assistant
+            </Button>
+            <Button
+              type="text"
+              onClick={() => setView('did')}
+              className={`${styles.navLink} ${view === 'did' ? styles.active : ''}`}
+            >
+              D-ID Talk
             </Button>
             <Button
               type="text"
@@ -86,6 +94,7 @@ const App: React.FC = () => {
         {view === 'contact' && <ContactPage />}
         {view === 'cv' && <WriteMyCV />}
         {view === 'gemini' && <Gemini onOpenCv={() => setView('cv')} />}
+        {view === 'did' && <DID />}
       </Content>
 
       <Footer className={styles.appFooter}>

@@ -56,6 +56,13 @@
   font-weight: 600;
 }
 
+.navLink:hover:not(.active),
+.navLink:focus-visible:not(.active) {
+  color: #111 !important;
+  background: rgba(17, 17, 17, 0.05) !important;
+  border-radius: 6px !important;
+}
+
 .active {
   color: #fa8c16 !important;
   font-weight: 600;
