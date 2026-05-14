@@ -289,6 +289,7 @@
   width: 270px;
   height: 270px;
   object-fit: cover;
+  display: block;
 }
 
 .topRatedTitle {
@@ -352,8 +353,8 @@
 .testimonialShell {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  padding-top: 72px;
-  padding-bottom: 72px;
+  padding-top: 56px;
+  padding-bottom: 56px;
   gap: 44px;
 }
 
@@ -368,6 +369,7 @@
   align-self: center;
   width: 220px;
   max-width: 100%;
+  line-height: 0;
 }
 
 .quoteMark img {
@@ -465,10 +467,6 @@
     font-size: 40px;
   }
 
-  .servicesGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .servicesSection,
   .worksSection,
   .whySection,
@@ -495,6 +493,43 @@
     width: 240px;
     max-width: 100%;
   }
+
+  .whySection h2 {
+    margin: 0 0 16px;
+  }
+
+  .whyGrid {
+    gap: 10px;
+  }
+
+  .whyAtomCard {
+    min-height: 0;
+    padding: 12px 20px;
+  }
+
+  .testimonialShell {
+    padding-top: 72px;
+    padding-bottom: 72px;
+    column-gap: 22px;
+    row-gap: 6px;
+  }
+
+  .testimonialLeft {
+    min-height: 0;
+    justify-content: flex-start;
+    align-self: start;
+    gap: 0;
+  }
+
+  .testimonialLeft h2 {
+    margin: 0;
+    line-height: 1.02;
+  }
+
+  .quoteMark {
+    margin-top: -6px;
+    margin-bottom: -8px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -513,8 +548,16 @@
 
   .worksSection {
     margin: 0;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 40px 0 28px;
+  }
+
+  .worksSection .brandBtn {
+    margin-top: 28px;
+  }
+
+  .whySection {
+    padding-top: 20px;
+    padding-bottom: 64px;
   }
 
   .homeHero {
@@ -592,6 +635,13 @@
     grid-template-columns: 1fr;
   }
 
+  .testimonialShell {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    row-gap: 0;
+    column-gap: 0;
+  }
+
   .serviceItem {
     align-items: center;
     margin: 0 auto;
@@ -613,19 +663,25 @@
 
   .testimonialLeft {
     min-height: auto;
-    gap: 18px;
+    justify-content: flex-start;
+    align-self: start;
+    gap: 0;
     align-items: flex-start;
     text-align: left;
   }
 
   .testimonialLeft h2 {
     text-align: left;
+    margin: 0;
+    line-height: 1;
   }
 
   .quoteMark {
     align-self: center;
     width: 100%;
     max-width: 220px;
+    margin-top: -26px;
+    margin-bottom: -30px;
   }
 
   .quoteMark img {
@@ -633,9 +689,12 @@
     max-width: 100%;
   }
 
-  .testimonialStars,
-  .testimonialCopy {
+  .testimonialStars {
     text-align: center;
+  }
+
+  .testimonialCopy {
+    text-align: left;
   }
 
   .testimonialAuthor,
@@ -643,9 +702,29 @@
     text-align: center;
   }
 
+  .testimonialAuthor {
+    margin: 16px 0 4px;
+  }
+
   .whyCard {
     align-items: flex-start;
     text-align: left;
+  }
+
+  .whySection h2 {
+    margin: 0 auto 14px;
+  }
+
+  .whyGrid {
+    gap: 10px;
+  }
+
+  .whyAtomCard {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 0;
+    padding: 12px 12px;
   }
 
   .whyTextCard {
