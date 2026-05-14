@@ -247,8 +247,33 @@
 }
 
 @media (max-width: 767px) {
+  .cvLayout,
   .cvPage {
-    padding: 12px 0 28px;
+    background: #fff;
+  }
+
+  .cvTopBanner {
+    background: #fff;
+    text-align: left;
+  }
+
+  .cvTopBanner h1,
+  .cvTopBanner h2,
+  .cvTopBanner p {
+    color: #1f1f1f;
+  }
+
+  .cvLastSection {
+    padding-bottom: 12px;
+  }
+
+  .cvPage {
+    padding: 12px 0 48px;
+  }
+
+  .cvPaperCard:global(.ant-card) {
+    border: none !important;
+    box-shadow: none !important;
   }
 
   .cvTopBanner,
@@ -256,10 +281,6 @@
   .cvSection {
     padding-left: 16px;
     padding-right: 16px;
-  }
-
-  .cvTopBanner {
-    text-align: left;
   }
 
   .cvTopBanner h1 {
@@ -333,6 +354,8 @@
     padding-left: 16px;
     padding-right: 16px;
     box-sizing: border-box;
+    margin-top: 8px;
+    margin-bottom: 12px;
   }
 
   .cvDownloadLink {

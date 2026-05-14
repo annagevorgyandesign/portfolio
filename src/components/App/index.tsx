@@ -101,7 +101,7 @@ const App: React.FC = () => {
       </Drawer>
 
       <Content
-        className={`${styles.appContent} ${view === 'gemini' ? styles.appContentGemini : ''}`}
+        className={`${styles.appContent} ${view === 'gemini' ? styles.appContentGemini : ''} ${view === 'cv' ? styles.appContentCv : ''}`}
       >
         {view === 'home' && (
           <Portfolio

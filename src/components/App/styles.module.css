@@ -315,6 +315,10 @@
 }
 
 @media (max-width: 767px) {
+  .appContentCv {
+    background: #fff;
+  }
+
   .appHeader {
     height: auto;
     min-height: 72px;
