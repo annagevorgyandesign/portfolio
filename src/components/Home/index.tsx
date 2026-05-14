@@ -125,7 +125,16 @@ const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenCv, onOpenWorks }) => 
             </div>
           </div>
           <p className={styles.testimonialStars}>★★★★★</p>
-          <p className={styles.testimonialCopy}>{HOME_COPY.testimonialQuote}</p>
+          <div className={styles.testimonialCopy}>
+            {HOME_COPY.testimonialQuote
+              .split('\n\n')
+              .filter((paragraph) => paragraph.length > 0)
+              .map((paragraph, index) => (
+                <p key={index} className={styles.testimonialParagraph}>
+                  {paragraph}
+                </p>
+              ))}
+          </div>
           <div className={styles.testimonialAttribution}>
             <p className={styles.testimonialAuthor}>- {HOME_COPY.testimonialAuthor},</p>
             <p className={styles.testimonialAuthorRole}>{HOME_COPY.testimonialAuthorRole}</p>

@@ -382,11 +382,17 @@
   grid-column: 2;
   grid-row: 2;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.testimonialSection .testimonialParagraph {
+  margin: 0;
   font-size: 18px;
   line-height: 30px;
   font-weight: 400;
   color: #d0d0d0;
-  white-space: pre-line;
 }
 
 .testimonialAttribution {
