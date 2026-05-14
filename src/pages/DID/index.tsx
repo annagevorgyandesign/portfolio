@@ -10,7 +10,7 @@ import {
   Typography,
 } from 'antd';
 import { ReloadOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import avatarImg from '../../assets/atom.jpg';
+import avatarImg from '../../assets/did-avatar.png';
 import { createTalk, pollTalk } from './utils';
 import type { TalkResult } from './utils';
 import styles from './styles.module.css';
@@ -37,6 +37,7 @@ const VOICE_OPTIONS = [
 ];
 
 interface FormValues {
+  imageUrl: string;
   voice: string;
   text: string;
 }
@@ -55,6 +56,7 @@ const DID: React.FC = () => {
   const [form] = Form.useForm<FormValues>();
   const [status, setStatus] = useState<Status>('idle');
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [imageUrl, setImageUrl] = useState<string>(DEFAULT_SOURCE_URL);
   const [messageApi, contextHolder] = message.useMessage();
   const pollTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -112,7 +114,7 @@ const DID: React.FC = () => {
 
     try {
       const talkId = await createTalk({
-        sourceUrl: DEFAULT_SOURCE_URL,
+        sourceUrl: values.imageUrl || DEFAULT_SOURCE_URL,
         voiceId: values.voice,
         text: values.text,
       });
@@ -179,8 +181,11 @@ const DID: React.FC = () => {
                   ) : (
                     <img
                       className={styles.avatarImg}
-                      src={avatarImg}
-                      alt="Default avatar"
+                      src={imageUrl || avatarImg}
+                      alt="Avatar preview"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = avatarImg;
+                      }}
                     />
                   )}
                 </div>
@@ -192,18 +197,32 @@ const DID: React.FC = () => {
 
               {/* Right column – form */}
               <div className={styles.formBlock}>
-                <h2 className={styles.formTitle}>
-                  AI Avatar
-                  <span className={styles.formTitleAccent}>Generator</span>
-                </h2>
+                <h2 className={styles.formTitle}>AI Avatar Generator</h2>
 
                 <Form<FormValues>
                   form={form}
                   layout="vertical"
                   className={styles.form}
                   onFinish={onFinish}
-                  initialValues={{ voice: 'en-US-JennyNeural' }}
+                  initialValues={{ voice: 'en-US-JennyNeural', imageUrl: DEFAULT_SOURCE_URL }}
                 >
+                  <Form.Item
+                    label="Source image URL"
+                    name="imageUrl"
+                    rules={[{ required: true, message: 'Please enter a source image URL' }]}
+                    extra={
+                      <Text className={styles.hint}>
+                        Must be a reachable https (or s3) URL ending in .jpg, .jpeg, or .png.
+                      </Text>
+                    }
+                  >
+                    <Input
+                      size="large"
+                      placeholder="https://d-id-public-bucket.s3.us-west-2.amazonaws.com/alice.jpg"
+                      onChange={(e) => setImageUrl(e.target.value)}
+                    />
+                  </Form.Item>
+
                   <Form.Item
                     label="Voice (Azure neural)"
                     name="voice"
