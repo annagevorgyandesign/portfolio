@@ -797,6 +797,21 @@
   }
 }
 
+@media (max-width: 767px) and (min-width: 600px) {
+  .heroActions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    max-width: 100%;
+    align-items: flex-start;
+  }
+
+  .heroBtn,
+  .brandBtn {
+    width: auto !important;
+  }
+}
+
 .ctaActions {
   display: flex;
   gap: 12px;

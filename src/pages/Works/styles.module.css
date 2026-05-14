@@ -314,3 +314,22 @@
     background: #ffa940 !important;
   }
 }
+
+@media (max-width: 767px) and (min-width: 600px) {
+  .heroActions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: auto !important;
+  }
+
+  .ctaButton {
+    width: auto !important;
+  }
+}

@@ -344,3 +344,13 @@
     justify-content: center !important;
   }
 }
+
+@media (max-width: 767px) and (min-width: 600px) {
+  .cvDownloadLink {
+    width: auto;
+  }
+
+  .cvDownloadBtn {
+    width: auto !important;
+  }
+}
