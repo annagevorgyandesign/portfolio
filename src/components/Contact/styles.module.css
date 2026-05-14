@@ -238,6 +238,22 @@
   .shell {
     padding: 48px 24px 64px;
   }
+
+  .infoBlock,
+  .infoTitle,
+  .topicsHeading,
+  .topicList {
+    text-align: left;
+  }
+
+  .topicList {
+    padding-left: 1.25em;
+    list-style-position: outside;
+  }
+
+  .infoIntro {
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 767px) {
@@ -248,8 +264,8 @@
 
   .infoBlock {
     gap: 28px;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .shell {
@@ -257,39 +273,39 @@
   }
 
   .infoIntro {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .infoTitle {
-    text-align: center;
+    text-align: left;
   }
 
   .topicsHeading {
-    text-align: center;
+    text-align: left;
   }
 
   .topicList {
-    padding-left: 0;
-    list-style-position: inside;
-    text-align: center;
+    padding-left: 1.25em;
+    list-style-position: outside;
+    text-align: left;
   }
 
   .contactRows {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .locationRow {
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
   }
 
   .formBlock {
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
   .form :global(.ant-form-item-label) {
-    text-align: center;
+    text-align: left;
   }
 
   .form :global(.ant-select) {
