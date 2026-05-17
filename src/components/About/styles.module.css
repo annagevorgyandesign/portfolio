@@ -130,8 +130,8 @@
   font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif;
   font-size: clamp(30px, 3.5vw, 46px);
   font-weight: 600;
-  color: var(--brand-orange);
-  text-align: left;
+  color: #111;
+  text-align: center;
   margin: 0 0 32px;
 }
 
@@ -194,14 +194,14 @@
 
 .serviceCardDesc {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 26px;
   color: rgba(26, 26, 26, 1);
   margin: 0;
 }
 
 .serviceCardFocus {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 26px;
   color: #222;
   margin: 0;
 }

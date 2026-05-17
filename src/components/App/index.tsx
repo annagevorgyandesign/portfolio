@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Layout, Button, Typography, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import Portfolio from '../../pages/Portfolio';
@@ -35,6 +35,10 @@ const App: React.FC = () => {
     setDrawerOpen(false);
   };
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [view]);
+
   return (
     <Layout className={styles.appLayout}>
       <Header className={styles.appHeader}>
@@ -48,7 +52,7 @@ const App: React.FC = () => {
               <Button
                 key={itemView}
                 type="text"
-                onClick={() => setView(itemView)}
+                onClick={() => goTo(itemView)}
                 className={`${styles.navLink} ${view === itemView ? styles.active : ''}`}
               >
                 {label}
@@ -60,7 +64,7 @@ const App: React.FC = () => {
             <Button
               type="default"
               className={styles.downloadCvBtn}
-              onClick={() => setView('contact')}
+              onClick={() => goTo('contact')}
             >
               Contact Me
             </Button>
@@ -105,16 +109,16 @@ const App: React.FC = () => {
       >
         {view === 'home' && (
           <Portfolio
-            onOpenContact={() => setView('contact')}
-            onOpenWorks={() => setView('works')}
-            onOpenAbout={() => setView('about')}
+            onOpenContact={() => goTo('contact')}
+            onOpenWorks={() => goTo('works')}
+            onOpenAbout={() => goTo('about')}
           />
         )}
-        {view === 'works' && <Works onOpenContact={() => setView('contact')} />}
+        {view === 'works' && <Works onOpenContact={() => goTo('contact')} />}
         {view === 'about' && <About />}
         {view === 'contact' && <ContactPage />}
         {view === 'cv' && <WriteMyCV />}
-        {view === 'gemini' && <Gemini onOpenCv={() => setView('cv')} />}
+        {view === 'gemini' && <Gemini onOpenCv={() => goTo('cv')} />}
         {view === 'did1' && <DID2 />}
       </Content>
 

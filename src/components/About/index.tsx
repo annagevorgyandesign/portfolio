@@ -95,7 +95,7 @@ const About: React.FC = () => {
                 <h3 className={styles.serviceCardTitle}>{card.title}</h3>
                 <p className={styles.serviceCardDesc}>{card.description}</p>
                 <p className={styles.serviceCardFocus}>
-                  <strong>Focus:</strong> {card.focus}
+                  <strong>Core Skills:</strong> {card.focus}
                 </p>
               </article>
             ))}
