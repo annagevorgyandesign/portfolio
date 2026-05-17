@@ -142,7 +142,7 @@
 }
 
 .serviceCard {
-  background: #fff;
+  background-color: #fff;
   border: 1px solid var(--field-border-color);
   border-radius: 12px;
   padding: 32px 24px;
@@ -175,6 +175,12 @@
   font-size: 28px;
   color: var(--brand-orange);
   margin-bottom: 8px;
+}
+
+.serviceCardTitle,
+.serviceCardDesc,
+.serviceCardFocus {
+  background-color: transparent;
 }
 
 .serviceCardTitle {
