@@ -1,5 +1,5 @@
 .geminiPage {
-  --gemini-field-border: 1px solid #d0d0d0;
+  --gemini-field-border: 1px solid var(--field-border-color, #d9d9d9);
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
@@ -351,14 +351,25 @@
   overflow: auto !important;
 }
 
+.geminiPage :global(.ant-input:hover:not(:disabled)),
+.geminiPage :global(.ant-input-outlined:hover:not(.ant-input-disabled)),
+.geminiPage :global(.ant-input-affix-wrapper:hover:not(.ant-input-affix-wrapper-disabled)),
+.geminiPage :global(.ant-input-affix-wrapper.ant-input-outlined:hover:not(.ant-input-affix-wrapper-disabled)),
+.geminiPage :global(.ant-input-textarea .ant-input:hover:not(:disabled)) {
+  background: #fff !important;
+  border-color: var(--brand-orange) !important;
+  box-shadow: none !important;
+}
+
 .geminiPage :global(.ant-input:focus),
 .geminiPage :global(.ant-input-focused),
 .geminiPage :global(.ant-input-outlined.ant-input-focused),
+.geminiPage :global(.ant-input-outlined:focus-within),
 .geminiPage :global(.ant-input-affix-wrapper-focused),
 .geminiPage :global(.ant-input-affix-wrapper.ant-input-outlined.ant-input-affix-wrapper-focused),
 .geminiPage :global(.ant-input-textarea .ant-input:focus) {
   background: #fff !important;
-  border: 1px solid #111 !important;
+  border-color: var(--brand-orange) !important;
   box-shadow: none !important;
 }
 
