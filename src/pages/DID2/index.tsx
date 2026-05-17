@@ -23,21 +23,16 @@ const POLL_INTERVAL_MS = 2000;
 const POLL_TIMEOUT_MS = 120_000;
 
 const VOICE_OPTIONS = [
-  { value: '21m00Tcm4TlvDq8ikWAM', label: 'English — Rachel (elevenlabs)' },
-  { value: 'AZnzlk1XvdvUeBnXmlld', label: 'English — Domi (elevenlabs)' },
-  { value: 'EXAVITQu4vr4xnSDxMaL', label: 'English — Bella (elevenlabs)' },
-  { value: 'ErXwobaYiN019PkySvjV', label: 'English — Antoni (elevenlabs)' },
-  { value: 'MF3mGyEYCl7XYWbV9V6O', label: 'English — Elli (elevenlabs)' },
-  { value: 'TxGEqnHWrfWFTfGW9XjX', label: 'English — Josh (elevenlabs)' },
-  { value: 'VR6AewLTigWG4xSOukaG', label: 'English — Arnold (elevenlabs)' },
-  { value: 'pNInz6obpgDQGcFmaJgB', label: 'English — Adam (elevenlabs)' },
-  { value: 'yoZ06aMxZJJ28mfd3POQ', label: 'English — Sam (elevenlabs)' },
-  { value: 'ThT5KcBeYPX3keUQqHPh', label: 'English — Dorothy (elevenlabs)' },
-  { value: 'D38z5RcWu1voky8WS1ja', label: 'English — Fin (elevenlabs)' },
-  { value: 'IKne3meq5aSn9XLyUdCD', label: 'English — Charlie (elevenlabs)' },
-  { value: 'XB0fDUnXU5powFXDhCwa', label: 'English — Charlotte (elevenlabs)' },
-  { value: 'onwK4e9ZLuTAKqWW03F9', label: 'English — Daniel (elevenlabs)' },
-  { value: 'cgSgspJ2msm6clMCkdW9', label: 'English — Jessica (elevenlabs)' },
+  { value: 'en-US-JennyNeural', label: 'English — Jenny (en-US-JennyNeural)' },
+  { value: 'en-US-GuyNeural', label: 'English — Guy (en-US-GuyNeural)' },
+  { value: 'en-GB-SoniaNeural', label: 'English UK — Sonia (en-GB-SoniaNeural)' },
+  { value: 'fr-FR-DeniseNeural', label: 'French — Denise (fr-FR-DeniseNeural)' },
+  { value: 'fr-FR-HenriNeural', label: 'French — Henri (fr-FR-HenriNeural)' },
+  { value: 'de-DE-KatjaNeural', label: 'German — Katja (de-DE-KatjaNeural)' },
+  { value: 'es-ES-ElviraNeural', label: 'Spanish — Elvira (es-ES-ElviraNeural)' },
+  { value: 'it-IT-ElsaNeural', label: 'Italian — Elsa (it-IT-ElsaNeural)' },
+  { value: 'ar-AE-FatimaNeural', label: 'Arabic — Fatima (ar-AE-FatimaNeural)' },
+  { value: 'hy-AM-AnahitNeural', label: 'Armenian — Anahit (hy-AM-AnahitNeural)' },
 ];
 
 interface FormValues {
@@ -171,7 +166,7 @@ const DID2: React.FC = () => {
                 layout="vertical"
                 className={styles.form}
                 onFinish={onFinish}
-                initialValues={{ voice: '21m00Tcm4TlvDq8ikWAM', imageUrl: DEFAULT_SOURCE_URL }}
+                initialValues={{ voice: 'en-US-JennyNeural', imageUrl: DEFAULT_SOURCE_URL }}
               >
                 <Form.Item
                   label="Source image URL"
@@ -200,11 +195,15 @@ const DID2: React.FC = () => {
                 </Form.Item>
 
                 <Form.Item
-                  label="Voice / TTS"
+                  label="Voice (Azure neural)"
                   name="voice"
                   rules={[{ required: true, message: 'Please select a voice' }]}
                 >
-                  <Select options={VOICE_OPTIONS} placeholder="Select a voice" />
+                  <Select
+                    size="large"
+                    options={VOICE_OPTIONS}
+                    placeholder="Select a voice"
+                  />
                 </Form.Item>
 
                 <Form.Item className={styles.actionsItem}>

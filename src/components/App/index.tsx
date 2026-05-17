@@ -6,7 +6,6 @@ import Works from '../../pages/Works';
 import ContactPage from '../../pages/Contact';
 import WriteMyCV from '../../pages/WriteMyCV';
 import Gemini from '../../pages/Gemini';
-import DID from '../../pages/DID';
 import DID2 from '../../pages/DID2';
 import About from '../About';
 import { FOOTER_LINKS } from '../Home/consts';
@@ -15,7 +14,7 @@ import styles from './styles.module.css';
 const { Header, Content, Footer } = Layout;
 const { Link } = Typography;
 
-type AppView = 'home' | 'about' | 'works' | 'contact' | 'cv' | 'gemini' | 'did1' | 'did';
+type AppView = 'home' | 'about' | 'works' | 'contact' | 'cv' | 'gemini' | 'did1';
 
 const MENU_LINKS: { view: AppView; label: string }[] = [
   { view: 'home', label: 'Home' },
@@ -23,7 +22,6 @@ const MENU_LINKS: { view: AppView; label: string }[] = [
   { view: 'about', label: 'About' },
   { view: 'gemini', label: 'AI Assistant' },
   { view: 'did1', label: 'D-ID 1' },
-  { view: 'did', label: 'D-ID 2' },
   { view: 'cv', label: 'CV Writer' },
   { view: 'contact', label: 'Contact' },
 ];
@@ -117,7 +115,6 @@ const App: React.FC = () => {
         {view === 'contact' && <ContactPage />}
         {view === 'cv' && <WriteMyCV />}
         {view === 'gemini' && <Gemini onOpenCv={() => setView('cv')} />}
-        {view === 'did' && <DID />}
         {view === 'did1' && <DID2 />}
       </Content>
 

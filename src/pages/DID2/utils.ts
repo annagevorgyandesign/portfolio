@@ -38,7 +38,7 @@ export async function createTalk(params: CreateTalkParams): Promise<string> {
         type: 'text',
         input: params.text,
         provider: {
-          type: 'elevenlabs',
+          type: 'microsoft',
           voice_id: params.voiceId,
         },
       },
