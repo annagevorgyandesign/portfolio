@@ -1,6 +1,7 @@
 .root {
   --sticky-chat-orange: color-mix(in srgb, var(--brand-orange) 88%, #1a1a1a);
   --sticky-chat-orange-hover: var(--brand-orange);
+  --sticky-chat-send-icon-size: 32px;
   position: fixed;
   right: 16px;
   bottom: 64px;
@@ -51,8 +52,8 @@
 }
 
 .chatIconHeader {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
 }
 
 .chatIconLauncher {
@@ -82,7 +83,7 @@
   align-items: center;
   gap: 12px;
   padding: var(--sticky-chat-padding-x);
-  min-height: 64px;
+  min-height: 72px;
   box-sizing: border-box;
   background: var(--sticky-chat-orange);
   color: #fff;
@@ -100,7 +101,7 @@
   flex: 1;
   margin: 0;
   font-family: 'Degular', 'Inter', 'Segoe UI', sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -258,37 +259,62 @@
   color: #111 !important;
 }
 
-.sendBtn {
+.sendBtn:global(.ant-btn) {
   margin-left: 4px;
-  width: 56px !important;
-  min-width: 56px !important;
-  height: 56px !important;
-  min-height: 56px !important;
-  padding: 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 4px !important;
+  font-size: var(--sticky-chat-send-icon-size, 32px) !important;
+  line-height: 1 !important;
   border-radius: 8px !important;
   background: transparent !important;
   border: none !important;
   color: var(--sticky-chat-orange) !important;
   box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-.sendBtn:hover:not(:disabled) {
+.sendBtn:global(.ant-btn):hover:not(:disabled) {
+  transform: none !important;
   background: color-mix(in srgb, var(--sticky-chat-orange) 12%, transparent) !important;
   color: var(--sticky-chat-orange-hover) !important;
 }
 
-.sendBtn:disabled,
-.sendBtn:disabled:hover {
+.sendBtn:global(.ant-btn):disabled,
+.sendBtn:global(.ant-btn):disabled:hover {
   opacity: 1 !important;
   color: var(--sticky-chat-orange) !important;
 }
 
+.sendBtn :global(.ant-btn-icon) {
+  margin-inline: 0 !important;
+  line-height: 0;
+  font-size: inherit;
+}
+
+.sendIcon:global(.anticon),
 .sendBtn :global(.anticon) {
-  font-size: 32px;
+  font-size: var(--sticky-chat-send-icon-size, 32px) !important;
+  line-height: 1 !important;
   color: var(--sticky-chat-orange) !important;
 }
 
-.sendBtn:disabled :global(.anticon) {
+.sendIcon:global(.anticon svg),
+.sendBtn :global(.anticon svg) {
+  display: block;
+  width: 1em !important;
+  height: 1em !important;
+}
+
+.sendBtn:global(.ant-btn):hover:not(:disabled) :global(.anticon) {
+  color: var(--sticky-chat-orange-hover) !important;
+}
+
+.sendBtn:global(.ant-btn):disabled :global(.anticon) {
   color: var(--sticky-chat-orange) !important;
   opacity: 1;
 }

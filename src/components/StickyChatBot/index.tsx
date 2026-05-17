@@ -156,7 +156,7 @@ const StickyChatBot: React.FC<StickyChatBotProps> = ({ hidden = false }) => {
               />
               <Button
                 type="text"
-                icon={<SendOutlined />}
+                icon={<SendOutlined className={styles.sendIcon} />}
                 onClick={handleSend}
                 loading={loading}
                 disabled={!draft.trim()}
