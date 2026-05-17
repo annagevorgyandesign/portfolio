@@ -16,9 +16,10 @@ import styles from './styles.module.css'
 export interface HomeProps {
   onOpenContact: () => void
   onOpenWorks: () => void
+  onOpenAbout: () => void
 }
 
-const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenWorks }) => {
+const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenWorks, onOpenAbout }) => {
   const [firstStat, ...remainingStats] = STAT_ITEMS
 
   return (
@@ -69,7 +70,7 @@ const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenWorks }) => {
               </article>
             ))}
           </div>
-          <Button className={styles.brandBtn} onClick={onOpenWorks}>
+          <Button className={styles.brandBtn} onClick={onOpenAbout}>
             {HOME_COPY.servicesAction}
           </Button>
         </section>

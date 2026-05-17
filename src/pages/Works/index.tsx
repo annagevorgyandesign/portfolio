@@ -20,7 +20,7 @@ const Works: React.FC<WorksProps> = ({ onOpenContact }) => {
     <div className={styles.worksPage}>
       <div className={styles.shell}>
         <header className={styles.hero}>
-          <Title level={1}>Works</Title>
+          <Title level={1}>Work</Title>
           <Paragraph className={styles.lead}>{WORKS_INTRO}</Paragraph>
           <div className={styles.heroActions}>
             <Button

@@ -30,7 +30,7 @@ export const HOME_COPY = {
     'UI/UX, Product, Web Design, Graphic Design & Branding Solutions for Startups and Brands',
   primaryAction: 'View Portfolio',
   secondaryAction: 'Download CV',
-  servicesAction: 'All Services',
+  servicesAction: 'Learn More',
   worksAction: 'See More',
   testimonialTitle: 'Client Testimonial',
   testimonialQuote:

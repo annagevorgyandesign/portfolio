@@ -1,6 +1,6 @@
 export const NAV_ITEMS = [
   { id: 'services', label: 'Services' },
-  { id: 'works', label: 'Works' },
+  { id: 'works', label: 'Work' },
   { id: 'about', label: 'About' },
   { id: 'testimonial', label: 'Testimonial' },
 ] as const
