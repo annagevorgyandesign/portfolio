@@ -6,7 +6,12 @@ import {
   ProjectOutlined,
   ThunderboltOutlined,
 } from '@ant-design/icons'
-import { ABOUT_AVATAR_ALT, ABOUT_AVATAR_VIDEO_SRC, ABOUT_CONTACT_BUTTON_LABEL } from './consts'
+import {
+  ABOUT_AVATAR_ALT,
+  ABOUT_AVATAR_VIDEO_SRC,
+  ABOUT_CONTACT_BUTTON_LABEL,
+  ABOUT_UI_UX_FIGMA_SKILL,
+} from './consts'
 import styles from './styles.module.css'
 
 export interface AboutProps {
@@ -36,6 +41,7 @@ const SERVICE_CARDS: ServiceCardData[] = [
       'Atomic Design',
       'Responsive Design',
       'Usability & A/B Testing',
+      ABOUT_UI_UX_FIGMA_SKILL,
     ],
   },
   {
@@ -55,7 +61,7 @@ const SERVICE_CARDS: ServiceCardData[] = [
   },
   {
     icon: <FormatPainterOutlined />,
-    title: 'Logo, Branding & Graphic Design',
+    title: 'Graphic Design, Logo & Branding',
     description:
       'From memorable logos and premium packaging to impactful print materials, I craft cohesive visual identities that tell your story and build trust.',
     skills: [
