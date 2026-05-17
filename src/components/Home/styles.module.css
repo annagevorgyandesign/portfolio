@@ -2,6 +2,8 @@
   background-color: #fff;
   color: #111;
   font-family: 'Inter', 'Segoe UI', sans-serif;
+  container-type: inline-size;
+  overflow-x: clip;
 }
 
 .homeShell {
@@ -22,8 +24,10 @@
 
 .homeHero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: stretch;
+  width: 100%;
+  max-width: 100%;
   height: calc(100svh - 88px);
   max-height: calc(100svh - 88px);
   min-height: 0;
@@ -33,11 +37,18 @@
 .heroCopyWrapper {
   display: flex;
   align-items: center;
-  padding-left: max(48px, calc((100vw - 1440px) / 2 + 48px));
+  padding-left: 48px;
   padding-right: 40px;
+  min-width: 0;
   min-height: 0;
   height: 100%;
   box-sizing: border-box;
+}
+
+@container (min-width: 1440px) {
+  .heroCopyWrapper {
+    padding-left: calc((100cqw - 1440px) / 2 + 48px);
+  }
 }
 
 .heroCopy {
@@ -47,6 +58,7 @@
   align-items: flex-start;
   text-align: left;
   width: 100%;
+  min-width: 0;
   transform: translateY(-12px);
 }
 
@@ -132,6 +144,7 @@
 .heroVisual {
   width: 100%;
   height: 100%;
+  min-width: 0;
   min-height: 0;
   overflow: hidden;
 }
@@ -139,18 +152,19 @@
 .heroVisual img {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
-  transform: scale(1.03);
 }
 
 .servicesSection {
+  --section-bleed: max(0px, calc((100vw - 100%) / 2));
   background: #000;
   color: #fff;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: calc(100% + 2 * var(--section-bleed));
+  margin-left: calc(-1 * var(--section-bleed));
+  margin-right: calc(-1 * var(--section-bleed));
   padding: 64px 120px;
   text-align: center;
   box-sizing: border-box;
@@ -241,7 +255,7 @@
 .worksSection {
   padding: 58px 0 64px;
   text-align: center;
-  margin: 0 -40px;
+  margin: 0;
 }
 
 .worksPreview {
@@ -561,10 +575,6 @@
   }
 
   .servicesSection {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    box-sizing: border-box;
     padding: 56px 16px;
   }
 
