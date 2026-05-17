@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
-import { AppstoreOutlined, FormatPainterOutlined, ProjectOutlined } from '@ant-design/icons'
+import {
+  AppstoreOutlined,
+  FormatPainterOutlined,
+  ProjectOutlined,
+  ThunderboltOutlined,
+} from '@ant-design/icons'
 import { ABOUT_AVATAR_ALT, ABOUT_AVATAR_VIDEO_SRC } from './consts'
 import styles from './styles.module.css'
 
@@ -14,14 +19,8 @@ const SERVICE_CARDS: ServiceCardData[] = [
   {
     icon: <AppstoreOutlined />,
     title: 'UI/UX, Product & Web Design',
-    description: (
-      <>
-        I transform complex ideas into intuitive, human-centered digital experiences that your
-        customers will actually love using. I also bridge the gap between design and development,
-        leveraging <strong>Cursor AI</strong> to transform high-fidelity prototypes into fully
-        functional, production-ready websites.
-      </>
-    ),
+    description:
+      'I transform complex ideas into intuitive, human-centered digital experiences that your customers will actually love using.',
     skills: [
       'UI/UX & Product Design',
       'Web & Mobile App Design',
@@ -32,6 +31,18 @@ const SERVICE_CARDS: ServiceCardData[] = [
       'Atomic Design',
       'Responsive Design',
       'Usability & A/B Testing',
+    ],
+  },
+  {
+    icon: <ThunderboltOutlined />,
+    title: 'AI-Enhanced Design & Cursor',
+    description: (
+      <>
+        I bridge the gap between design and development, leveraging <strong>Cursor AI</strong> to
+        transform high-fidelity prototypes into fully functional, production-ready websites.
+      </>
+    ),
+    skills: [
       'AI-Assisted Web Implementation',
       'Figma-to-Code Workflow (via Cursor)',
       'AI-Powered Frontend Development',
@@ -42,14 +53,38 @@ const SERVICE_CARDS: ServiceCardData[] = [
     title: 'Logo, Branding & Graphic Design',
     description:
       'From memorable logos and premium packaging to impactful print materials, I craft cohesive visual identities that tell your story and build trust.',
-    skills: ['Brand Identity', 'Label & Packaging', 'Print Materials'],
+    skills: [
+      'Branding & Brand Identity',
+      'Visual Identity',
+      'Logo Design',
+      'Label & Packaging Design',
+      'Print & Marketing Materials (Brochure, Flyer, Poster)',
+      'Banner Ad Design',
+      'Advertisement Design',
+      'Layout Design',
+      'Social Media Imagery',
+      'Infographics',
+      'Email Design',
+      'Stationery',
+      'Design Principles',
+      'Typography',
+      'Color Theory',
+    ],
   },
   {
     icon: <ProjectOutlined />,
     title: 'Pitch Decks & Presentations',
     description:
       'I turn boring, text-heavy slides into compelling visual stories that win investors and close deals.',
-    skills: ['Investor Pitch Decks', 'Business Presentations'],
+    skills: [
+      'Investor Pitch Deck',
+      'Fundraising Presentation',
+      'Business Presentation',
+      'Microsoft PowerPoint',
+      'PPTX',
+      'Google Slides',
+      'GSLIDES',
+    ],
   },
 ]
 
