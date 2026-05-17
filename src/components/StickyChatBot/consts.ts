@@ -1,4 +1,4 @@
-export const STICKY_CHAT_HEADER = 'Ask anything!'
+export const STICKY_CHAT_HEADER = 'AI assistant'
 
 export const STICKY_CHAT_WELCOME_LINES = [
   "Hi! I am Anna's portfolio assistant. Ask me",
