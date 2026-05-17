@@ -115,7 +115,7 @@ const App: React.FC = () => {
           />
         )}
         {view === 'works' && <Works onOpenContact={() => goTo('contact')} />}
-        {view === 'about' && <About />}
+        {view === 'about' && <About onOpenContact={() => goTo('contact')} />}
         {view === 'contact' && <ContactPage />}
         {view === 'cv' && <WriteMyCV />}
         {view === 'gemini' && <Gemini onOpenCv={() => goTo('cv')} />}

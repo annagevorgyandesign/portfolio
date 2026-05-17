@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
+import { Button } from 'antd'
 import {
   AppstoreOutlined,
   FormatPainterOutlined,
   ProjectOutlined,
   ThunderboltOutlined,
 } from '@ant-design/icons'
-import { ABOUT_AVATAR_ALT, ABOUT_AVATAR_VIDEO_SRC } from './consts'
+import { ABOUT_AVATAR_ALT, ABOUT_AVATAR_VIDEO_SRC, ABOUT_CONTACT_BUTTON_LABEL } from './consts'
 import styles from './styles.module.css'
+
+export interface AboutProps {
+  onOpenContact: () => void
+}
 
 interface ServiceCardData {
   icon: React.ReactNode
@@ -85,7 +90,7 @@ const SERVICE_CARDS: ServiceCardData[] = [
   },
 ]
 
-const About: React.FC = () => {
+const About: React.FC<AboutProps> = ({ onOpenContact }) => {
   const [hasVideo, setHasVideo] = useState(false)
 
   return (
@@ -155,6 +160,16 @@ const About: React.FC = () => {
                 </div>
               </article>
             ))}
+          </div>
+          <div className={styles.servicesCta}>
+            <Button
+              type="default"
+              size="large"
+              className={styles.contactBtn}
+              onClick={onOpenContact}
+            >
+              {ABOUT_CONTACT_BUTTON_LABEL}
+            </Button>
           </div>
         </div>
       </section>
