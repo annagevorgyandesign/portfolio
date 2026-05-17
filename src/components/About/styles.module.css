@@ -200,14 +200,29 @@
 }
 
 .serviceCardFocus {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   font-size: 16px;
   line-height: 26px;
   color: #222;
   margin: 0;
 }
 
-.serviceCardFocus strong {
+.serviceCardFocusLabel {
   color: #222;
+}
+
+.serviceCardSkills {
+  margin: 0;
+  padding-left: 1.25em;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.serviceCardSkills li {
+  margin: 0;
+  line-height: 26px;
 }
 
 /* ── Responsive ────────────────────────────────────── */

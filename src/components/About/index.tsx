@@ -6,31 +6,50 @@ import styles from './styles.module.css'
 interface ServiceCardData {
   icon: React.ReactNode
   title: string
-  description: string
-  focus: string
+  description: React.ReactNode
+  skills: string[]
 }
 
 const SERVICE_CARDS: ServiceCardData[] = [
   {
     icon: <AppstoreOutlined />,
     title: 'UI/UX, Product & Web Design',
-    description:
-      'I transform complex ideas into intuitive, human-centered digital experiences that your customers will actually love using.',
-    focus: 'Web & Mobile App Design, User Research, Design Systems, Auto Layout.',
+    description: (
+      <>
+        I transform complex ideas into intuitive, human-centered digital experiences that your
+        customers will actually love using. I also bridge the gap between design and development,
+        leveraging <strong>Cursor AI</strong> to transform high-fidelity prototypes into fully
+        functional, production-ready websites.
+      </>
+    ),
+    skills: [
+      'UI/UX & Product Design',
+      'Web & Mobile App Design',
+      'User Research & CJM',
+      'Information Architecture',
+      'Wireframing & Prototyping',
+      'Design Systems & UI Kits',
+      'Atomic Design',
+      'Responsive Design',
+      'Usability & A/B Testing',
+      'AI-Assisted Web Implementation',
+      'Figma-to-Code Workflow (via Cursor)',
+      'AI-Powered Frontend Development',
+    ],
   },
   {
     icon: <FormatPainterOutlined />,
     title: 'Logo, Branding & Graphic Design',
     description:
       'From memorable logos and premium packaging to impactful print materials, I craft cohesive visual identities that tell your story and build trust.',
-    focus: 'Brand Identity, Label & Packaging, Print Materials.',
+    skills: ['Brand Identity', 'Label & Packaging', 'Print Materials'],
   },
   {
     icon: <ProjectOutlined />,
     title: 'Pitch Decks & Presentations',
     description:
       'I turn boring, text-heavy slides into compelling visual stories that win investors and close deals.',
-    focus: 'Investor Pitch Decks, Business Presentations.',
+    skills: ['Investor Pitch Decks', 'Business Presentations'],
   },
 ]
 
@@ -94,9 +113,14 @@ const About: React.FC = () => {
                 <div className={styles.serviceIconCircle}>{card.icon}</div>
                 <h3 className={styles.serviceCardTitle}>{card.title}</h3>
                 <p className={styles.serviceCardDesc}>{card.description}</p>
-                <p className={styles.serviceCardFocus}>
-                  <strong>Core Skills:</strong> {card.focus}
-                </p>
+                <div className={styles.serviceCardFocus}>
+                  <strong className={styles.serviceCardFocusLabel}>Core Skills:</strong>
+                  <ul className={styles.serviceCardSkills}>
+                    {card.skills.map((skill) => (
+                      <li key={skill}>{skill}</li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             ))}
           </div>
