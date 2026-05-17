@@ -46,7 +46,7 @@ export const PORTFOLIO_MOCK_PROJECTS: readonly PortfolioMockProject[] = [
   },
   {
     id: '6',
-    title: 'Heritage Real Estate — Logo Design',
+    title: 'Heritage Real Estate Logo Design',
     tags: ['Logo', 'Real Estate'],
     imageSrc: 'https://picsum.photos/seed/behance-estate/800/600',
     imageAlt: 'Real estate branding project preview',

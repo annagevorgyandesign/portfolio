@@ -96,7 +96,7 @@ export const WORKS_PROJECTS: readonly WorkProject[] = [
     imageSeed: 'works-medicine',
   },
   {
-    title: 'Heritage Real Estate — Logo Design',
+    title: 'Heritage Real Estate Logo Design',
     tags: ['Logo', 'Real Estate'],
     behanceUrl: 'https://www.behance.net/gallery/154643705/Heritage-Real-Estate-Logo-Design',
     coverSrc: worksHeritageRealEstateLogo,
