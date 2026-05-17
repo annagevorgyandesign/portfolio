@@ -20,9 +20,9 @@ const MENU_LINKS: { view: AppView; label: string }[] = [
   { view: 'home', label: 'Home' },
   { view: 'works', label: 'Work' },
   { view: 'about', label: 'About' },
-  { view: 'gemini', label: 'AI Assistant' },
-  { view: 'did1', label: 'D-ID 1' },
-  { view: 'cv', label: 'CV Writer' },
+  { view: 'gemini', label: 'AI Chat' },
+  { view: 'did1', label: 'Video Avatar' },
+  { view: 'cv', label: 'Resume' },
   { view: 'contact', label: 'Contact' },
 ];
 

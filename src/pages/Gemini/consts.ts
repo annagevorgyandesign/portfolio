@@ -19,7 +19,7 @@ export const GEMINI_HINT_TEXT =
 
 export const GEMINI_RESUME_PAGE_NOTE_PARTS = {
   before: 'The full resume is on the ',
-  highlight: 'CV Writer',
+  highlight: 'Resume',
   after: ' page.',
 } as const
 
