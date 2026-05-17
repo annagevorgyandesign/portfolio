@@ -35,7 +35,7 @@ const SERVICE_CARDS: ServiceCardData[] = [
   },
   {
     icon: <ThunderboltOutlined />,
-    title: 'AI-Enhanced Design & Cursor',
+    title: 'AI-Powered Implementation, Design-to-Code Workflow',
     description: (
       <>
         I bridge the gap between design and development, leveraging <strong>Cursor AI</strong> to
@@ -66,9 +66,6 @@ const SERVICE_CARDS: ServiceCardData[] = [
       'Infographics',
       'Email Design',
       'Stationery',
-      'Design Principles',
-      'Typography',
-      'Color Theory',
     ],
   },
   {
