@@ -8,6 +8,7 @@ import WriteMyCV from '../../pages/WriteMyCV';
 import Gemini from '../../pages/Gemini';
 import DID2 from '../../pages/DID2';
 import About from '../About';
+import StickyChatBot from '../StickyChatBot';
 import { FOOTER_LINKS } from '../Home/consts';
 import styles from './styles.module.css';
 
@@ -139,6 +140,8 @@ const App: React.FC = () => {
           </div>
         </div>
       </Footer>
+
+      <StickyChatBot hidden={view === 'gemini'} />
     </Layout>
   );
 };
