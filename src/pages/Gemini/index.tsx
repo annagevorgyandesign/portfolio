@@ -9,6 +9,8 @@ import {
   message,
   Tag,
   Spin,
+  ConfigProvider,
+  theme,
 } from 'antd'
 import { SendOutlined, ReloadOutlined, FileTextOutlined } from '@ant-design/icons'
 import { sendGeminiChat } from '../../api/gemini'
@@ -98,7 +100,28 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
   }
 
   return (
-    <div className={styles.geminiPage}>
+    <ConfigProvider
+      theme={{
+        algorithm: theme.defaultAlgorithm,
+        token: {
+          colorPrimary: '#FA8C16',
+          borderRadius: 8,
+          fontFamily: 'Inter, Segoe UI, Roboto, Arial, sans-serif',
+          colorText: '#111',
+          colorTextSecondary: '#4a4a4a',
+          colorBorder: '#d9d9d9',
+        },
+        components: {
+          Button: {
+            contentFontSize: 16,
+            contentFontSizeLG: 16,
+            contentFontSizeSM: 16,
+            fontWeight: 500,
+          },
+        },
+      }}
+    >
+      <div className={styles.geminiPage}>
       {contextHolder}
       <Space direction="vertical" size="large" className={styles.geminiStack}>
         <header className={styles.geminiHero}>
@@ -190,6 +213,7 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
             <Form.Item name="message" className={styles.chatFormItem}>
               <Input.TextArea
                 rows={4}
+                size="large"
                 placeholder="Message"
                 className={styles.geminiTextarea}
                 onPressEnter={(e) => {
@@ -223,7 +247,8 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
           </Form>
         </Card>
       </Space>
-    </div>
+      </div>
+    </ConfigProvider>
   )
 }
 
