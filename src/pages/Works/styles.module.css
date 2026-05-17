@@ -106,18 +106,13 @@
   flex-direction: column;
   height: 100%;
   background: #fff;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--field-border-color);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease;
 }
 
 .projectCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+  border-color: var(--brand-orange);
 }
 
 .thumb {

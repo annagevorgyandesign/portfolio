@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AppstoreOutlined, FormatPainterOutlined, ProjectOutlined } from '@ant-design/icons'
+import { ABOUT_AVATAR_ALT, ABOUT_AVATAR_VIDEO_SRC } from './consts'
 import styles from './styles.module.css'
 
 interface ServiceCardData {
@@ -33,15 +34,9 @@ const SERVICE_CARDS: ServiceCardData[] = [
   },
 ]
 
-const WHY_POINTS: string[] = [
-  'One Designer, Infinite Solutions',
-  'Proven Impact: 50+ successful projects',
-  'Reliability',
-]
-
-const TOOLS: string[] = ['Figma', 'Adobe CS', 'PowerPoint', 'Google Slides', 'AI Tools']
-
 const About: React.FC = () => {
+  const [hasVideo, setHasVideo] = useState(false)
+
   return (
     <div className={styles.aboutPage}>
       <section className={styles.heroSection}>
@@ -69,7 +64,22 @@ const About: React.FC = () => {
               </div>
             </div>
             <div className={styles.heroVisualCol}>
-              <div className={styles.avatarPlaceholder} />
+              <div className={styles.avatarFrame}>
+                <div className={styles.avatarMedia} aria-label={ABOUT_AVATAR_ALT}>
+                  <video
+                    className={`${styles.avatarVideo} ${hasVideo ? '' : styles.avatarVideoHidden}`}
+                    src={ABOUT_AVATAR_VIDEO_SRC}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    aria-hidden={!hasVideo}
+                    onLoadedData={() => setHasVideo(true)}
+                    onError={() => setHasVideo(false)}
+                  />
+                  {!hasVideo && <span className={styles.avatarTag}>Video Avatar</span>}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -89,33 +99,6 @@ const About: React.FC = () => {
                 </p>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.whySection}>
-        <div className={styles.shell}>
-          <div className={styles.whyGrid}>
-            <div className={styles.whyCol}>
-              <h2 className={styles.whyTitle}>Why Work With Me?</h2>
-              <ul className={styles.whyList}>
-                {WHY_POINTS.map((point) => (
-                  <li key={point} className={styles.whyItem}>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={styles.toolsCol}>
-              <h2 className={styles.whyTitle}>Tools</h2>
-              <div className={styles.toolsWrap}>
-                {TOOLS.map((tool) => (
-                  <span key={tool} className={styles.toolChip}>
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
