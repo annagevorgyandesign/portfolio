@@ -258,20 +258,20 @@
 }
 
 .suggestedRow {
-  --gemini-prompt-tag-row-gap: 24px;
-  --gemini-prompt-tag-col-gap: 24px;
+  --gemini-prompt-tag-row-gap: 16px;
+  --gemini-prompt-tag-col-gap: 16px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 0;
   margin-top: 16px;
-  margin-bottom: var(--gemini-prompt-tag-row-gap);
+  margin-bottom: 12px;
   min-width: 0;
 }
 
 .suggestedLabel {
   display: block;
-  margin-bottom: 8px !important;
+  margin-bottom: 6px !important;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -301,9 +301,9 @@
   height: auto !important;
   line-height: 1.35 !important;
   border-radius: 9999px !important;
-  border: 1px solid #d1d5db !important;
-  background: #f3f4f6 !important;
-  color: #374151 !important;
+  border: 1px solid #e8eaed !important;
+  background: #f8f9fa !important;
+  color: #4b5563 !important;
   font-size: 12px !important;
   font-family: 'Inter', 'Segoe UI', sans-serif !important;
   white-space: nowrap !important;
@@ -315,9 +315,9 @@
 
 .suggestedTag:hover {
   opacity: 1;
-  border-color: #9ca3af !important;
-  background: #e5e7eb !important;
-  color: #111827 !important;
+  border-color: #d1d6dc !important;
+  background: #f3f4f6 !important;
+  color: #434c59 !important;
 }
 
 .chatForm {
@@ -438,8 +438,9 @@
   }
 
   .suggestedRow {
-    --gemini-prompt-tag-row-gap: 12px;
-    --gemini-prompt-tag-col-gap: 14px;
+    --gemini-prompt-tag-row-gap: 10px;
+    --gemini-prompt-tag-col-gap: 12px;
+    margin-bottom: 10px;
   }
 
   .geminiActionsRow {
