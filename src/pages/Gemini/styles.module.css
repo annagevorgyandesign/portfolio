@@ -318,6 +318,14 @@
   color: #434c59 !important;
 }
 
+@media (min-width: 768px) {
+  .bubble.welcomeBubble {
+    width: 100%;
+    max-width: 100%;
+    align-self: stretch;
+  }
+}
+
 .chatForm {
   margin-top: 0;
 }
