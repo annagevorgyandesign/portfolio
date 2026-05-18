@@ -253,14 +253,7 @@
   }
 
   .cvTopBanner {
-    background: #fff;
     text-align: left;
-  }
-
-  .cvTopBanner h1,
-  .cvTopBanner h2,
-  .cvTopBanner p {
-    color: #1f1f1f;
   }
 
   .cvLastSection {

@@ -220,7 +220,7 @@
 
 .serviceItem p {
   margin: 12px 0 0;
-  color: #d9d9d9;
+  color: #f2f2f2;
   font-size: 16px;
   line-height: 24px;
   width: 240px;
@@ -406,7 +406,7 @@
   font-size: 18px;
   line-height: 30px;
   font-weight: 400;
-  color: #d0d0d0;
+  color: #f2f2f2;
 }
 
 .testimonialAttribution {
@@ -432,7 +432,7 @@
 
 .testimonialSection .testimonialAuthor {
   margin: 4px 0 4px;
-  color: #fff;
+  color: #f2f2f2;
   font-weight: 400;
   font-size: 15px;
   font-style: italic;
@@ -441,7 +441,7 @@
 
 .testimonialSection .testimonialAuthorRole {
   margin: 10px 0 0;
-  color: #fff;
+  color: #f2f2f2;
   font-weight: 400;
   font-size: 15px;
   font-style: italic;
