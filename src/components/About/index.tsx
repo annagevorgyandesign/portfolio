@@ -22,6 +22,7 @@ import {
   ABOUT_UI_UX_FIGMA_SKILL_DETAIL,
   ABOUT_UI_UX_FIGMA_SKILL_TITLE,
 } from './consts'
+import heroImage from '../../assets/hero.png'
 import VideoAvatar from '../VideoAvatar'
 import styles from './styles.module.css'
 
@@ -151,6 +152,14 @@ const About: React.FC<AboutProps> = ({ onOpenContact }) => {
       </section>
 
       <section className={styles.servicesSection}>
+        <img
+          className={styles.servicesBgImage}
+          src={heroImage}
+          alt=""
+          aria-hidden="true"
+          decoding="async"
+        />
+        <div className={styles.servicesBgOverlay} aria-hidden="true" />
         <div className={styles.shell}>
           <h2 className={styles.sectionTitle}>My Services</h2>
           <div className={styles.servicesGrid}>
