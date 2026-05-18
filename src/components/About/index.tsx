@@ -10,7 +10,8 @@ import {
   ABOUT_AVATAR_ALT,
   ABOUT_AVATAR_VIDEO_SRC,
   ABOUT_CONTACT_BUTTON_LABEL,
-  ABOUT_UI_UX_FIGMA_SKILL,
+  ABOUT_UI_UX_FIGMA_SKILL_DETAIL,
+  ABOUT_UI_UX_FIGMA_SKILL_TITLE,
 } from './consts'
 import styles from './styles.module.css'
 
@@ -23,6 +24,7 @@ interface ServiceCardData {
   title: string
   description: React.ReactNode
   skills: string[]
+  skillHighlight?: { title: string; detail: string }
 }
 
 const SERVICE_CARDS: ServiceCardData[] = [
@@ -41,8 +43,11 @@ const SERVICE_CARDS: ServiceCardData[] = [
       'Atomic Design',
       'Responsive Design',
       'Usability & A/B Testing',
-      ABOUT_UI_UX_FIGMA_SKILL,
     ],
+    skillHighlight: {
+      title: ABOUT_UI_UX_FIGMA_SKILL_TITLE,
+      detail: ABOUT_UI_UX_FIGMA_SKILL_DETAIL,
+    },
   },
   {
     icon: <ThunderboltOutlined />,
@@ -158,11 +163,23 @@ const About: React.FC<AboutProps> = ({ onOpenContact }) => {
                 <p className={styles.serviceCardDesc}>{card.description}</p>
                 <div className={styles.serviceCardFocus}>
                   <strong className={styles.serviceCardFocusLabel}>Core Skills:</strong>
-                  <ul className={styles.serviceCardSkills}>
+                  <div className={styles.serviceCardSkills}>
                     {card.skills.map((skill) => (
-                      <li key={skill}>{skill}</li>
+                      <span key={skill} className={styles.skillTag}>
+                        {skill}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
+                  {card.skillHighlight && (
+                    <p className={styles.skillHighlight}>
+                      <span className={styles.skillHighlightTitle}>
+                        {card.skillHighlight.title}:
+                      </span>{' '}
+                      <span className={styles.skillHighlightDetail}>
+                        {card.skillHighlight.detail}
+                      </span>
+                    </p>
+                  )}
                 </div>
               </article>
             ))}
