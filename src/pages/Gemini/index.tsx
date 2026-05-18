@@ -166,7 +166,7 @@ const Gemini: React.FC<GeminiProps> = ({ onOpenCv }) => {
 
           <div ref={scrollRef} className={styles.chatScroll}>
             <div className={styles.chatThread}>
-              <div className={`${styles.bubble} ${styles.bubbleModel}`}>
+              <div className={`${styles.bubble} ${styles.bubbleModel} ${styles.welcomeBubble}`}>
                 <Text className={styles.bubbleText}>{GEMINI_WELCOME_MESSAGE}</Text>
               </div>
 

@@ -226,7 +226,7 @@
 }
 
 .appContentGemini {
-  background: #fff;
+  background: #fff !important;
 }
 
 .appFooter {

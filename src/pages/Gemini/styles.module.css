@@ -3,9 +3,7 @@
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 32px 48px 56px;
-  min-height: min(820px, calc(100vh - 120px));
-  background: #fff;
+  padding: 32px 48px 40px;
   color: #111;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   box-sizing: border-box;
@@ -52,12 +50,10 @@
   color: #4a4a4a;
 }
 
-.geminiChatCard {
+.geminiChatCard:global(.ant-card) {
   border-radius: 8px;
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.04),
-    0 6px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid #d9d9d9;
+  box-shadow: none !important;
+  border: none !important;
   background: #fff !important;
   overflow: hidden;
 }
@@ -82,7 +78,8 @@
 
 .geminiChatCard :global(.ant-card-body) {
   background: #fff !important;
-  padding: 6px 24px 24px !important;
+  border: none !important;
+  padding: 6px 24px 16px !important;
 }
 
 .geminiHint {
@@ -132,6 +129,7 @@
   color: #222 !important;
   border: 1px solid #111 !important;
   background: #fff !important;
+  box-shadow: none !important;
 }
 
 .geminiGhostBtn:hover:not(:disabled) {
@@ -325,7 +323,7 @@
 }
 
 .chatFormItem {
-  margin-bottom: 12px !important;
+  margin-bottom: var(--button-row-gap) !important;
 }
 
 .geminiTextarea {
@@ -364,7 +362,7 @@
 
 @media (max-width: 1023px) {
   .geminiPage {
-    padding: 28px 24px 48px;
+    padding: 28px 24px 36px;
   }
 
   .geminiMainTitle {
@@ -383,15 +381,14 @@
 }
 
 @media (max-width: 767px) {
-  .geminiChatCard {
-    border: none;
-    box-shadow:
-      0 4px 16px rgba(17, 17, 17, 0.08),
-      0 1px 4px rgba(17, 17, 17, 0.04);
+  .geminiChatCard:global(.ant-card) {
+    border: none !important;
+    box-shadow: none !important;
     border-radius: 0;
   }
 
   .geminiChatCard :global(.ant-card-head) {
+    border-bottom: none !important;
     padding-inline: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 6px !important;
@@ -405,6 +402,7 @@
   .geminiChatCard :global(.ant-card-body) {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    padding-bottom: 12px !important;
   }
 
   .chatScroll {
@@ -412,7 +410,7 @@
   }
 
   .geminiPage {
-    padding: 20px 16px 40px;
+    padding: 20px 16px 48px;
   }
 
   .geminiHero {
@@ -509,10 +507,26 @@
     max-width: 92%;
   }
 
+  .welcomeBubble {
+    align-self: center;
+    margin-inline: auto;
+  }
+
+  .chatForm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--button-row-gap);
+  }
+
+  .chatFormItem {
+    margin-bottom: 0 !important;
+  }
+
   .chatForm :global(.ant-space) {
     width: 100%;
     flex-direction: column !important;
     align-items: stretch !important;
+    gap: var(--button-row-gap) !important;
   }
 
   .geminiPage :global(.ant-input),
