@@ -14,7 +14,10 @@ const WriteMyCV: React.FC = () => {
         <Card bordered={false} className={styles.cvPaperCard}>
           <section className={styles.cvTopBanner}>
             <h1>ANNA GEVORGYAN</h1>
-            <h2>UI/UX &amp; Product Designer, Graphic Designer</h2>
+            <h2 className={styles.cvTitle}>
+              <span className={styles.cvTitleFull}>UI/UX &amp; Product Designer, Graphic Designer</span>
+              <span className={styles.cvTitleCompact}>UI/UX, Product and Graphic Designer</span>
+            </h2>
             <p>Yerevan, Armenia</p>
           </section>
 

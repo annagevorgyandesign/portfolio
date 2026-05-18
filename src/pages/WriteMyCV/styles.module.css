@@ -42,17 +42,27 @@
   line-height: 1;
 }
 
-.cvTopBanner h2 {
+.cvTopBanner h2,
+.cvTitle {
   margin: 10px 0 8px;
-  color: #fff;
+  color: rgba(242, 242, 242, 1);
   font-size: 26px;
   font-weight: 600;
   line-height: 1.2;
 }
 
+.cvTopBanner .cvTitleFull,
+.cvTopBanner .cvTitleCompact {
+  color: rgba(242, 242, 242, 1);
+}
+
+.cvTitleCompact {
+  display: none;
+}
+
 .cvTopBanner p {
   margin: 0;
-  color: #fff;
+  color: rgba(242, 242, 242, 1);
   font-size: 20px;
   line-height: 1.2;
 }
@@ -358,6 +368,16 @@
   .cvDownloadBtn {
     width: 100% !important;
     justify-content: center !important;
+  }
+}
+
+@media (max-width: 499px) {
+  .cvTitleFull {
+    display: none;
+  }
+
+  .cvTitleCompact {
+    display: block;
   }
 }
 
