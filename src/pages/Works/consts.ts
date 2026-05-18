@@ -15,6 +15,8 @@ export const BEHANCE_PROFILE_URL = 'https://www.behance.net/annagevorgyan2' as c
 
 export const LINKEDIN_PROFILE_URL = 'https://www.linkedin.com/in/annagevorgyan-design' as const
 
+export const GITHUB_PROFILE_URL = 'https://github.com/annagevorgyandesign' as const
+
 export type WorkProject = {
   readonly title: string
   readonly tags: readonly string[]

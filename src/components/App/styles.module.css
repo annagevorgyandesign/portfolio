@@ -277,14 +277,19 @@
 .socialLinks {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .socialLinks :global(.ant-typography) {
-  font-size: 34px;
+  font-size: 26px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1;
+}
+
+.socialIcon {
+  font-size: 26px;
+  color: #f2f2f2;
 }
 
 @media (max-width: 1023px) {
@@ -359,6 +364,10 @@
   }
 
   .socialLinks :global(.ant-typography) {
-    font-size: 28px;
+    font-size: 22px;
+  }
+
+  .socialIcon {
+    font-size: 22px;
   }
 }

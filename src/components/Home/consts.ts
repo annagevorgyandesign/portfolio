@@ -1,4 +1,8 @@
-import { BEHANCE_PROFILE_URL, LINKEDIN_PROFILE_URL } from '../../pages/Works/consts'
+import {
+  BEHANCE_PROFILE_URL,
+  GITHUB_PROFILE_URL,
+  LINKEDIN_PROFILE_URL,
+} from '../../pages/Works/consts'
 
 export interface ServiceItem {
   title: string
@@ -76,7 +80,12 @@ export const STAT_ITEMS: StatItem[] = [
   { value: '110 +', label: 'Total Hours on Upwork' },
 ]
 
-export const FOOTER_LINKS = [
+export type FooterSocialLink =
+  | { label: string; href: string; icon?: never }
+  | { href: string; icon: 'github' }
+
+export const FOOTER_LINKS: FooterSocialLink[] = [
   { label: 'Bē', href: BEHANCE_PROFILE_URL },
   { label: 'in', href: LINKEDIN_PROFILE_URL },
-] as const
+  { href: GITHUB_PROFILE_URL, icon: 'github' },
+]

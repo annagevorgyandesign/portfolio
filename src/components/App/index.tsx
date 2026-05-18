@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, Button, Typography, Drawer } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
+import { GithubOutlined, MenuOutlined } from '@ant-design/icons';
 import Portfolio from '../../pages/Portfolio';
 import Works from '../../pages/Works';
 import ContactPage from '../../pages/Contact';
@@ -132,8 +132,18 @@ const App: React.FC = () => {
             <Link href="tel:+37455048820">+374 55 40 88 20</Link>
             <div className={styles.socialLinks}>
               {FOOTER_LINKS.map((link) => (
-                <Link href={link.href} key={link.label} target="_blank" rel="noopener noreferrer">
-                  {link.label}
+                <Link
+                  href={link.href}
+                  key={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={'icon' in link ? 'GitHub' : link.label}
+                >
+                  {'icon' in link && link.icon === 'github' ? (
+                    <GithubOutlined className={styles.socialIcon} />
+                  ) : (
+                    link.label
+                  )}
                 </Link>
               ))}
             </div>
