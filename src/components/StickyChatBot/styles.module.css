@@ -329,6 +329,12 @@
   opacity: 1;
 }
 
+@media (max-width: 1023px) and (min-width: 768px) {
+  .root {
+    bottom: 80px;
+  }
+}
+
 @media (max-width: 767px) {
   .root {
     right: 12px;

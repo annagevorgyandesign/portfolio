@@ -270,6 +270,8 @@
   .columns > .card:last-of-type .cardTitle {
     font-size: 14px;
     font-weight: 500;
-    margin-bottom: 8px;
+    line-height: 22px;
+    margin: 0;
+    padding: 0 0 8px;
   }
 }
