@@ -344,3 +344,9 @@
     font-size: 13px;
   }
 }
+
+@media (max-width: 499px) {
+  .root {
+    bottom: 24px;
+  }
+}
