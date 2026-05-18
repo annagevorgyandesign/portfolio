@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Button } from 'antd'
 import {
   AppstoreOutlined,
@@ -7,8 +7,6 @@ import {
   ThunderboltOutlined,
 } from '@ant-design/icons'
 import {
-  ABOUT_AVATAR_ALT,
-  ABOUT_AVATAR_VIDEO_SRC,
   ABOUT_CONTACT_BUTTON_LABEL,
   ABOUT_SKILL_PRINT_FORMATS,
   ABOUT_SKILL_PRINT_MARKETING,
@@ -24,6 +22,7 @@ import {
   ABOUT_UI_UX_FIGMA_SKILL_DETAIL,
   ABOUT_UI_UX_FIGMA_SKILL_TITLE,
 } from './consts'
+import VideoAvatar from '../VideoAvatar'
 import styles from './styles.module.css'
 
 export interface AboutProps {
@@ -116,8 +115,6 @@ const SERVICE_CARDS: ServiceCardData[] = [
 ]
 
 const About: React.FC<AboutProps> = ({ onOpenContact }) => {
-  const [hasVideo, setHasVideo] = useState(false)
-
   return (
     <div className={styles.aboutPage}>
       <section className={styles.heroSection}>
@@ -146,20 +143,7 @@ const About: React.FC<AboutProps> = ({ onOpenContact }) => {
             </div>
             <div className={styles.heroVisualCol}>
               <div className={styles.avatarFrame}>
-                <div className={styles.avatarMedia} aria-label={ABOUT_AVATAR_ALT}>
-                  <video
-                    className={`${styles.avatarVideo} ${hasVideo ? '' : styles.avatarVideoHidden}`}
-                    src={ABOUT_AVATAR_VIDEO_SRC}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    aria-hidden={!hasVideo}
-                    onLoadedData={() => setHasVideo(true)}
-                    onError={() => setHasVideo(false)}
-                  />
-                  {!hasVideo && <span className={styles.avatarTag}>Video Avatar</span>}
-                </div>
+                <VideoAvatar />
               </div>
             </div>
           </div>
