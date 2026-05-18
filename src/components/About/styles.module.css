@@ -278,6 +278,10 @@
     gap: 32px;
   }
 
+  .heroVisualCol {
+    order: -1;
+  }
+
   .avatarFrame {
     max-width: 100%;
   }
