@@ -10,6 +10,17 @@ import {
   ABOUT_AVATAR_ALT,
   ABOUT_AVATAR_VIDEO_SRC,
   ABOUT_CONTACT_BUTTON_LABEL,
+  ABOUT_SKILL_PRINT_FORMATS,
+  ABOUT_SKILL_PRINT_MARKETING,
+  ABOUT_SKILL_AB_TESTING,
+  ABOUT_SKILL_CJM,
+  ABOUT_SKILL_DESIGN_SYSTEMS,
+  ABOUT_SKILL_PRINT_MARKETING_DESKTOP,
+  ABOUT_SKILL_PROTOTYPING,
+  ABOUT_SKILL_UI_KITS,
+  ABOUT_SKILL_USABILITY,
+  ABOUT_SKILL_USER_RESEARCH,
+  ABOUT_SKILL_WIREFRAMING,
   ABOUT_UI_UX_FIGMA_SKILL_DETAIL,
   ABOUT_UI_UX_FIGMA_SKILL_TITLE,
 } from './consts'
@@ -35,14 +46,18 @@ const SERVICE_CARDS: ServiceCardData[] = [
       'I transform complex ideas into intuitive, human-centered digital experiences that your customers will actually love using.',
     skills: [
       'UI/UX & Product Design',
-      'Web & Mobile App Design',
-      'User Research & CJM',
-      'Information Architecture',
-      'Wireframing & Prototyping',
-      'Design Systems & UI Kits',
-      'Atomic Design',
+      ABOUT_SKILL_CJM,
       'Responsive Design',
-      'Usability & A/B Testing',
+      'Atomic Design',
+      'Web & Mobile App Design',
+      ABOUT_SKILL_UI_KITS,
+      ABOUT_SKILL_USER_RESEARCH,
+      ABOUT_SKILL_WIREFRAMING,
+      ABOUT_SKILL_AB_TESTING,
+      'Information Architecture',
+      ABOUT_SKILL_PROTOTYPING,
+      ABOUT_SKILL_USABILITY,
+      ABOUT_SKILL_DESIGN_SYSTEMS,
     ],
     skillHighlight: {
       title: ABOUT_UI_UX_FIGMA_SKILL_TITLE,
@@ -59,8 +74,8 @@ const SERVICE_CARDS: ServiceCardData[] = [
       </>
     ),
     skills: [
-      'AI-Assisted Web Implementation',
       'Figma-to-Code Workflow (via Cursor)',
+      'AI-Assisted Web Implementation',
       'AI-Powered Frontend Development',
     ],
   },
@@ -74,14 +89,13 @@ const SERVICE_CARDS: ServiceCardData[] = [
       'Visual Identity',
       'Logo Design',
       'Label & Packaging Design',
-      'Print & Marketing Materials (Brochure, Flyer, Poster)',
+      'Stationery',
+      ABOUT_SKILL_PRINT_MARKETING_DESKTOP,
+      'Infographics',
+      'Social Media Imagery',
       'Banner Ad Design',
       'Advertisement Design',
-      'Layout Design',
-      'Social Media Imagery',
-      'Infographics',
       'Email Design',
-      'Stationery',
     ],
   },
   {
@@ -91,12 +105,12 @@ const SERVICE_CARDS: ServiceCardData[] = [
       'I turn boring, text-heavy slides into compelling visual stories that win investors and close deals.',
     skills: [
       'Investor Pitch Deck',
-      'Fundraising Presentation',
-      'Business Presentation',
-      'Microsoft PowerPoint',
       'PPTX',
-      'Google Slides',
+      'Fundraising Presentation',
       'GSLIDES',
+      'Business Presentation',
+      'Google Slides',
+      'Microsoft PowerPoint',
     ],
   },
 ]
@@ -164,11 +178,35 @@ const About: React.FC<AboutProps> = ({ onOpenContact }) => {
                 <div className={styles.serviceCardFocus}>
                   <strong className={styles.serviceCardFocusLabel}>Core Skills:</strong>
                   <div className={styles.serviceCardSkills}>
-                    {card.skills.map((skill) => (
-                      <span key={skill} className={styles.skillTag}>
-                        {skill}
-                      </span>
-                    ))}
+                    {card.skills.map((skill) => {
+                      if (skill === ABOUT_SKILL_PRINT_MARKETING_DESKTOP) {
+                        return (
+                          <React.Fragment key={skill}>
+                            <span
+                              className={`${styles.skillTag} ${styles.skillTagDesktopOnly}`}
+                            >
+                              {skill}
+                            </span>
+                            <span
+                              className={`${styles.skillTag} ${styles.skillTagMobileOnly}`}
+                            >
+                              {ABOUT_SKILL_PRINT_MARKETING}
+                            </span>
+                            <span
+                              className={`${styles.skillTag} ${styles.skillTagMobileOnly}`}
+                            >
+                              {ABOUT_SKILL_PRINT_FORMATS}
+                            </span>
+                          </React.Fragment>
+                        )
+                      }
+
+                      return (
+                        <span key={skill} className={styles.skillTag}>
+                          {skill}
+                        </span>
+                      )
+                    })}
                   </div>
                   {card.skillHighlight && (
                     <p className={styles.skillHighlight}>
