@@ -76,7 +76,7 @@ const Home: React.FC<HomeProps> = ({ onOpenContact, onOpenWorks, onOpenAbout }) 
         </section>
 
         <section id="home-works" className={styles.worksSection}>
-          <h2>My Works</h2>
+          <h2>My Work</h2>
           <div className={styles.worksPreview}>
             <img src={portfolioSetImage} alt="Portfolio works preview collage" />
           </div>
