@@ -2,6 +2,9 @@
   background-color: #fff;
   color: #111;
   font-family: 'Inter', 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100dvh - 88px - 96px);
 }
 
 .shell {
@@ -122,8 +125,17 @@
 /* ── Services ─────────────────────────────────────── */
 
 .servicesSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: 40px 0 0;
   background-color: #fafafa;
+}
+
+.servicesSection > .shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .sectionTitle {
@@ -254,9 +266,13 @@
 }
 
 .servicesCta {
+  flex: 1;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin: 48px 0;
+  margin: 0;
+  padding: 48px 0;
+  min-height: 120px;
 }
 
 .contactBtn {
@@ -322,8 +338,14 @@
     padding: 32px 0 0;
   }
 
+  .aboutPage {
+    min-height: calc(100dvh - 72px - 200px);
+  }
+
   .servicesCta {
-    margin: 32px 0;
+    margin: 20px 0 28px;
+    padding: 20px 0;
+    min-height: 104px;
   }
 
   .servicesGrid {
